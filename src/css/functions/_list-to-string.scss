@@ -1,5 +1,7 @@
+@use "sass:list";
+
 @function list-to-string($list, $separator: ",") {
-  @if length($list) == 1 {
+  @if list.length($list) == 1 {
     @return $list;
   }
 

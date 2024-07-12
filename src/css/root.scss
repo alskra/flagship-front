@@ -1,4 +1,4 @@
-@use "sass:color";
+@use "sass:math";
 
 // stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
 // Responsive Sizes
@@ -42,9 +42,9 @@
 // Typography
 :root {
   --font-family: var(--font-family-steinbeck);
-  --font-size: 20rem;
+  --font-size: 16rem;
   --font-weight: 400;
-  --line-height: #{div(28, 20)};
+  --line-height: #{math.div(28, 18)};
 
   --h-spacing-top: 40rem;
   --h-spacing-bottom: 40rem;
