@@ -1,0 +1,21 @@
+mixin section-intro
+  section.section-intro&attributes(attributes)
+    .section-intro__body
+      .section-intro__grid.container.grid-12
+        .section-intro__col-1.col-span-5.col-line-2.col-span-6-max-lg.col-span-4-max-md.col-span-3-max-sm
+          icon-svg.section-intro__logo(name="logo")
+        .section-intro__col-2.col-span-5.col-span-6-max-lg.col-span-8-max-md.col-span-9-max-sm
+          +content().section-intro__content
+            p.
+              145-летие российской рекламы&nbsp;&mdash; повод вспомнить, каким был фестиваль &gt;30 лет назад, как менялся и&nbsp;развивался, каким его знает индустрия сегодня. Корни проекта забываются, время напомнить о&nbsp;ключевом событии креативной индустрии в&nbsp;формате хронологической ленты.
+            p.
+              Это большой медиа-проект от&nbsp;команды фестиваля, в&nbsp;котором описаны ключевые вехи Red Apple: с&nbsp;1992 года до&nbsp;наших дней.
+            p.
+              В&nbsp;рамках каждого сезона раскрыты главные тезисы времени и&nbsp;рынка, упомянуты ключевые лица и&nbsp;описаны формат и&nbsp;структура конкурса, а&nbsp;также продемонстрированы работы участников.
+            p.
+              Приятного погружения в&nbsp;историю!
+
+    +btn({
+      tag: 'a',
+      iconPrev: 'angle-down',
+    }).section-intro__btn(href="#1992")

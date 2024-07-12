@@ -1,0 +1,24 @@
+@forward "variables";
+@forward "functions";
+@forward "mixins";
+@use "variables" as *;
+
+// Custom Selectors
+@custom-selector :--invalid .is-invalid;
+@custom-selector :--disabled :disabled, .is-disabled;
+@custom-selector :--not-fc :not(:first-child);
+@custom-selector :--not-lc :not(:last-child);
+
+// Custom Media Queries
+// Styles for hover-devices and IE11
+@custom-media --hover (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none);
+
+@each $name, $value in $grid-breakpoints {
+  // stylelint-disable-next-line
+  @custom-media --min-#{$name} (min-width: #{$value});
+}
+
+@each $name, $value in $grid-breakpoints {
+  // stylelint-disable-next-line
+  @custom-media --max-#{$name} (max-width: #{$value - 0.02});
+}

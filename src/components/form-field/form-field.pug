@@ -1,0 +1,3 @@
+mixin form-field({ tag = 'input' } = {})
+  #{tag}.form-field(type=tag === 'input' ? 'text' : null)&attributes(attributes)
+    block

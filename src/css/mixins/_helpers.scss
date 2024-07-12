@@ -1,0 +1,70 @@
+@use "../variables" as *;
+
+@mixin focus-default {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+@mixin hover {
+  @media (--hover) {
+    #{if(&, "&", "")}:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-not-disabled {
+  @include hover {
+    &:where(:not(:--disabled)) {
+      @content;
+    }
+  }
+}
+
+@mixin text-stroke($stroke-width, $stroke-color, $fill-color: transparent) {
+  -webkit-text-stroke: $stroke-width $stroke-color;
+
+  @if $fill-color == transparent {
+    -webkit-text-fill-color: $fill-color;
+    color: $stroke-color;
+  } @else {
+    color: $fill-color;
+  }
+}
+
+@mixin font-face($url, $font-family, $font-weight, $font-style, $woff: false) {
+  @font-face {
+    @if $woff {
+      src:
+        url($url + ".woff2") format("woff2"),
+        url($url + ".woff") format("woff");
+    } @else {
+      src: url($url + ".woff2") format("woff2");
+    }
+
+    // stylelint-disable
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    // stylelint-enable
+  }
+}
+
+@mixin retina {
+  // stylelint-disable-next-line
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin line-clamp {
+  // stylelint-disable
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line-clamp);
+  overflow: hidden;
+  line-height: var(--line-height);
+  max-height: calc(var(--line-clamp) * var(--line-height) * 1em);
+  // stylelint-enable
+}

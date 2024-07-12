@@ -1,0 +1,8 @@
+// Steinbeck
+@include font-face("~@fonts/Steinbeck/Steinbeck-Regular", "Steinbeck", 400, normal);
+@include font-face("~@fonts/Steinbeck/Steinbeck-Italic", "Steinbeck", 400, italic);
+
+:root {
+  --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-steinbeck: "Steinbeck", system-ui, var(--font-family-emoji);
+}

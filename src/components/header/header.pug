@@ -1,0 +1,5 @@
+mixin header
+  header.header&attributes(attributes)
+    +btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
+    a.header__logo(href="/")
+      icon-svg(name="logo")

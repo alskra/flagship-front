@@ -1,0 +1,68 @@
+@mixin make-grid($suffix: "") {
+  .container#{$suffix} {
+    width: 100%;
+    max-width: var(--container-max-width);
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+    container: container / inline-size;
+  }
+
+  @for $size from 1 through $grid-count {
+    .grid-#{$size}#{$suffix} {
+      display: grid;
+      grid-template-columns: repeat($size, 1fr);
+      column-gap: var(--grid-gutter);
+    }
+
+    .grid-flex-#{$size}#{$suffix} {
+      --grid-count: #{$size};
+      --col-size: calc((100% - (var(--grid-count) - 1) * var(--grid-gutter)) / var(--grid-count));
+
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: var(--grid-gutter);
+    }
+  }
+
+  @for $size from 1 through $grid-count {
+    .col-span-#{$size}#{$suffix} {
+      grid-column: span $size / span $size;
+    }
+
+    .col-#{$size}#{$suffix},
+    .col-#{$size}#{$suffix}.swiper-slide {
+      flex-shrink: 0;
+      width: calc($size * var(--col-size) + ($size - 1) * var(--grid-gutter));
+    }
+  }
+
+  @for $size from 1 through $grid-count {
+    .col-line-#{$size}#{$suffix} {
+      grid-column-start: $size;
+    }
+
+    .col-line-end-#{$size}#{$suffix} {
+      grid-column-end: -$size;
+    }
+  }
+
+  @for $size from 0 through $grid-count - 1 {
+    .col-offset-#{$size}#{$suffix} {
+      margin-left: calc($size * (var(--col-size) + var(--grid-gutter)));
+    }
+  }
+}
+
+@include make-grid;
+
+@each $name, $value in $grid-breakpoints {
+  @media (--min-#{$name}) {
+    @include make-grid(-min-#{$name});
+  }
+}
+
+@each $name, $value in map-reverse($grid-breakpoints) {
+  @media (--max-#{$name}) {
+    @include make-grid(-max-#{$name});
+  }
+}

@@ -1,0 +1,76 @@
+include /components/breadcrumb/breadcrumb
+include /components/comment/comment
+
+mixin article({ date, name })
+  article.article&attributes(attributes)
+    header.article__header
+      a.article__logo(href="/")
+        icon-svg(name="logo")
+
+      .container.grid-12
+        .col-span-7.col-span-12-max-lg
+          +breadcrumb([{ title: date.split('-')[0] }]).article__breadcrumb
+          h1.article__title!= name
+
+    .article__main
+      block
+
+mixin article-important
+  .container.mb-12
+    .grid-12
+      .col-span-7.col-span-12-max-lg
+        +content().article__important
+          block
+
+mixin article-industry({ digits })
+  .container.mb-20
+    .grid-12
+      .col-span-7.col-span-12-max-lg(class={ 'mb-20-max-lg': digits.length })
+        +content()
+          block
+
+      if digits.length
+        .col-span-4.col-line-end-1.col-span-12-max-lg
+          .article__digits
+            each digit in digits
+              .article__digits-item
+                .article__digits-val!= digit.val
+                .article__digits-title!= digit.title
+
+mixin article-comments({ comments }, start, end)
+  .container.mb-30
+    each comment in comments.slice(start, end)
+      +comment(comment)
+
+mixin article-about
+  section.container.mb-20
+    .grid-12
+      .col-span-8.col-span-12-max-lg
+        +content()
+          h2.mb О&nbsp;фестивале
+          block
+
+mixin article-winners({ winners })
+  section.container
+    +content()
+      h2.mb Победители
+    .article__winners.grid-12.grid-9-max-lg.grid-6-max-md.grid-3-max-sm
+      each winner in winners
+        .col-span-3
+          figure.article__winner
+            if winner.image
+              +picture-webp()(
+                src=winner.image
+                srcset="2x"
+                alt!=winner.reward
+              ).article__winner-image
+            else
+              img(
+                src="upload/empty.svg"
+                alt!=winner.reward
+              ).article__winner-image
+            figcaption
+              .article__winner-reward!= winner.reward
+              .article__winner-info!= winner.info
+    +content()
+      block

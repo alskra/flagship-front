@@ -1,0 +1,16 @@
+.breadcrumb {
+  display: flex;
+}
+
+.breadcrumb__item {
+  font-size: 16rem;
+  line-height: div(22, 16);
+  text-transform: uppercase;
+
+  & + & {
+    &::before {
+      margin: 0 4rem;
+      content: "/";
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "../variables" as *;
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+@function vh($number) {
+  @return calc($number * min(var(--vh, 1vh), 1vh));
+}
+
+@function em($number, $base: 16) {
+  @return math.div($number, $base) * 1em;
+}
+
+@function to-vw($number, $base: $xxl) {
+  @return math.div($number, strip-unit($base)) * 100vw;
+}

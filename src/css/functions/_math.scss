@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function div($number1, $number2) {
+  @return math.div($number1, $number2);
+}
+
+@function negate($number) {
+  @return calc(-1 * $number);
+}

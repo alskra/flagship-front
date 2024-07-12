@@ -1,0 +1,227 @@
+@custom-selector :--h h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6;
+@custom-selector :--link :any-link:not([href^="tel:"]);
+@custom-selector :--list :is(ul, ol);
+
+.content {
+  --list-indent: #{em(40)};
+  --list-marker-size: #{em(10)};
+  --blockquote-font-size: #{em(24)};
+  --block-spacing: 40rem;
+
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  :--h {
+    &:--not-fc,
+    &.mt {
+      margin-top: var(--h-spacing-top);
+    }
+
+    &:--not-lc,
+    &.mb {
+      margin-bottom: var(--h-spacing-bottom);
+    }
+  }
+
+  :--h + * {
+    // stylelint-disable-next-line
+    margin-top: 0 !important;
+  }
+
+  @for $level from 1 through 6 {
+    h#{$level},
+    .h#{$level} {
+      font-family: var(--h#{$level}-font-family);
+      font-size: var(--h#{$level}-font-size);
+      font-weight: var(--h#{$level}-font-weight);
+      line-height: var(--h#{$level}-line-height);
+      color: var(--h#{$level}-color);
+      text-transform: uppercase;
+    }
+  }
+
+  // stylelint-disable-next-line
+  p,
+  .p {
+    &:--not-fc {
+      margin-top: var(--p-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--p-spacing);
+    }
+  }
+
+  .p {
+    font: inherit;
+    color: inherit;
+  }
+
+  :--link {
+    color: var(--link-color);
+    text-decoration: var(--link-text-decoration);
+
+    @include hover {
+      color: var(--link-hover-color);
+      text-decoration: var(--link-hover-text-decoration);
+    }
+  }
+
+  :--list {
+    position: relative;
+    padding-left: var(--list-indent);
+    list-style: none;
+
+    > li::before {
+      position: absolute;
+      left: 0;
+      width: var(--list-indent);
+      text-align: right;
+    }
+
+    &:--not-fc {
+      margin-top: var(--p-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--p-spacing);
+    }
+  }
+
+  ul > li {
+    &::before {
+      content: "\2014\00A0";
+    }
+  }
+
+  ol {
+    counter-reset: ol;
+  }
+
+  ol > li {
+    counter-increment: ol;
+
+    &::before {
+      content: counter(ol) ".\00A0";
+    }
+  }
+
+  dl {
+    &:--not-fc {
+      margin-top: var(--p-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--p-spacing);
+    }
+  }
+
+  dt {
+    font-weight: 700;
+
+    &:--not-fc {
+      margin-top: 40rem;
+    }
+
+    &:--not-lc {
+      margin-bottom: 14rem;
+    }
+  }
+
+  blockquote {
+    padding-left: calc(var(--list-indent) - 4rem);
+    font-size: var(--blockquote-font-size);
+    border-left: 4rem solid var(--color-light);
+
+    &:--not-fc {
+      margin-top: var(--block-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--block-spacing);
+    }
+  }
+
+  table {
+    display: block;
+    overflow: auto;
+
+    &:--not-fc {
+      margin-top: var(--block-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--block-spacing);
+    }
+  }
+
+  tbody {
+    display: table;
+    border-collapse: collapse;
+  }
+
+  tr:first-child :is(th, td) {
+    padding-top: 0;
+  }
+
+  tr:last-child :is(th, td) {
+    padding-bottom: 0;
+  }
+
+  :is(th, td) {
+    padding: calc(0.5 * var(--p-spacing)) calc(0.5 * var(--grid-gutter));
+    vertical-align: baseline;
+  }
+
+  :is(th, td):first-child {
+    padding-left: 0;
+  }
+
+  :is(th, td):last-child {
+    padding-right: 0;
+  }
+
+  td:first-child {
+    color: var(--color-light);
+  }
+
+  img:not(picture *, figure *),
+  picture:not(figure *) {
+    &:--not-fc {
+      margin-top: var(--block-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--block-spacing);
+    }
+  }
+
+  figure {
+    text-align: center;
+
+    &:--not-fc {
+      margin-top: var(--block-spacing);
+    }
+
+    &:--not-lc {
+      margin-bottom: var(--block-spacing);
+    }
+  }
+
+  figcaption {
+    margin-top: calc(0.5 * var(--p-spacing));
+    font-size: 13rem;
+    font-style: italic;
+  }
+
+  hr {
+    margin: var(--h-spacing-bottom) 0 var(--h-spacing-top);
+    border: 0;
+    border-top: 1px solid var(--color-light);
+  }
+
+  .highlight {
+    padding: 0 4rem;
+    background: var(--color-primary);
+  }
+}

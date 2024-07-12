@@ -1,0 +1,112 @@
+@use "sass:color";
+
+// stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
+// Responsive Sizes
+:root {
+  // font-size: calc(0.35 / strip-unit($xl) * 100vw + 0.65px);
+  font-size: 1px;
+
+  @media (--max-xl) {
+    font-size: calc(0.4 / strip-unit($xl) * 100vw + 0.6px);
+  }
+
+  @media (--max-lg) {
+    font-size: calc(0.3 / strip-unit($lg) * 100vw + 0.7px);
+  }
+}
+
+// Layout
+:root {
+  --container-max-width: 1360rem;
+  --container-padding: 30rem;
+  --grid-count: #{$grid-count};
+  --grid-gutter: 20rem;
+  --col-size: calc((100% - (var(--grid-count) - 1) * var(--grid-gutter)) / var(--grid-count));
+
+  @media (--max-lg) {
+    --container-padding: 20rem;
+  }
+}
+
+// Colors & Gradients
+:root {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+
+  @each $name, $value in $gradients {
+    --#{$name}: #{$value};
+  }
+}
+
+// Typography
+:root {
+  --font-family: var(--font-family-steinbeck);
+  --font-size: 20rem;
+  --font-weight: 400;
+  --line-height: #{div(28, 20)};
+
+  --h-spacing-top: 40rem;
+  --h-spacing-bottom: 40rem;
+  --h-font-family: var(--font-family);
+  --h-font-size: var(--font-size);
+  --h-font-weight: 400;
+  --h-line-height: 1.25;
+  --h-color: var(--color-heading);
+
+  --h1-font-family: var(--h-font-family);
+  --h1-font-size: 44rem;
+  --h1-font-weight: var(--h-font-weight);
+  --h1-line-height: var(--h-line-height);
+  --h1-color: var(--h-color);
+
+  --h2-font-family: var(--h-font-family);
+  --h2-font-size: 40rem;
+  --h2-font-weight: var(--h-font-weight);
+  --h2-line-height: var(--h-line-height);
+  --h2-color: var(--color-primary);
+
+  --h3-font-family: var(--h-font-family);
+  --h3-font-size: 36rem;
+  --h3-font-weight: var(--h-font-weight);
+  --h3-line-height: var(--h-line-height);
+  --h3-color: var(--h-color);
+
+  --h4-font-family: var(--h-font-family);
+  --h4-font-size: 32rem;
+  --h4-font-weight: var(--h-font-weight);
+  --h4-line-height: var(--h-line-height);
+  --h4-color: var(--h-color);
+
+  --h5-font-family: var(--h-font-family);
+  --h5-font-size: 28rem;
+  --h5-font-weight: var(--h-font-weight);
+  --h5-line-height: var(--h-line-height);
+  --h5-color: var(--h-color);
+
+  --h6-font-family: var(--h-font-family);
+  --h6-font-size: 24rem;
+  --h6-font-weight: var(--h-font-weight);
+  --h6-line-height: var(--h-line-height);
+  --h6-color: var(--h-color);
+
+  --p-spacing: calc(1em * var(--line-height));
+
+  --link-color: var(--color-primary);
+  --link-text-decoration: underline;
+  --link-hover-color: var(--color-primary-hover);
+  --link-hover-text-decoration: none;
+}
+
+// Other
+:root {
+  --transition-duration: 0.15s;
+  --transition-timing-function: ease-in-out;
+  --transition: var(--transition-duration) var(--transition-timing-function);
+
+  --scroll-behavior: smooth;
+  --overscroll-behavior: auto;
+
+  --selection-color: #FFF;
+  --selection-bg: var(--color-primary-hover);
+}

@@ -1,0 +1,60 @@
+@use "sass:color";
+
+// Layout
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 1025px;
+$xl: 1400px; // default
+$xxl: 1920px;
+$xxxl: 2560px;
+$grid-breakpoints: (
+  // xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  // 2xl: $xxl,
+  // 3xl: $xxxl
+);
+$grid-count: 12;
+
+// Colors & Gradients
+$color: #383737;
+$color-bg: #FFF;
+$color-heading: $color;
+$color-primary: #F00;
+$color-primary-hover: color.adjust($color-primary, $lightness: -10%);
+$color-secondary: #6C757D;
+$color-success: #198754;
+$color-danger: #DC3545;
+$color-warning: #FFC107;
+$color-info: #0DCAF0;
+$color-light: #F8F9FA;
+$color-dark: #212529;
+$colors: (
+  color: $color,
+  color-bg: $color-bg,
+  color-heading: $color-heading,
+  color-primary: $color-primary,
+  color-primary-hover: $color-primary-hover,
+  color-secondary: $color-secondary,
+  color-success: $color-success,
+  color-danger: $color-danger,
+  color-warning: $color-warning,
+  color-info: $color-info,
+  color-light: $color-light,
+  color-dark: $color-dark,
+);
+$gradients: (
+);
+
+// Utilities
+$spacer: 4rem;
+$spacers: 0, px, auto,
+  0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4,
+  5, 6, 7, 8, 9, 10, 11, 12,
+  14, 16, 18, 20,
+  24, 28, 30, 32, 36, 40, 44, 48, 52, 56, 60, 64,
+  72, 80,
+  96;

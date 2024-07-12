@@ -1,0 +1,30 @@
+-
+  const store = {
+    festivals: null,
+
+    get festivalYears() {
+      let arr = [];
+
+      this.festivals.forEach((festival) => {
+        const year = festival.date.split('-')[0];
+        const festivalYear = arr.find(({ year: yearTarget }) => yearTarget === year)
+
+        if (!festivalYear) {
+          arr.push({
+            year,
+            festivals: [festival],
+          });
+        } else {
+          festivalYear.festivals.push(festival);
+        }
+      });
+
+      return arr;
+    },
+
+    getFestivalOfDate(dateVal) {
+      return this.festivals.find(({ date }) => date === dateVal);
+    },
+  };
+
+include store/festivals
