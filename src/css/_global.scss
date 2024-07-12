@@ -10,8 +10,8 @@
 @custom-selector :--not-lc :not(:last-child);
 
 // Custom Media Queries
-// Styles for hover-devices and IE11
-@custom-media --hover (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none);
+// Styles for hover-devices
+@custom-media --hover (hover: hover);
 
 @each $name, $value in $grid-breakpoints {
   // stylelint-disable-next-line
