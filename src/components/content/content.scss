@@ -12,12 +12,12 @@
   line-height: var(--line-height);
 
   :--h {
-    &:--not-fc,
+    &:--not-f-c,
     &.mt {
       margin-top: var(--h-spacing-top);
     }
 
-    &:--not-lc,
+    &:--not-l-c,
     &.mb {
       margin-bottom: var(--h-spacing-bottom);
     }
@@ -36,18 +36,17 @@
       font-weight: var(--h#{$level}-font-weight);
       line-height: var(--h#{$level}-line-height);
       color: var(--h#{$level}-color);
-      text-transform: uppercase;
     }
   }
 
   // stylelint-disable-next-line
   p,
   .p {
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--p-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--p-spacing);
     }
   }
@@ -79,11 +78,11 @@
       text-align: right;
     }
 
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--p-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--p-spacing);
     }
   }
@@ -107,11 +106,11 @@
   }
 
   dl {
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--p-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--p-spacing);
     }
   }
@@ -119,11 +118,11 @@
   dt {
     font-weight: 700;
 
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: 40rem;
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: 14rem;
     }
   }
@@ -133,11 +132,11 @@
     font-size: var(--blockquote-font-size);
     border-left: 4rem solid var(--color-light);
 
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--block-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--block-spacing);
     }
   }
@@ -146,11 +145,11 @@
     display: block;
     overflow: auto;
 
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--block-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--block-spacing);
     }
   }
@@ -187,11 +186,11 @@
 
   img:not(picture *, figure *),
   picture:not(figure *) {
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--block-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--block-spacing);
     }
   }
@@ -199,11 +198,11 @@
   figure {
     text-align: center;
 
-    &:--not-fc {
+    &:--not-f-c {
       margin-top: var(--block-spacing);
     }
 
-    &:--not-lc {
+    &:--not-l-c {
       margin-bottom: var(--block-spacing);
     }
   }

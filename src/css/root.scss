@@ -1,7 +1,8 @@
 @use "sass:math";
+@use "sass:color";
 
 // stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
-// Responsive Sizes
+// Responsive sizes
 :root {
   // font-size: calc(0.35 / strip-unit($xl) * 100vw + 0.65px);
   font-size: 1px;
@@ -17,25 +18,35 @@
 
 // Layout
 :root {
-  --container-max-width: 1360rem;
+  --container-max-width: none;
   --container-padding: 30rem;
   --grid-count: #{$grid-count};
-  --grid-gutter: 20rem;
+  --grid-gutter: 30rem;
   --col-size: calc((100% - (var(--grid-count) - 1) * var(--grid-gutter)) / var(--grid-count));
 
   @media (--max-lg) {
-    --container-padding: 20rem;
+    --container-padding: 15rem;
   }
 }
 
-// Colors & Gradients
+// Colors
 :root {
-  @each $name, $value in $colors {
-    --#{$name}: #{$value};
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
   }
+}
 
-  @each $name, $value in $gradients {
-    --#{$name}: #{$value};
+// Theme colors
+:root {
+  @each $color, $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+}
+
+// Gradients
+:root {
+  @each $gradient, $value in $gradients {
+    --#{$gradient}: #{$value};
   }
 }
 
@@ -44,7 +55,9 @@
   --font-family: var(--font-family-steinbeck);
   --font-size: 16rem;
   --font-weight: 400;
-  --line-height: #{math.div(28, 18)};
+  --line-height: 1.5;
+  --color: var(--color-text);
+  --bg: var(--color-white);
 
   --h-spacing-top: 40rem;
   --h-spacing-bottom: 40rem;
@@ -52,38 +65,50 @@
   --h-font-size: var(--font-size);
   --h-font-weight: 400;
   --h-line-height: 1.25;
-  --h-color: var(--color-heading);
+  --h-color: inherit;
 
+  --h1-spacing-top: var(--h-spacing-top);
+  --h1-spacing-bottom: var(--h-spacing-bottom);
   --h1-font-family: var(--h-font-family);
   --h1-font-size: 44rem;
   --h1-font-weight: var(--h-font-weight);
   --h1-line-height: var(--h-line-height);
   --h1-color: var(--h-color);
 
+  --h2-spacing-top: var(--h-spacing-top);
+  --h2-spacing-bottom: var(--h-spacing-bottom);
   --h2-font-family: var(--h-font-family);
   --h2-font-size: 40rem;
   --h2-font-weight: var(--h-font-weight);
   --h2-line-height: var(--h-line-height);
   --h2-color: var(--color-primary);
 
+  --h3-spacing-top: var(--h-spacing-top);
+  --h3-spacing-bottom: var(--h-spacing-bottom);
   --h3-font-family: var(--h-font-family);
   --h3-font-size: 36rem;
   --h3-font-weight: var(--h-font-weight);
   --h3-line-height: var(--h-line-height);
   --h3-color: var(--h-color);
 
+  --h4-spacing-top: var(--h-spacing-top);
+  --h4-spacing-bottom: var(--h-spacing-bottom);
   --h4-font-family: var(--h-font-family);
   --h4-font-size: 32rem;
   --h4-font-weight: var(--h-font-weight);
   --h4-line-height: var(--h-line-height);
   --h4-color: var(--h-color);
 
+  --h5-spacing-top: var(--h-spacing-top);
+  --h5-spacing-bottom: var(--h-spacing-bottom);
   --h5-font-family: var(--h-font-family);
   --h5-font-size: 28rem;
   --h5-font-weight: var(--h-font-weight);
   --h5-line-height: var(--h-line-height);
   --h5-color: var(--h-color);
 
+  --h6-spacing-top: var(--h-spacing-top);
+  --h6-spacing-bottom: var(--h-spacing-bottom);
   --h6-font-family: var(--h-font-family);
   --h6-font-size: 24rem;
   --h6-font-weight: var(--h-font-weight);
@@ -108,5 +133,5 @@
   --overscroll-behavior: auto;
 
   --selection-color: #FFF;
-  --selection-bg: var(--color-primary-hover);
+  --selection-bg: var(--color-primary);
 }

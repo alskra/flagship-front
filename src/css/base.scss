@@ -22,10 +22,22 @@ body {
   text-rendering: optimizelegibility;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  background: var(--color-bg);
+  background: var(--bg);
 }
 
-:is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, blockquote, figure) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+blockquote,
+figure {
   padding: 0;
   margin: 0;
 }
