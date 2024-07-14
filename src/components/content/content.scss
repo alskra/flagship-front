@@ -146,9 +146,14 @@
     }
   }
 
-  table {
+  .table-responsive {
     display: block;
-    overflow: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    border-collapse: collapse;
 
     &:--not-f-c {
       margin-top: var(--block-spacing);
@@ -157,11 +162,6 @@
     &:--not-l-c {
       margin-bottom: var(--block-spacing);
     }
-  }
-
-  tbody {
-    display: table;
-    border-collapse: collapse;
   }
 
   tr:first-child :is(th, td) {
