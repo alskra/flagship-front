@@ -9,6 +9,6 @@ cssHasPseudo(document);
 
 // Fix for `css-has-pseudo`
 // eslint-disable-next-line no-extend-native
-Array.prototype.toLowerCase = function toLowerCase() {
-  return this.join().toLowerCase();
-};
+// Array.prototype.toLowerCase = function toLowerCase() {
+//   return this.join().toLowerCase();
+// };
