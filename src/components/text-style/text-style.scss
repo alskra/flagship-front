@@ -1,3 +1,5 @@
-.color-primary {
-  color: var(--color-primary);
+@each $color, $value in $theme-colors {
+  .#{$color} {
+    color: var(--#{$color});
+  }
 }
