@@ -3,9 +3,9 @@
 @custom-selector :--list ul, ol;
 
 .content {
-  --list-indent: #{em(40)};
-  --list-marker-size: #{em(10)};
-  --blockquote-font-size: #{em(24)};
+  --list-indent: #{to-em(40)};
+  --list-marker-size: #{to-em(10)};
+  --blockquote-font-size: #{to-em(24)};
   --block-spacing: 40rem;
 
   font-size: var(--font-size);

@@ -59,10 +59,10 @@
   --color: var(--color-text);
   --bg: var(--color-white);
 
-  --h-spacing-top: 40rem;
-  --h-spacing-bottom: 40rem;
-  --h-font-family: var(--font-family);
-  --h-font-size: var(--font-size);
+  --h-spacing-top: 0.5em;
+  --h-spacing-bottom: 0.5em;
+  --h-font-family: inherit;
+  --h-font-size: 2em;
   --h-font-weight: 400;
   --h-line-height: 1.25;
   --h-color: inherit;

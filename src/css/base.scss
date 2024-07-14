@@ -5,8 +5,10 @@
   min-height: 0;
 }
 
-html {
-  scroll-behavior: var(--scroll-behavior);
+:root {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: var(--scroll-behavior);
+  }
 }
 
 body {
