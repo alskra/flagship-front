@@ -56,17 +56,26 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new CssMinimizerPlugin(),
+      // new ImageMinimizerPlugin({
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   minimizer: {
+      //     implementation: ImageMinimizerPlugin.imageminMinify,
+      //     options: {
+      //       plugins: [
+      //         ['gifsicle', { interlaced: true }],
+      //         ['mozjpeg', { quality: 80, progressive: true }],
+      //         ['optipng', { optimizationLevel: 3 }],
+      //         ['svgo', svgoConfig],
+      //       ],
+      //     },
+      //   },
+      // }),
       new ImageMinimizerPlugin({
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.svg$/i,
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
-            plugins: [
-              ['gifsicle', { interlaced: true }],
-              ['mozjpeg', { progressive: true, quality: 85 }],
-              ['optipng', { optimizationLevel: 5 }],
-              ['svgo', svgoConfig],
-            ],
+            plugins: [['svgo', svgoConfig]],
           },
         },
       }),
@@ -76,7 +85,7 @@ module.exports = merge(common, {
             preset: 'webp',
             implementation: ImageMinimizerPlugin.imageminGenerate,
             options: {
-              plugins: ['webp'],
+              plugins: [['webp', { quality: 75 }]],
             },
           },
         ],

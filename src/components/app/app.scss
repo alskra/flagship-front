@@ -8,23 +8,5 @@
 }
 
 .app__main {
-  position: relative;
   flex: 1;
-  padding-top: 100rem;
-  background: var(--color-bg);
-
-  @media (--max-lg) {
-    padding-top: 0;
-  }
-}
-
-.app__main-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 99;
-  pointer-events: none;
-
-  > * {
-    pointer-events: auto;
-  }
 }

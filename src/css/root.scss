@@ -4,16 +4,15 @@
 // stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
 // Responsive sizes
 :root {
-  // font-size: calc(0.35 / strip-unit($xl) * 100vw + 0.65px);
-  font-size: 1px;
+  font-size: clamp(14px / 16, 1 / strip-unit($xl) * 100vw, 18px / 16);
 
-  @media (--max-xl) {
-    font-size: calc(0.4 / strip-unit($xl) * 100vw + 0.6px);
-  }
+  // @media (--max-xxl) {
+  //   font-size: calc(0.4 / strip-unit($xl) * 100vw + 0.6px);
+  // }
 
-  @media (--max-lg) {
-    font-size: calc(0.3 / strip-unit($lg) * 100vw + 0.7px);
-  }
+  // @media (--max-lg) {
+  //   font-size: calc(0.3 / strip-unit($lg) * 100vw + 0.7px);
+  // }
 }
 
 // Layout

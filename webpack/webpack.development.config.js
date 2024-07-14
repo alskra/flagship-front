@@ -49,7 +49,7 @@ module.exports = merge(webpackConfig, {
             preset: 'webp',
             implementation: ImageMinimizerPlugin.imageminGenerate,
             options: {
-              plugins: ['webp'],
+              plugins: [['webp', { quality: 75 }]],
             },
           },
         ],
