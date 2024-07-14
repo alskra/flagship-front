@@ -1,6 +1,19 @@
-@custom-selector :--h h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6;
+@custom-selector :--h h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
 @custom-selector :--link :any-link:not([href^="tel:"]);
 @custom-selector :--list ul, ol;
+@custom-selector :--ignore :not(.content-ignore, .content-ignore * );
+
+@mixin spacing($top, $bottom: $top) {
+  &:--not-f-c,
+  &:is(.content *:--not-f-c *) {
+    margin-top: $top;
+  }
+
+  &:--not-l-c,
+  &:is(.content *:--not-l-c *) {
+    margin-bottom: $bottom;
+  }
+}
 
 .content {
   --list-indent: #{to-em(40)};
@@ -12,15 +25,7 @@
   line-height: var(--line-height);
 
   :--h {
-    &:--not-f-c,
-    &.mt {
-      margin-top: var(--h-spacing-top);
-    }
-
-    &:--not-l-c,
-    &.mb {
-      margin-bottom: var(--h-spacing-bottom);
-    }
+    @include spacing(var(--h-spacing-top), var(--h-spacing-bottom));
   }
 
   :--h + * {
@@ -184,15 +189,8 @@
     color: var(--color-light);
   }
 
-  img:not(picture *, figure *),
-  picture:not(figure *) {
-    &:--not-f-c {
-      margin-top: var(--block-spacing);
-    }
-
-    &:--not-l-c {
-      margin-bottom: var(--block-spacing);
-    }
+  :is(img:not(picture *, figure *), picture:not(figure *)):--ignore {
+    @include spacing(var(--block-spacing));
   }
 
   figure {
