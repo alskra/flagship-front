@@ -51,10 +51,10 @@
 
 // Typography
 :root {
-  --font-family: var(--font-family-steinbeck);
+  --font-family: var(--font-family-manrope);
   --font-size: 16rem;
-  --font-weight: 400;
-  --line-height: 1.5;
+  --font-weight: 500;
+  --line-height: #{calc(22 / 16)};
   --color: var(--color-text);
   --bg: var(--color-white);
 
