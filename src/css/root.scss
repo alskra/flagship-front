@@ -60,9 +60,9 @@
 
   --h-spacing-top: 0.5em;
   --h-spacing-bottom: 0.5em;
-  --h-font-family: inherit;
+  --h-font-family: var(--font-family-bitter);
   --h-font-size: 2em;
-  --h-font-weight: 400;
+  --h-font-weight: 700;
   --h-line-height: 1.25;
   --h-color: inherit;
 
@@ -77,10 +77,10 @@
   --h2-spacing-top: var(--h-spacing-top);
   --h2-spacing-bottom: var(--h-spacing-bottom);
   --h2-font-family: var(--h-font-family);
-  --h2-font-size: 40rem;
+  --h2-font-size: 24rem;
   --h2-font-weight: var(--h-font-weight);
   --h2-line-height: var(--h-line-height);
-  --h2-color: var(--color-primary);
+  --h2-color: var(--h-color);
 
   --h3-spacing-top: var(--h-spacing-top);
   --h3-spacing-bottom: var(--h-spacing-bottom);

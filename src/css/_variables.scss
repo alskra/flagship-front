@@ -28,7 +28,7 @@ $colors: (
 );
 
 // Theme colors
-$color-text: #333;
+$color-text: $color-black;
 $color-primary: #0d6efd;
 $color-primary-dark: color.mix(black, $color-primary, 20%);
 $color-secondary: #6c757d;
