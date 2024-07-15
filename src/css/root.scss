@@ -32,6 +32,7 @@
 :root {
   @each $color, $value in $colors {
     --#{$color}: #{$value};
+    --#{$color}-rgb: #{to-rgb($value)};
   }
 }
 
@@ -39,6 +40,7 @@
 :root {
   @each $color, $value in $theme-colors {
     --#{$color}: #{$value};
+    --#{$color}-rgb: #{to-rgb($value)};
   }
 }
 
@@ -51,16 +53,18 @@
 
 // Defaults
 :root {
-  --font-family: var(--font-family-manrope);
+  --font-family: var(--font-manrope);
   --font-size: 16rem;
   --font-weight: 500;
-  --line-height: #{calc(22 / 16)};
-  --color: var(--color-black);
-  --bg: var(--color-white);
+  --line-height: #{calc(22 / 16)}; // normal: 1.1 - 1.25
+  --color: var(--black);
+  --color-rgb: var(--black-rgb);
+  --bg: var(--white);
+  --bg-rgb: var(--white-rgb);
 
   --h-spacing-top: 1em;
   --h-spacing-bottom: 1em;
-  --h-font-family: var(--font-family-bitter);
+  --h-font-family: var(--font-bitter);
   --h-font-size: 2em;
   --h-font-weight: 700;
   --h-line-height: 1.25;
@@ -117,12 +121,14 @@
   --p-spacing: calc(1em * var(--line-height));
 
   --link-color: var(--color-primary);
-  --link-text-decoration: underline;
-  --link-hover-color: var(--color-primary-dark);
-  --link-hover-text-decoration: none;
+  --link-color-rgb: var(--color-primary-rgb);
+  --link-decoration: underline;
+  --link-hover-color: var(--primary-dark);
+  --link-hover-color-rgb: var(--primary-dark-rgb);
+  --link-hover-decoration: none;
 
-  --selection-color: var(--color-white);
-  --selection-bg: var(--color-primary);
+  --selection-color: var(--white);
+  --selection-bg: var(--primary);
 
   --transition-duration: 0.15s;
   --transition-timing-function: ease-in-out;
@@ -130,5 +136,5 @@
 
   --scroll-behavior: smooth;
   --overscroll-behavior: auto;
-  --scroll-padding-top: 80rem;
+  --scroll-padding-top: calc(var(--header_-_height) + var(--app__main_-_padding-top));
 }

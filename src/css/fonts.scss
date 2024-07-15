@@ -11,7 +11,7 @@
 @include font-face("~@fonts/Manrope/Manrope-ExtraBold", "Manrope", 800, normal);
 
 :root {
-  --font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-manrope: "Manrope", system-ui, sans-serif, var(--font-family-emoji);
-  --font-family-bitter: "Bitter", serif, var(--font-family-emoji);
+  --font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-manrope: "Manrope", system-ui, sans-serif, var(--font-emoji);
+  --font-bitter: "Bitter", serif, var(--font-emoji);
 }

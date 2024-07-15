@@ -1,11 +1,16 @@
+:root {
+  --header_-_height: 80rem;
+}
+
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   flex-flow: column;
-  height: 80rem;
-  background: var(--color-white);
+  height: var(--header_-_height);
+  background: var(--white);
+  box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
 }
 
 .header__container {
@@ -16,6 +21,11 @@
 
 .header__logo {
   width: 195rem;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .header__btn-nav {

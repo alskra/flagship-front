@@ -20,33 +20,33 @@ $grid-breakpoints: (
 $grid-count: 12;
 
 // Colors
-$color-black: #000;
-$color-white: #fff;
+$black: #000;
+$white: #fff;
 $colors: (
-  color-black: $color-black,
-  color-white: $color-white,
+  "black": $black,
+  "white": $white,
 );
 
 // Theme colors
-$color-primary: #0d6efd;
-$color-primary-dark: color.mix(black, $color-primary, 20%);
-$color-secondary: #6c757d;
-$color-success: #198754;
-$color-info: #0dcaf0;
-$color-warning: #ffc107;
-$color-danger: #dc3545;
-$color-light: #f8f9fa;
-$color-dark: #212529;
+$primary: #0d6efd;
+$primary-dark: color.mix(black, $primary, 20%);
+$secondary: #6c757d;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
 $theme-colors: (
-  color-primary: $color-primary,
-  color-primary-dark: $color-primary-dark,
-  color-secondary: $color-secondary,
-  color-success: $color-success,
-  color-info: $color-info,
-  color-warning: $color-warning,
-  color-danger: $color-danger,
-  color-light: $color-light,
-  color-dark: $color-dark,
+  "primary": $primary,
+  "primary-dark": $primary-dark,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
 );
 
 // Gradients

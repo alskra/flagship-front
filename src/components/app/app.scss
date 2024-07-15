@@ -1,3 +1,7 @@
+:root {
+  --app__main_-_padding-top: 60rem;
+}
+
 .app {
   --app-width: var(--body-content-width, 100vw);
 
@@ -9,4 +13,5 @@
 
 .app__main {
   flex: 1;
+  padding: var(--app__main_-_padding-top) 0;
 }
