@@ -21,6 +21,7 @@
 .header__logo {
   display: block;
   width: 195rem;
+  max-width: 100%;
 
   img {
     display: block;
@@ -51,6 +52,33 @@
   align-items: center;
   justify-content: flex-end;
   margin-top: 5rem;
+}
+
+.header__btn {
+  min-width: 34rem;
+  min-height: 34rem;
+  padding: 5.75rem;
+  font-size: 18rem;
+  font-weight: 600;
+  color: var(--white);
+  border-radius: 8rem;
+
+  &--primary {
+    width: 185rem;
+    background: var(--primary);
+
+    @include hover {
+      background: var(--primary-dark);
+    }
+  }
+
+  &--accent {
+    background: var(--accent);
+
+    @include hover {
+      background: var(--accent-dark);
+    }
+  }
 }
 
 .header__btn-nav {

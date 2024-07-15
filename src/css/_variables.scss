@@ -22,13 +22,17 @@ $grid-count: 12;
 // Colors
 $black: #000;
 $white: #fff;
+$persimmon: #ff5c51;
 $colors: (
   "black": $black,
   "white": $white,
+  "persimmon": $persimmon,
 );
 
 // Theme colors
 $primary: #00a9d7;
+$accent: $persimmon;
+$accent-dark: color.mix(black, $accent, 20%);
 // Default theme colors
 $primary: #0d6efd !default;
 $primary-dark: color.mix(black, $primary, 20%) !default;
@@ -49,6 +53,8 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "accent": $accent,
+  "accent-dark": $accent-dark,
 );
 
 // Gradients
