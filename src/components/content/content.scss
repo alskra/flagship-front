@@ -1,16 +1,16 @@
+// stylelint-disable scss/operator-no-unspaced
+@custom-selector :--content :is(.content, .content *):where(:not(.content-ignore, .content-ignore *));
 @custom-selector :--h h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
 @custom-selector :--link :any-link:not([href^="tel:"]);
 @custom-selector :--list ul, ol;
-@custom-selector :--ignore :not(.content-ignore, .content-ignore * );
+// stylelint-enable scss/operator-no-unspaced
 
 @mixin spacing($top, $bottom: $top) {
-  &:--not-f-c,
-  &:is(.content *:--not-f-c *) {
+  &:where(:--not-f-c, .content :--not-f-c *) {
     margin-top: $top;
   }
 
-  &:--not-l-c,
-  &:is(.content *:--not-l-c *) {
+  &:where(:--not-l-c, .content :--not-l-c *) {
     margin-bottom: $bottom;
   }
 }
@@ -23,202 +23,170 @@
 
   font-size: var(--font-size);
   line-height: var(--line-height);
+}
 
-  :--h {
-    @include spacing(var(--h-spacing-top), var(--h-spacing-bottom));
-  }
+:--h:--content {
+  @include spacing(var(--h-spacing-top), var(--h-spacing-bottom));
+}
 
-  :--h + * {
-    // stylelint-disable-next-line
-    margin-top: 0 !important;
-  }
-
-  @for $level from 1 through 6 {
-    h#{$level},
-    .h#{$level} {
-      font-family: var(--h#{$level}-font-family);
-      font-size: var(--h#{$level}-font-size);
-      font-weight: var(--h#{$level}-font-weight);
-      line-height: var(--h#{$level}-line-height);
-      color: var(--h#{$level}-color);
-    }
-  }
-
+:--h:--content + * {
   // stylelint-disable-next-line
-  p,
-  .p {
-    &:--not-f-c {
-      margin-top: var(--p-spacing);
-    }
+  margin-top: 0 !important;
+}
 
-    &:--not-l-c {
-      margin-bottom: var(--p-spacing);
-    }
+@for $level from 1 through 6 {
+  h#{$level}:--content,
+  .h#{$level}:--content {
+    font-family: var(--h#{$level}-font-family);
+    font-size: var(--h#{$level}-font-size);
+    font-weight: var(--h#{$level}-font-weight);
+    line-height: var(--h#{$level}-line-height);
+    color: var(--h#{$level}-color);
   }
+}
 
-  .p {
-    font: inherit;
-    color: inherit;
+// stylelint-disable-next-line
+p:--content,
+.p:--content {
+  @include spacing(var(--p-spacing));
+}
+
+.p:--content {
+  font: inherit;
+  color: inherit;
+}
+
+:--link:--content {
+  color: var(--link-color);
+  text-decoration: var(--link-text-decoration);
+
+  @include hover {
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-text-decoration);
   }
+}
 
-  :--link {
-    color: var(--link-color);
-    text-decoration: var(--link-text-decoration);
+:--list:--content {
+  position: relative;
+  padding-left: var(--list-indent);
+  list-style: none;
 
-    @include hover {
-      color: var(--link-hover-color);
-      text-decoration: var(--link-hover-text-decoration);
-    }
+  @include spacing(var(--p-spacing));
+}
+
+:--list > li:--content {
+  &::before {
+    position: absolute;
+    left: 0;
+    width: var(--list-indent);
+    text-align: right;
   }
+}
 
-  :--list {
-    position: relative;
-    padding-left: var(--list-indent);
-    list-style: none;
-
-    > li::before {
-      position: absolute;
-      left: 0;
-      width: var(--list-indent);
-      text-align: right;
-    }
-
-    &:--not-f-c {
-      margin-top: var(--p-spacing);
-    }
-
-    &:--not-l-c {
-      margin-bottom: var(--p-spacing);
-    }
+ul > li:--content {
+  &::before {
+    content: "\2014\00A0";
   }
+}
 
-  ul > li {
-    &::before {
-      content: "\2014\00A0";
-    }
+ol:--content {
+  counter-reset: ol;
+}
+
+ol > li:--content {
+  counter-increment: ol;
+
+  &::before {
+    content: counter(ol) ".\00A0";
   }
+}
 
-  ol {
-    counter-reset: ol;
-  }
+dl:--content {
+  @include spacing(var(--p-spacing));
+}
 
-  ol > li {
-    counter-increment: ol;
+dt:--content {
+  font-weight: 700;
 
-    &::before {
-      content: counter(ol) ".\00A0";
-    }
-  }
+  @include spacing(40rem, 14rem);
+}
 
-  dl {
-    &:--not-f-c {
-      margin-top: var(--p-spacing);
-    }
+blockquote:--content {
+  padding-left: calc(var(--list-indent) - 4rem);
+  font-size: var(--blockquote-font-size);
+  border-left: 4rem solid var(--color-light);
 
-    &:--not-l-c {
-      margin-bottom: var(--p-spacing);
-    }
-  }
+  @include spacing(var(--block-spacing));
+}
 
-  dt {
-    font-weight: 700;
+.table-responsive {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 
-    &:--not-f-c {
-      margin-top: 40rem;
-    }
-
-    &:--not-l-c {
-      margin-bottom: 14rem;
-    }
-  }
-
-  blockquote {
-    padding-left: calc(var(--list-indent) - 4rem);
-    font-size: var(--blockquote-font-size);
-    border-left: 4rem solid var(--color-light);
-
-    &:--not-f-c {
-      margin-top: var(--block-spacing);
-    }
-
-    &:--not-l-c {
-      margin-bottom: var(--block-spacing);
-    }
-  }
-
-  .table-responsive {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  table {
-    border-collapse: collapse;
-
-    &:--not-f-c {
-      margin-top: var(--block-spacing);
-    }
-
-    &:--not-l-c {
-      margin-bottom: var(--block-spacing);
-    }
-  }
-
-  tr:first-child :is(th, td) {
-    padding-top: 0;
-  }
-
-  tr:last-child :is(th, td) {
-    padding-bottom: 0;
-  }
-
-  :is(th, td) {
-    padding: calc(0.5 * var(--p-spacing)) calc(0.5 * var(--grid-gutter));
-    vertical-align: baseline;
-  }
-
-  :is(th, td):first-child {
-    padding-left: 0;
-  }
-
-  :is(th, td):last-child {
-    padding-right: 0;
-  }
-
-  td:first-child {
-    color: var(--color-light);
-  }
-
-  :is(img:not(picture *, figure *), picture:not(figure *)):--ignore {
+  &:--content {
     @include spacing(var(--block-spacing));
   }
 
-  figure {
-    text-align: center;
-
-    &:--not-f-c {
-      margin-top: var(--block-spacing);
-    }
-
-    &:--not-l-c {
-      margin-bottom: var(--block-spacing);
-    }
+  table:--content {
+    margin: 0;
   }
+}
 
-  figcaption {
-    margin-top: calc(0.5 * var(--p-spacing));
-    font-size: 13rem;
-    font-style: italic;
-  }
+table:--content {
+  border-collapse: collapse;
 
-  hr {
-    margin: var(--h-spacing-bottom) 0 var(--h-spacing-top);
-    border: 0;
-    border-top: 1px solid var(--color-light);
-  }
+  @include spacing(var(--block-spacing));
+}
 
-  .highlight {
-    padding: 0 4rem;
-    background: var(--color-primary);
-  }
+tr:first-child :is(th, td):--content {
+  padding-top: 0;
+}
+
+tr:last-child :is(th, td):--content {
+  padding-bottom: 0;
+}
+
+:is(th, td):--content {
+  padding: calc(0.5 * var(--p-spacing)) calc(0.5 * var(--grid-gutter));
+  vertical-align: baseline;
+}
+
+:is(th, td):first-child:--content {
+  padding-left: 0;
+}
+
+:is(th, td):last-child:--content {
+  padding-right: 0;
+}
+
+td:first-child:--content {
+  color: var(--color-light);
+}
+
+:is(img:not(picture *, figure *), picture:not(figure *)):--content {
+  @include spacing(var(--block-spacing));
+}
+
+figure:--content {
+  text-align: center;
+
+  @include spacing(var(--block-spacing));
+}
+
+figcaption:--content {
+  margin-top: calc(0.5 * var(--p-spacing));
+  font-size: 13rem;
+  font-style: italic;
+}
+
+hr:--content {
+  margin: var(--h-spacing-bottom) 0 var(--h-spacing-top);
+  border: 0;
+  border-top: 1px solid var(--color-light);
+}
+
+.highlight:--content {
+  padding: 0 4rem;
+  background: var(--color-primary);
 }

@@ -6,8 +6,8 @@
 // Custom Selectors
 @custom-selector :--invalid .is-invalid;
 @custom-selector :--disabled :disabled, .is-disabled;
-@custom-selector :--not-f-c :not(:first-child);
-@custom-selector :--not-l-c :not(:last-child);
+@custom-selector :--not-f-c :where(:not(:first-child));
+@custom-selector :--not-l-c :where(:not(:last-child));
 
 // Custom Media Queries
 // Styles for hover-devices

@@ -15,12 +15,12 @@
       },
       "dollar-variables",
       "custom-properties",
+      "declarations",
       {
         "type": "at-rule",
         "name": "include",
         "hasBlock": false
       },
-      "declarations",
       {
         "type": "rule",
         "selector": "&::before"
