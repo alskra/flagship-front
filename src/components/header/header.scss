@@ -55,9 +55,8 @@
 }
 
 .header__btn {
-  min-width: 34rem;
-  min-height: 34rem;
-  padding: 5.75rem;
+  --height: 34rem;
+
   font-size: 18rem;
   font-weight: 600;
   color: var(--white);
@@ -84,6 +83,8 @@
   }
 
   &--sign {
+    --padding-x: 24rem;
+
     width: 185rem;
   }
 }

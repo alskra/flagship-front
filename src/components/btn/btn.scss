@@ -1,13 +1,19 @@
 .btn {
   --line-height: 1.25;
+  --content-height: calc(1em * var(--line-height));
+  --height: var(--content-height);
+  --padding-y: calc((var(--height) - var(--content-height)) / 2);
+  --padding-x: 0;
   --icon-box-width: auto;
-  --icon-width: calc(1em * var(--line-height));
+  --icon-width: var(--content-height);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: var(--height);
   max-width: 100%;
-  padding: 0;
+  min-height: var(--height);
+  padding: var(--padding-y) var(--padding-x);
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: var(--color);
@@ -32,7 +38,7 @@
   align-items: center;
   justify-content: center;
   width: var(--icon-box-width);
-  height: calc(1em * var(--line-height));
+  height: var(--content-height);
 }
 
 .btn__icon {
