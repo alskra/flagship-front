@@ -1,5 +1,5 @@
 mixin header
-  header.header&attributes(attributes)
+  header.header(x-data)&attributes(attributes)
     .container.grid-12.header__container
       //-+btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
       .col-span-3.col-span-6-max-lg
@@ -11,11 +11,11 @@ mixin header
             loading="lazy"
             alt=""
           )
-      .col-span-6.hidden-max-lg
+      .col-span-6.header__nav-box(x-show="$store.scrollYDelta > 0 ? false : true")
         nav.header__nav
           a.header__nav-item(href="/") Главная
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
       .col-span-3.col-span-6-max-lg.header__actions
-        +btn({ tag: 'a', content: 'Выйти' }).header__btn.header__btn--primary.header__btn--sign
+        +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
         +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent

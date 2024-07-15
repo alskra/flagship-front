@@ -5,9 +5,10 @@
   --padding-y: calc((var(--height) - var(--content-height)) / 2);
   --padding-x: 0;
   --icon-box-width: auto;
-  --icon-width: var(--content-height);
+  --icon-height: var(--content-height);
 
   display: inline-flex;
+  column-gap: 8rem;
   align-items: center;
   justify-content: center;
   min-width: var(--height);
@@ -42,7 +43,7 @@
 }
 
 .btn__icon {
-  width: var(--icon-width);
+  height: var(--icon-height);
 }
 
 .btn__content {

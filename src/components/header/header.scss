@@ -1,5 +1,9 @@
 :root {
   --header_-_height: 80rem;
+
+  @media (--max-lg) {
+    --header_-_height: 56rem;
+  }
 }
 
 .header {
@@ -10,12 +14,13 @@
   flex-flow: column;
   height: var(--header_-_height);
   background: var(--white);
-  box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
 }
 
 .header__container {
   flex: 1;
   align-items: center;
+  box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
+  container: none;
 }
 
 .header__logo {
@@ -28,21 +33,53 @@
     width: 100%;
     object-fit: contain;
   }
+
+  @media (--max-lg) {
+    width: 156rem;
+  }
+}
+
+.header__nav-box {
+  @media (--max-lg) {
+    position: absolute;
+    inset: 100% 0 auto;
+    z-index: -1;
+    background: var(--white);
+    box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
+  }
 }
 
 .header__nav {
   display: flex;
-  gap: 30rem;
+  gap: 24rem;
   margin-top: 10rem;
+
+  @media (--max-lg) {
+    padding: 6rem var(--container-padding) 4rem;
+    margin-top: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--container-padding);
+  }
 }
 
 .header__nav-item {
+  flex-shrink: 0;
+  font-size: 16rem;
   font-weight: 400;
+  line-height: 1.25;
   color: var(--link-color);
+  white-space: nowrap;
   transition: color var(--transition);
 
   @include hover {
     color: var(--link-hover-color);
+  }
+
+  @media (--max-lg) {
+    font-size: 15rem;
+    font-weight: 500;
+    scroll-snap-align: start;
   }
 }
 
@@ -52,18 +89,23 @@
   align-items: center;
   justify-content: flex-end;
   margin-top: 5rem;
+
+  @media (--max-lg) {
+    margin-top: 0;
+  }
 }
 
 .header__btn {
   --height: 34rem;
+  --icon-height: 26rem;
 
   font-size: 18rem;
   font-weight: 600;
   color: var(--white);
   border-radius: 8rem;
 
-  &:has([name="profile"]) {
-    --icon-width: 23rem;
+  .btn__icon-box {
+    order: 1;
   }
 
   &--primary {
@@ -86,6 +128,18 @@
     --padding-x: 24rem;
 
     width: 185rem;
+  }
+
+  @media (--max-md) {
+    &--sign {
+      --padding-x: 0;
+
+      width: auto;
+
+      .btn__content {
+        display: none;
+      }
+    }
   }
 }
 
