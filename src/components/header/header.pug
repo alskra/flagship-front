@@ -1,11 +1,16 @@
 mixin header
   header.header&attributes(attributes)
-    .container.header__container
+    .container.grid-12.header__container
       //-+btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
-      a.header__logo(href="/")
-        img(
-          src="~@images/logo.png?as=webp"
-          srcset="~@images/logo.png?as=webp 195w, ~@images/logo@2x.png?as=webp 390w, ~@images/logo@2x.png?as=webp 585w"
-          sizes="195rem"
-          alt=""
-        )
+      .col-span-3
+        a.header__logo(href="/")
+          img(
+            src="~@images/logo.png?as=webp"
+            srcset="~@images/logo.png?as=webp 195w, ~@images/logo@2x.png?as=webp 390w, ~@images/logo@2x.png?as=webp 585w"
+            sizes="195rem"
+            loading="lazy"
+            alt=""
+          )
+      .col-span-7
+        nav.header__nav
+      .col-span-2

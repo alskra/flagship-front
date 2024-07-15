@@ -14,17 +14,18 @@
 }
 
 .header__container {
-  display: flex;
   flex: 1;
   align-items: center;
 }
 
 .header__logo {
+  display: block;
   width: 195rem;
 
   img {
     display: block;
     width: 100%;
+    object-fit: contain;
   }
 }
 

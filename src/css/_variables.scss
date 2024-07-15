@@ -28,15 +28,17 @@ $colors: (
 );
 
 // Theme colors
-$primary: #0d6efd;
-$primary-dark: color.mix(black, $primary, 20%);
-$secondary: #6c757d;
-$success: #198754;
-$info: #0dcaf0;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #212529;
+$primary: #00a9d7;
+// Default theme colors
+$primary: #0d6efd !default;
+$primary-dark: color.mix(black, $primary, 20%) !default;
+$secondary: #6c757d !default;
+$success: #198754 !default;
+$info: #0dcaf0 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+$light: #f8f9fa !default;
+$dark: #212529 !default;
 $theme-colors: (
   "primary": $primary,
   "primary-dark": $primary-dark,
