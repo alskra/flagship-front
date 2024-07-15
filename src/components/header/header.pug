@@ -1,4 +1,10 @@
 mixin header
   header.header&attributes(attributes)
-    //-+btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
-    a.header__logo(href="/")
+    .container.header__container
+      //-+btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
+      a.header__logo(href="/")
+        img(
+          src="~@images/logo.png?as=webp"
+          srcset="~@images/logo@2x.png?as=webp 2x"
+          alt=""
+        )

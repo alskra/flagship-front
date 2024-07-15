@@ -1,35 +1,21 @@
-:root {
-  @media (--max-lg) {
-    scroll-padding-top: 64rem;
-  }
-}
-
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
-  align-items: flex-start;
-  height: 0;
-  background: #FFF;
+  flex-flow: column;
+  height: 80rem;
+  background: var(--color-white);
+}
 
-  @media (--max-lg) {
-    align-items: center;
-    height: 64rem;
-    padding: 10px var(--container-padding);
-    border-bottom: 1px solid var(--color-primary);
-  }
+.header__container {
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .header__logo {
-  width: 52rem;
-  margin: 30rem var(--container-padding) 0 auto;
-  color: var(--color-primary);
-
-  @media (--max-lg) {
-    width: 28rem;
-    margin: 0 0 0 auto;
-  }
+  width: 195rem;
 }
 
 .header__btn-nav {

@@ -13,6 +13,7 @@
 
 body {
   overscroll-behavior: var(--overscroll-behavior);
+  scroll-padding-top: var(--scroll-padding-top);
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
