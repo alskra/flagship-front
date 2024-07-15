@@ -2,6 +2,6 @@
 
 @each $color, $value in $theme-colors {
   .#{$color} {
-    color: var(--#{$color});
+    color: var(--#{$color}) !important;
   }
 }
