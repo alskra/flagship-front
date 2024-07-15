@@ -34,7 +34,6 @@
 }
 
 .btn__content {
-  padding: calc((var(--icon-height) - 1em * var(--line-height)) / 2) 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
