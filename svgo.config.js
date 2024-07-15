@@ -6,7 +6,7 @@ module.exports = {
         overrides: {
           removeUnknownsAndDefaults: false,
           removeViewBox: false,
-          cleanupIDs: {
+          cleanupIds: {
             prefix: {
               toString() {
                 this.counter = (this.counter || 0) + 1;
@@ -19,6 +19,5 @@ module.exports = {
       },
     },
     'removeDimensions',
-    'sortAttrs',
   ],
 };

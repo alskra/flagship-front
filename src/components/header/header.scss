@@ -62,8 +62,8 @@
   color: var(--white);
   border-radius: 8rem;
 
-  [name="profile"] {
-    width: 23rem;
+  &:has([name="profile"]) {
+    --icon-width: 23rem;
   }
 
   &--primary {
