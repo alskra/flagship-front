@@ -49,13 +49,13 @@
   }
 }
 
-// Typography
+// Defaults
 :root {
   --font-family: var(--font-family-manrope);
   --font-size: 16rem;
   --font-weight: 500;
   --line-height: #{calc(22 / 16)};
-  --color: var(--color-text);
+  --color: var(--color-black);
   --bg: var(--color-white);
 
   --h-spacing-top: 1em;
@@ -120,17 +120,14 @@
   --link-text-decoration: underline;
   --link-hover-color: var(--color-primary-dark);
   --link-hover-text-decoration: none;
-}
 
-// Other
-:root {
+  --selection-color: var(--color-white);
+  --selection-bg: var(--color-primary);
+
   --transition-duration: 0.15s;
   --transition-timing-function: ease-in-out;
   --transition: var(--transition-duration) var(--transition-timing-function);
 
   --scroll-behavior: smooth;
   --overscroll-behavior: auto;
-
-  --selection-color: #FFF;
-  --selection-bg: var(--color-primary);
 }
