@@ -75,6 +75,8 @@ p:--content,
 }
 
 :--list > li:--content {
+  @include spacing(var(--p-spacing));
+
   &::before {
     position: absolute;
     left: 0;

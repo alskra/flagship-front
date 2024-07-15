@@ -33,8 +33,8 @@ block app
       .col-3 3
 
     .container.guide
-      +content
-        h2 Pages
+      +content()
+        h2(id="pages") Pages
 
         +pages(pages)
 
@@ -50,7 +50,7 @@ block app
 
         h6 h6: Конкурс среди организаций высшего образования
 
-        a(href="#location") Anchor link
+        a(href="#pages") Anchor link
 
         p.
           Это #[strong информационно-познавательный] портал для молодёжи #[em Новгородской области], занимающийся реализацией

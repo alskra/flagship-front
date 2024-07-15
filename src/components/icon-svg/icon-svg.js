@@ -48,7 +48,6 @@ class IconSvg extends HTMLElement {
 
     styleEl.innerHTML = style.toString();
     this.shadowRoot.append(styleEl);
-
     this.svgEl = document.createElement('svg');
     this.shadowRoot.append(this.svgEl);
   }

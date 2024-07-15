@@ -1,0 +1,7 @@
+@use "../variables" as *;
+
+@each $color, $value in $theme-colors {
+  .#{$color} {
+    color: var(--#{$color});
+  }
+}
