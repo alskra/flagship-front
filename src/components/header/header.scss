@@ -29,11 +29,35 @@
   }
 }
 
+.header__nav {
+  display: flex;
+  gap: 30rem;
+  margin-top: 10rem;
+}
+
+.header__nav-item {
+  font-weight: 400;
+  color: var(--link-color);
+  transition: color var(--transition);
+
+  @include hover {
+    color: var(--link-hover-color);
+  }
+}
+
+.header__actions {
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 5rem;
+}
+
 .header__btn-nav {
   --icon-width: 24rem;
   --icon-height: auto;
 
-  color: var(--color-primary);
+  color: var(--primary);
 
   @media (--min-lg) {
     display: none;

@@ -13,4 +13,9 @@ mixin header
           )
       .col-span-7
         nav.header__nav
-      .col-span-2
+          a.header__nav-item(href="/") Главная
+          a.header__nav-item(href="") Пункт меню 2
+          a.header__nav-item(href="") Пункт меню 3
+      .col-span-2.header__actions
+        +btn({ tag: 'a', content: 'Выйти' }).header__btn
+        +btn({ tag: 'a' }).header__btn
