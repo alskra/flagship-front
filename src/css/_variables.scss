@@ -31,8 +31,9 @@ $colors: (
 
 // Theme colors
 $primary: #00a9d7;
+$primary-dark: color.mix(black, $primary, 15%);
 $accent: $persimmon;
-$accent-dark: color.mix(black, $accent, 20%);
+$accent-dark: color.mix(black, $accent, 15%);
 // Default theme colors
 $primary: #0d6efd !default;
 $primary-dark: color.mix(black, $primary, 20%) !default;

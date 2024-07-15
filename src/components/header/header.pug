@@ -17,5 +17,5 @@ mixin header
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
       .col-span-2.col-span-6-max-lg.header__actions
-        +btn({ tag: 'a', content: 'Выйти' }).header__btn.header__btn--primary
-        +btn({ tag: 'a' }).header__btn.header__btn--accent
+        +btn({ tag: 'a', content: 'Выйти' }).header__btn.header__btn--primary.header__btn--sign
+        +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent

@@ -63,8 +63,11 @@
   color: var(--white);
   border-radius: 8rem;
 
+  [name="profile"] {
+    width: 23rem;
+  }
+
   &--primary {
-    width: 185rem;
     background: var(--primary);
 
     @include hover {
@@ -78,6 +81,10 @@
     @include hover {
       background: var(--accent-dark);
     }
+  }
+
+  &--sign {
+    width: 185rem;
   }
 }
 
