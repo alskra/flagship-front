@@ -8,6 +8,22 @@
 :root {
   scroll-padding-top: var(--scroll-padding-top);
 
+  &.is-device-desktop {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: var(--scroll-behavior);
   }
@@ -116,18 +132,4 @@ fieldset {
     animation-duration: 0.001s !important;
     animation-delay: 0s !important;
   }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
 }
