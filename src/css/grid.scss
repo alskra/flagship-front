@@ -4,6 +4,7 @@
     max-width: var(--container-max-width);
     padding: 0 var(--container-padding);
     margin: 0 auto;
+    // Optional `container` property
     // container: container / inline-size;
   }
 
@@ -19,6 +20,11 @@
     .col-span-#{$size}#{$suffix} {
       grid-column: span $size / span $size;
     }
+  }
+
+  // stylelint-disable-next-line order/order
+  .col-span-auto#{$suffix} {
+    grid-column: auto;
   }
 
   @for $size from 1 through $grid-count {
@@ -48,6 +54,12 @@
       flex-shrink: 0;
       width: calc($size * var(--col-size) + ($size - 1) * var(--grid-gutter));
     }
+  }
+
+  // stylelint-disable-next-line order/order
+  .col-auto#{$suffix} {
+    flex-shrink: 0;
+    width: auto;
   }
 
   @for $size from 0 through $grid-count - 1 {

@@ -24,7 +24,8 @@
   --col-size: calc((100% - (var(--grid-count) - 1) * var(--grid-gutter)) / var(--grid-count));
 
   @media (--max-lg) {
-    --container-padding: 15rem;
+    --container-padding: 10rem;
+    --grid-gutter: 20rem;
   }
 }
 

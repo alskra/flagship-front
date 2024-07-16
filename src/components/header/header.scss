@@ -44,13 +44,6 @@
     position: absolute;
     inset: 100% 0 auto;
     z-index: -1;
-    background: var(--primary);
-    box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
-    transition: transform var(--transition);
-
-    &.is-hidden {
-      transform: translateY(-105%);
-    }
   }
 }
 
@@ -65,6 +58,13 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 var(--container-padding);
+    background: var(--primary);
+    box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
+    transition: transform var(--transition);
+
+    &.is-hidden {
+      transform: translateY(-105%);
+    }
   }
 }
 

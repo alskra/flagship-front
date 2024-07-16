@@ -1,7 +1,6 @@
 mixin header
   header.header(x-data="header")&attributes(attributes)
     .container.grid-12.header__container
-      //-+btn({ iconPrev: 'list' }).header__btn-nav(x-on:click="toggleNav")
       .col-span-3.col-span-6-max-lg
         a.header__logo(href="/")
           img(
@@ -10,8 +9,8 @@ mixin header
             loading="lazy"
             alt=""
           )
-      .col-span-6.header__nav-box(x-bind="nav")
-        nav.header__nav
+      .col-span-6.header__nav-box
+        nav.header__nav(x-bind="nav")
           a.header__nav-item(href="/") Главная
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
