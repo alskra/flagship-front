@@ -17,13 +17,14 @@
 .app__main {
   display: flex;
   flex: 1;
+  width: 100%;
   padding: var(--app__main_-_padding-top) 0 var(--app__main_-_padding-bottom);
   background: image-set(url("~@images/bg.png?as=webp") 1x, url("~@images/bg@2x.png?as=webp") 2x) var(--bg);
   background-attachment: fixed;
   background-size: min(735rem, 735px);
 
   @media (--max-lg) {
-    box-shadow: -3px 0 4px rgb(var(--black-rgb) / 4%);
+    box-shadow: -3px 0 5px rgb(var(--black-rgb) / 10%);
     transition: margin-left 0.25s var(--transition-timing-function);
 
     &.is-menu-open {
