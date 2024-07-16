@@ -31,6 +31,18 @@
   color: var(--white);
   background: var(--tertiary);
 
+  &:not(.is-menu-open) {
+    :has([name="menu-fold"]) {
+      display: none;
+    }
+  }
+
+  &.is-menu-open {
+    :has([name="menu-unfold"]) {
+      display: none;
+    }
+  }
+
   @media (--min-lg) {
     display: none;
   }

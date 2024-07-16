@@ -6,6 +6,11 @@ Alpine.data('header', () => ({
     return this.$store.scrollDir > 0;
   },
   btnMenu: {
+    ':class'() {
+      return {
+        'is-menu-open': this.menuIsOpen,
+      };
+    },
     '@click'() {
       this.toggleMenu();
     },
