@@ -23,15 +23,18 @@ $grid-count: 12;
 $black: #000;
 $white: #fff;
 $persimmon: #ff5c51;
+$foam: #d5f2fd;
 $colors: (
   "black": $black,
   "white": $white,
   "persimmon": $persimmon,
+  "foam": $foam,
 );
 
 // Theme colors
 $primary: #00a9d7;
 $primary-dark: color.mix(black, $primary, 15%);
+$secondary: $foam;
 $accent: $persimmon;
 $accent-dark: color.mix(black, $accent, 15%);
 // Default theme colors

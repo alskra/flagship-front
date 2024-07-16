@@ -1,5 +1,6 @@
 :root {
   --app__main_-_padding-top: 60rem;
+  --app__main_-_padding-bottom: 40rem;
 }
 
 .app {
@@ -12,7 +13,7 @@
 }
 
 .app__main {
+  display: flex;
   flex: 1;
-  min-height: 2000px;
-  padding: var(--app__main_-_padding-top) 0;
+  padding: var(--app__main_-_padding-top) 0 var(--app__main_-_padding-bottom);
 }

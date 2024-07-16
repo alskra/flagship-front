@@ -1,0 +1,9 @@
+.aside {
+  position: sticky;
+  top: var(--header_-_height);
+  height: calc(100% + var(--app__main_-_padding-top) + var(--app__main_-_padding-bottom));
+  max-height: calc(100vh - var(--header_-_height));
+  margin: negate(var(--app__main_-_padding-top)) 0 negate(var(--app__main_-_padding-bottom)) negate(var(--container-padding));
+  background: var(--secondary);
+  border-bottom: 2px solid red;
+}
