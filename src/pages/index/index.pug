@@ -21,8 +21,18 @@ block app
               a.aside__nav-item.is-current(href="") Пользователи
               a.aside__nav-item(href="") Настройки
 
-      .col-span-12.col-span-9-min-lg.col-span-8-min-xl.col-start-5-min-xl(style="min-height: 2000px;")
+      .col-span-12.col-span-9-min-lg.col-span-8-min-xl.col-start-5-min-xl
         h1.h3.content Целевые группы
-        p Content
+
+        .target-groups
+          a.target-groups__item.target-groups__item--student(href="")
+            .target-groups__item-icon
+            .target-groups__item-title Студент
+          a.target-groups__item.target-groups__item--teacher(href="")
+            .target-groups__item-icon
+            .target-groups__item-title Педагог
+          a.target-groups__item.target-groups__item--manager(href="")
+            .target-groups__item-icon
+            .target-groups__item-title Управленец
 
   //-+footer()
