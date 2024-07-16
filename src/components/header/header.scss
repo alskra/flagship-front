@@ -75,7 +75,7 @@
 
 .header__nav {
   display: flex;
-  gap: 16rem;
+  gap: 7rem;
   margin-top: 10rem;
 
   @media (--max-lg) {
@@ -86,9 +86,11 @@
     scroll-padding: 0 var(--container-padding);
     background: var(--primary);
     box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
-    transition: transform var(--transition);
+    transition: var(--transition);
+    transition-property: visibility, transform;
 
     &.is-hidden {
+      visibility: hidden;
       transform: translateY(-105%);
     }
   }
