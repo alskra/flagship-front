@@ -2,6 +2,7 @@ mixin header
   header.header(x-data="header")&attributes(attributes)
     .container.grid-12.header__container
       .col-span-3.col-span-6-max-lg
+        +btn({ icons: ['menu-unfold-2'] }).header__btn-nav
         a.header__logo(href="/")
           img(
             src="~@images/logo.png?as=webp"
@@ -15,5 +16,5 @@ mixin header
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
       .col-span-3.col-span-6-max-lg.header__actions
-        +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
+        +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out-2'] }).header__btn.header__btn--primary.header__btn--sign
         +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent

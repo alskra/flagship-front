@@ -24,17 +24,22 @@ $black: #000;
 $white: #fff;
 $persimmon: #ff5c51;
 $foam: #d5f2fd;
+$endeavour: #005ab3;
 $colors: (
   "black": $black,
   "white": $white,
   "persimmon": $persimmon,
   "foam": $foam,
+  "$endeavour": $endeavour,
 );
 
 // Theme colors
+// Overwrite
 $primary: #00a9d7;
 $primary-dark: color.mix(black, $primary, 15%);
 $secondary: $foam;
+// Additional
+$tertiary: $endeavour;
 $accent: $persimmon;
 $accent-dark: color.mix(black, $accent, 15%);
 // Default theme colors
@@ -57,6 +62,7 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "tertiary": $tertiary,
   "accent": $accent,
   "accent-dark": $accent-dark,
 );
