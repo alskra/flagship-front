@@ -1,9 +1,18 @@
 .aside {
   position: sticky;
   top: var(--header_-_height);
+  display: flex;
+  flex-flow: column;
   height: calc(100% + var(--app__main_-_padding-top) + var(--app__main_-_padding-bottom));
   max-height: calc(100vh - var(--header_-_height));
   margin: negate(var(--app__main_-_padding-top)) 0 negate(var(--app__main_-_padding-bottom)) negate(var(--container-padding));
+  background: var(--primary);
+}
+
+.aside__body {
+  flex: 1;
+  padding: 60rem 30rem;
+  margin-left: calc(107 / 473 * 100%);
+  overflow-y: auto;
   background: var(--secondary);
-  border-bottom: 2px solid red;
 }

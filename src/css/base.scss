@@ -42,9 +42,7 @@ body {
   text-rendering: optimizelegibility;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  background: image-set(url("~@images/bg.png?as=webp") 1x, url("~@images/bg@2x.png?as=webp") 2x) var(--bg);
-  background-attachment: fixed;
-  background-size: min(735rem, 735px);
+  background: var(--bg);
 }
 
 h1,

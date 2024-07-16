@@ -1,5 +1,5 @@
 :root {
-  --app__main_-_padding-top: 60rem;
+  --app__main_-_padding-top: 64rem;
   --app__main_-_padding-bottom: 40rem;
 }
 
@@ -10,6 +10,9 @@
   flex-direction: column;
   min-height: 100vh;
   overflow: clip;
+  background: image-set(url("~@images/bg.png?as=webp") 1x, url("~@images/bg@2x.png?as=webp") 2x) var(--bg);
+  background-attachment: fixed;
+  background-size: min(735rem, 735px);
 }
 
 .app__main {
