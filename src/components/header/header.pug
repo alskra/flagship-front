@@ -2,7 +2,7 @@ mixin header
   header.header(x-data="header")&attributes(attributes)
     .container.grid-12.header__container
       .col-span-3.col-span-6-max-lg
-        +btn({ icons: ['menu-unfold-2'] }).header__btn-nav
+        +btn({ icons: ['menu-unfold-2'] })(x-bind="btnMenu").header__btn-menu
         a.header__logo(href="/")
           img(
             src="~@images/logo.png?as=webp"
