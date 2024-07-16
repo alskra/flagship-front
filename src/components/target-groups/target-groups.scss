@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, min(197rem, 50% - 13rem));
   gap: 26rem;
+
+  @media (--max-lg) {
+    gap: var(--grid-gutter);
+  }
 }
 
 .target-groups__item {
