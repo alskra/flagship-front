@@ -106,7 +106,7 @@
   --h5-spacing-top: var(--h-spacing-top);
   --h5-spacing-bottom: var(--h-spacing-bottom);
   --h5-font-family: var(--h-font-family);
-  --h5-font-size: 16rem;
+  --h5-font-size: 18rem;
   --h5-font-weight: var(--h-font-weight);
   --h5-line-height: var(--h-line-height);
   --h5-color: var(--h-color);
@@ -114,7 +114,7 @@
   --h6-spacing-top: var(--h-spacing-top);
   --h6-spacing-bottom: var(--h-spacing-bottom);
   --h6-font-family: var(--h-font-family);
-  --h6-font-size: 12rem;
+  --h6-font-size: 16rem;
   --h6-font-weight: var(--h-font-weight);
   --h6-line-height: var(--h-line-height);
   --h6-color: var(--h-color);
@@ -123,10 +123,10 @@
 
   --link-color: var(--primary);
   --link-color-rgb: var(--primary-rgb);
-  --link-decoration: underline;
+  --link-decoration: none;
   --link-hover-color: var(--primary-dark);
   --link-hover-color-rgb: var(--primary-dark-rgb);
-  --link-hover-decoration: none;
+  --link-hover-decoration: underline;
 
   --selection-color: var(--white);
   --selection-bg: var(--primary);

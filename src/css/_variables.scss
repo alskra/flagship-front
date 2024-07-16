@@ -21,21 +21,25 @@ $grid-count: 12;
 
 // Colors
 $black: #000;
-$white: #fff;
-$persimmon: #ff5c51;
-$foam: #d5f2fd;
-$endeavour: #005ab3;
+$white: #FFF;
+$persimmon: #FF5C51;
+$foam: #D5F2FD;
+$endeavour: #005AB3;
+$gray: #F0F0F0;
+$gray-2: #CFCFCF;
 $colors: (
   "black": $black,
   "white": $white,
   "persimmon": $persimmon,
   "foam": $foam,
-  "$endeavour": $endeavour,
+  "endeavour": $endeavour,
+  "gray": $gray,
+  "gray-2": $gray-2,
 );
 
 // Theme colors
 // Overwrite
-$primary: #00a9d7;
+$primary: #00A9D7;
 $primary-dark: color.mix(black, $primary, 15%);
 $secondary: $foam;
 // Additional
@@ -43,14 +47,14 @@ $tertiary: $endeavour;
 $accent: $persimmon;
 $accent-dark: color.mix(black, $accent, 15%);
 // Default theme colors
-$primary: #0d6efd !default;
+$primary: #0D6EFD !default;
 $primary-dark: color.mix(black, $primary, 20%) !default;
-$secondary: #6c757d !default;
+$secondary: #6C757D !default;
 $success: #198754 !default;
-$info: #0dcaf0 !default;
-$warning: #ffc107 !default;
-$danger: #dc3545 !default;
-$light: #f8f9fa !default;
+$info: #0DCAF0 !default;
+$warning: #FFC107 !default;
+$danger: #DC3545 !default;
+$light: #F8F9FA !default;
 $dark: #212529 !default;
 $theme-colors: (
   "primary": $primary,
@@ -62,6 +66,7 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  // Additional
   "tertiary": $tertiary,
   "accent": $accent,
   "accent-dark": $accent-dark,

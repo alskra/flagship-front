@@ -19,7 +19,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--primary);
+      background: var(--gray-2, var(--primary));
       border-radius: 4px;
     }
   }

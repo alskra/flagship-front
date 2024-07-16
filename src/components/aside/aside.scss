@@ -30,13 +30,42 @@
 }
 
 .aside__body {
+  --padding-x: 30rem;
+
   flex: 1;
-  padding: 60rem 30rem;
+  padding: 60rem var(--padding-x);
   margin-left: calc(107 / 473 * 100%);
   overflow-y: auto;
   background: var(--secondary);
 
   @media (--max-lg) {
     margin-left: var(--header_-_height);
+  }
+}
+
+.aside__nav {
+  margin: 0 negate(var(--padding-x));
+}
+
+.aside__nav-item {
+  display: block;
+  padding: 26rem var(--padding-x);
+  background: var(--white);
+  transition: var(--transition);
+  transition-property: color, background-color;
+
+  @include hover {
+    &:not(.is-current) {
+      background: var(--gray);
+    }
+  }
+
+  &.is-current {
+    color: var(--white);
+    background: var(--accent);
+  }
+
+  & + & {
+    border-top: 1px solid var(--gray);
   }
 }

@@ -1,5 +1,5 @@
 // stylelint-disable scss/operator-no-unspaced
-@custom-selector :--content :is(.content, .content *):where(:not(.content-ignore, .content-ignore *));
+@custom-selector :--content :where(.content, .content *):where(:not(.content-ignore, .content-ignore *));
 @custom-selector :--h h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
 @custom-selector :--link :any-link:not([href^="tel:"]);
 @custom-selector :--list ul, ol;
@@ -25,15 +25,6 @@
   line-height: var(--line-height);
 }
 
-:--h:--content {
-  @include spacing(var(--h-spacing-top), var(--h-spacing-bottom));
-}
-
-:--h:--content + * {
-  // stylelint-disable-next-line
-  margin-top: 0 !important;
-}
-
 @for $level from 1 through 6 {
   h#{$level}:--content,
   .h#{$level}:--content {
@@ -42,7 +33,14 @@
     font-weight: var(--h#{$level}-font-weight);
     line-height: var(--h#{$level}-line-height);
     color: var(--h#{$level}-color);
+
+    @include spacing(var(--h#{$level}-spacing-top), var(--h#{$level}-spacing-bottom));
   }
+}
+
+:--h:--content + * {
+  // stylelint-disable-next-line
+  margin-top: 0 !important;
 }
 
 // stylelint-disable-next-line
@@ -59,6 +57,7 @@ p:--content,
 :--link:--content {
   color: var(--link-color);
   text-decoration: var(--link-decoration);
+  transition: color var(--transition);
 
   @include hover {
     color: var(--link-hover-color);
