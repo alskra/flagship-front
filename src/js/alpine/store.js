@@ -4,25 +4,21 @@ Alpine.store('isDeviceDesktop', document.documentElement.classList.contains('is-
 Alpine.store('minLg', window.innerWidth >= 1025);
 window.addEventListener('resize', () => Alpine.store('minLg', window.innerWidth >= 1025));
 
-let scrollYCurrent = window.scrollY;
-// let scrollYTimeout;
+let scrollLast = window.scrollY;
 
-const scrollYDelta = () => {
-  // clearTimeout(scrollYTimeout);
-  // scrollYTimeout = setTimeout(() => Alpine.store('scrollYDelta', 0));
+const scrollDir = () => {
+  const dir = window.scrollY - scrollLast > 0 ? 1 : -1;
 
-  const delta = window.scrollY - scrollYCurrent;
+  scrollLast = window.scrollY;
 
-  scrollYCurrent = window.scrollY;
-
-  return delta;
+  return dir;
 };
 
 Alpine.store('scrollY', window.scrollY);
-Alpine.store('scrollYDelta', scrollYDelta());
+Alpine.store('scrollDir', scrollDir());
 window.addEventListener('scroll', () => {
   Alpine.store('scrollY', window.scrollY);
-  Alpine.store('scrollYDelta', scrollYDelta());
+  Alpine.store('scrollDir', scrollDir());
 }, { passive: true });
 
 Alpine.store('hash', window.location.hash);
