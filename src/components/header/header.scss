@@ -29,7 +29,7 @@
   inset: 0 auto 0 0;
   aspect-ratio: 1;
   color: var(--white);
-  background: var(--tertiary);
+  background: var(--primary);
 
   &:not(.is-menu-open) {
     :has([name="menu-fold"]) {
