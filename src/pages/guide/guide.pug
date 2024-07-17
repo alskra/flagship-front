@@ -5,7 +5,7 @@ include /components/footer/footer
 
 append variables
   -
-    title = `${title} - Guide`;
+    title = `${projectName} - Guide`;
 
 block app
   +header()
@@ -36,7 +36,7 @@ block app
       +content()
         h2#pages Pages
 
-        +pages(pages)
+        +pages(store.pages)
 
         h1 h1: Конкурс среди организаций высшего образования
         h2 h2: Конкурс среди организаций высшего образования

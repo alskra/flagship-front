@@ -3,6 +3,6 @@ mixin pages(pages)
     ol
       each page in pages
         li
-          a(href=page.url)= page.title
+          a(href=`${page.url}.html`)= page.title
           if page.pages
             +pages(page.pages)

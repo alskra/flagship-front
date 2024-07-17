@@ -3,6 +3,10 @@ extends /pug/base
 include /components/header/header
 include /components/footer/footer
 
+append variables
+  -
+    title = `${projectName} - ${store.getPage('index').title}`;
+
 block app
   +header()
 
@@ -22,20 +26,19 @@ block app
               a.aside__nav-item(href="") Настройки
 
       .col-span-12.col-span-9-min-lg.col-span-8-min-xl.col-start-5-min-xl
-        h1.h3.content Целевые группы
+        block main
+          h1.h3.content Целевые группы
 
-        .target-groups
-          a.target-groups__item.target-groups__item--student(href="")
-            .target-groups__item-body
-              .target-groups__item-icon
-              .target-groups__item-title Студент
-          a.target-groups__item.target-groups__item--teacher(href="")
-            .target-groups__item-body
-              .target-groups__item-icon
-              .target-groups__item-title Педагог
-          a.target-groups__item.target-groups__item--manager(href="")
-            .target-groups__item-body
-              .target-groups__item-icon
-              .target-groups__item-title Управленец
-
-  //-+footer()
+          .target-groups
+            a.target-groups__item.target-groups__item--student(href="")
+              .target-groups__item-body
+                .target-groups__item-icon
+                .target-groups__item-title Студент
+            a.target-groups__item.target-groups__item--teacher(href="")
+              .target-groups__item-body
+                .target-groups__item-icon
+                .target-groups__item-title Педагог
+            a.target-groups__item.target-groups__item--manager(href="")
+              .target-groups__item-body
+                .target-groups__item-icon
+                .target-groups__item-title Управленец
