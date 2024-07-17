@@ -3,7 +3,7 @@ mixin header
     .container.grid-12.header__container
       .col-span-3.col-span-6-max-lg
         +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
-        a.header__logo(href="/")
+        a.header__logo(href="index.html")
           img(
             src="~@images/logo.png?as=webp"
             srcset="~@images/logo@1.5x.png?as=webp 1.5x, ~@images/logo@2x.png?as=webp 2x"
@@ -12,7 +12,7 @@ mixin header
           )
       .col-span-6.header__nav-box
         nav.header__nav(x-bind="nav")
-          a.header__nav-item(href="/") Главная
+          a.header__nav-item(href="index.html") Главная
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
       .col-span-3.col-span-6-max-lg.header__actions
