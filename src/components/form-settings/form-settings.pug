@@ -7,14 +7,24 @@ mixin form-settings(view = 'common')
       if view === 'common'
         .form-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Название события
-          +form-field()(x-bind:id="$id('form-field')" value="Новое событие Флагманы Образования")
+          +form-field()(
+            name="name"
+            x-bind:id="$id('form-field')"
+            value="Новое событие Флагманы Образования"
+          )
       if view === 'datetime'
         .form-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
-          +form-field()(x-bind:id="$id('form-field')")
+          +form-field()(
+            name="start-date"
+            x-bind:id="$id('form-field')"
+          )
         .form-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
-          +form-field()(x-bind:id="$id('form-field')")
+          +form-field()(
+            name="end-date"
+            x-bind:id="$id('form-field')"
+          )
 
       .form-settings__footer
         if view === 'common'
