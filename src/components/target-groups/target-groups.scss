@@ -20,28 +20,16 @@
   &--student {
     --bg: var(--accent);
     --hover-bg: var(--accent-dark);
-
-    .target-groups__item-icon::before {
-      mask-image: image-set(url("~@images/icons/student.png?as=webp") 1x, url("~@images/icons/student@2x.png?as=webp") 2x);
-    }
   }
 
   &--teacher {
     --bg: var(--primary);
     --hover-bg: var(--primary-dark);
-
-    .target-groups__item-icon::before {
-      mask-image: image-set(url("~@images/icons/teacher.png?as=webp") 1x, url("~@images/icons/teacher@2x.png?as=webp") 2x);
-    }
   }
 
   &--manager {
     --bg: var(--tertiary);
     --hover-bg: var(--tertiary-dark);
-
-    .target-groups__item-icon::before {
-      mask-image: image-set(url("~@images/icons/manager.png?as=webp") 1x, url("~@images/icons/manager@2x.png?as=webp") 2x);
-    }
   }
 }
 
@@ -55,7 +43,7 @@
   transition: background-color var(--transition);
 
   @include hover {
-    background: var(--hover-bg);
+    --bg: var(--hover-bg);
   }
 
   @container (width > 253rem) {
@@ -65,21 +53,21 @@
 }
 
 .target-groups__item-icon {
+  display: flex;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   width: 74rem;
   aspect-ratio: 1;
   margin: 0 auto;
   background: var(--white);
   border-radius: 50%;
 
-  &::before {
-    display: block;
-    height: 100%;
-    content: "";
+  .icon {
+    width: 59.2rem;
+    height: auto;
     background: var(--bg);
-    border-radius: inherit;
-    mask-repeat: no-repeat;
-    mask-size: contain;
+    transition: background-color var(--transition);
   }
 
   &:--not-l-c {

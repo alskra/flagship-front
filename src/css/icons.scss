@@ -1,6 +1,17 @@
+$icons-set: student;
+
+@mixin make-icons {
+  @each $icon in $icons-set {
+    .icon-#{$icon} {
+      mask-image: image-set(url("~@images/icons/#{$icon}.png?as=webp") 1x,
+        url("~@images/icons/#{$icon}@2x.png?as=webp") 2x);
+    }
+  }
+}
+
 .icon {
   display: inline-block;
-  height: 1rem;
+  height: 1em;
   aspect-ratio: 1;
   vertical-align: middle;
   background: currentcolor;
@@ -9,6 +20,4 @@
   mask-size: contain;
 }
 
-.icon-student {
-  // mask-image: url("");
-}
+@include make-icons;
