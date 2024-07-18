@@ -9,8 +9,9 @@ include /components/form-field/form-field
 block variables
   -
     let projectName = 'Флагманы образования';
-    let title = projectName;
-    let description = title;
+    let url = '';
+    let title = 'Флагманы образования';
+    let description = '';
     let favicon = false;
     let og = false;
     let ym = false;
@@ -22,6 +23,13 @@ block variables
       'x-bind': 'app',
     };
 
+    function getTitle() {
+      title = title + (url ? ` - ${url === 'guide' ? 'Guide' : store.getPage(url).title}` : '');
+      description = description || title;
+
+      return title;
+    }
+
 block document
   doctype html
   html(
@@ -31,7 +39,7 @@ block document
     head
       meta(charset="utf-8")
       meta(name="viewport" content="width=device-width, initial-scale=1")
-      title= title
+      title= getTitle()
       meta(property="description" content=description)
 
       if favicon

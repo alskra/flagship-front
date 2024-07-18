@@ -4,14 +4,14 @@ include /components/event-info/event-info
 
 append variables
   -
-    title = `${projectName} - ${store.getPage('event-settings').title}`;
+    url = 'event-settings';
 
 block aside
   +event-info()
 
   nav.aside__nav
-    a.aside__nav-item.is-current(href="") Общие настройки
-    a.aside__nav-item(href="") Дата и время
+    a.aside__nav-item.is-current(href="event-settings.html") Общие настройки
+    a.aside__nav-item(href="event-settings-datetime.html") Дата и время
 
 block main
   h1.h3.content Общие настройки
