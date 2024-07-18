@@ -53,22 +53,20 @@
 }
 
 .target-groups__item-icon {
-  display: flex;
+  --width: 59.2rem;
+  --height: auto;
+  --bg: inherit;
+  --transition: background-color var(--transition);
+
+  // display: flex;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
   width: 74rem;
   aspect-ratio: 1;
   margin: 0 auto;
   background: var(--white);
   border-radius: 50%;
-
-  .icon {
-    width: 59.2rem;
-    height: auto;
-    background: var(--bg);
-    transition: background-color var(--transition);
-  }
 
   &:--not-l-c {
     margin-bottom: 30rem;

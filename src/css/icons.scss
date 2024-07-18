@@ -7,21 +7,39 @@ $icons-set:
 @mixin make-icons {
   @each $icon in $icons-set {
     .icon-#{$icon} {
-      mask-image: image-set(url("~@images/icons/#{$icon}.png?as=webp") 1x,
-        url("~@images/icons/#{$icon}@2x.png?as=webp") 2x);
+      &::before {
+        mask-image: image-set(url("~@images/icons/#{$icon}.png?as=webp") 1x,
+          url("~@images/icons/#{$icon}@2x.png?as=webp") 2x);
+      }
     }
   }
 }
 
 .icon {
-  display: inline-block;
-  height: 1em;
-  aspect-ratio: 1;
+  --width: auto;
+  --height: 1em;
+  --aspect-ratio: 1;
+  --bg: currentcolor;
+  --transition: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
-  background: currentcolor;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
+
+  &::before {
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    aspect-ratio: var(--aspect-ratio);
+    pointer-events: none;
+    content: "";
+    background: var(--bg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    transition: var(--transition);
+  }
 }
 
 @include make-icons;
