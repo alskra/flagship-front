@@ -17,17 +17,17 @@
       "custom-properties",
       "declarations",
       {
-        "type": "at-rule",
-        "name": "include",
-        "hasBlock": false
-      },
-      {
         "type": "rule",
         "selector": "&::before"
       },
       {
         "type": "rule",
         "selector": "&::after"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": false
       },
       "rules",
       {

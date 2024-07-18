@@ -1,5 +1,5 @@
 :root {
-  --app__main_-_padding-top: 64rem;
+  --app__main_-_padding-top: 60rem;
   --app__main_-_padding-bottom: 40rem;
 }
 
@@ -38,13 +38,13 @@
   flex: 1;
 }
 
-.app__main-col-1 {
+.app__main-aside {
   @media (--max-lg) {
     position: absolute;
   }
 }
 
-.app__main-col-2 {
+.app__main-body {
   position: relative;
   z-index: 0;
 }

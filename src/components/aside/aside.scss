@@ -33,7 +33,7 @@
   --padding-x: 30rem;
 
   flex: 1;
-  padding: 60rem var(--padding-x);
+  padding: var(--app__main_-_padding-top) var(--padding-x) var(--app__main_-_padding-bottom);
   margin-left: calc(107 / 473 * 100%);
   overflow-y: auto;
   background: var(--secondary);

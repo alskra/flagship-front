@@ -74,14 +74,14 @@ p:--content,
 }
 
 :--list > li:--content {
-  @include spacing(var(--p-spacing));
-
   &::before {
     position: absolute;
     left: 0;
     width: var(--list-indent);
     text-align: right;
   }
+
+  @include spacing(calc(0.5 * var(--p-spacing)));
 }
 
 ul > li:--content {

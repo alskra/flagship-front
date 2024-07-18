@@ -1,0 +1,19 @@
+extends /pages/index/index
+
+append variables
+  -
+    title = `${projectName} - ${store.getPage('event-settings').title}`;
+
+block aside
+  .event-info
+    +content().event-info__content
+      .h5 Название события
+      .event-info__badges
+        .event-info__badge Черновик
+
+  nav.aside__nav
+    a.aside__nav-item.is-current(href="") Общие настройки
+    a.aside__nav-item(href="") Дата и время
+
+block main
+  h1.h3.content Общие настройки
