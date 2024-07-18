@@ -1,0 +1,40 @@
+.table-data {
+  display: table;
+  width: 100%;
+  text-align: center;
+  border-spacing: 7rem;
+
+  th {
+    padding: 5.5rem 16rem;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: calc(19 / 14);
+    color: var(--gray-3);
+    background: var(--primary);
+  }
+
+  thead tr:first-child th:first-child {
+    border-radius: 8rem 0 0;
+  }
+
+  thead tr:first-child th:last-child {
+    border-radius: 0 8rem 0 0;
+  }
+
+  td {
+    padding: 8rem 16rem;
+    font-size: 12rem;
+    line-height: calc(16 / 12);
+    background: var(--secondary);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  &--events {
+    thead tr:first-child th:last-child {
+      background: var(--accent);
+    }
+  }
+}

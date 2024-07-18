@@ -3,6 +3,7 @@ import 'modern-normalize';
 import '@css/fonts.scss';
 import '@css/root.scss';
 import '@css/base.scss';
+import '@css/icons.scss';
 import '@css/grid.scss';
 import '@css/utilities.scss';
 

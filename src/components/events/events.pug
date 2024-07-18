@@ -5,3 +5,44 @@ mixin events
         icon-svg.events__action-add-bg(name="border")
         .events__action-add-icon: icon-svg(name="plus")
         .events__action-add-content Добавить событие
+
+    .table-responsive
+      table.table-data.table-data--events
+        thead
+          tr
+            th: span Группа
+            th: span Название события
+            th: span Дата
+            th: span Ссылка на регистрацию
+            th: span Ссылка на этапы
+            th(colspan="3"): span Действия
+        tbody
+          tr
+            td: span badge
+            td: span Новое событие Флагманы Образования
+            td: span 19.07.2024
+            td: a(href="") зарегистрироваться
+            td: a(href="") этапы
+            td: a(href="") QR
+            td: a(href="") Edit
+            td: a(href="") Del
+
+          tr
+            td: span badge
+            td: span Новое событие Флагманы Образования
+            td: span 19.07.2024
+            td: a(href="") зарегистрироваться
+            td: a(href="") этапы
+            td: a(href="") QR
+            td: a(href="") Edit
+            td: a(href="") Del
+
+          tr
+            td: span badge
+            td: span Новое событие Флагманы Образования
+            td: span 19.07.2024
+            td: a(href="") зарегистрироваться
+            td: a(href="") этапы
+            td: a(href="") QR
+            td: a(href="") Edit
+            td: a(href="") Del
