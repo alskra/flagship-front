@@ -1,4 +1,8 @@
-$icons-set: student;
+// Sizes: 96x96, 192x192
+$icons-set:
+  student,
+  teacher,
+  manager;
 
 @mixin make-icons {
   @each $icon in $icons-set {
