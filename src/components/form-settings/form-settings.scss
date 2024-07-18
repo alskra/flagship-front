@@ -1,0 +1,14 @@
+.form-settings {
+  display: flex;
+  flex-flow: column;
+}
+
+.form-settings__row {
+  display: flex;
+  flex-flow: column;
+}
+
+.form-settings__field {
+  display: block;
+  width: 100%;
+}

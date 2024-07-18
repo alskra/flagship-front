@@ -1,0 +1,8 @@
+mixin form-settings
+  form.form-settings(
+    x-data="formSettings"
+    action=""
+  )&attributes(attributes)
+    .form-settings__row(x-id=['form-field'])
+      label.form-label(x-bind:for="$id('form-field')")
+      +form-field().form-settings__field(x-bind:id="$id('form-field')")

@@ -2,7 +2,7 @@
   --line-height: 1.25;
   --content-height: calc(1em * var(--line-height));
   --height: var(--content-height);
-  --padding-y: calc((var(--height) - var(--content-height)) / 2);
+  --padding-y: calc(0.5 * (var(--height) - var(--content-height)));
   --padding-x: 0;
   --icon-box-width: auto;
   --icon-height: var(--content-height);

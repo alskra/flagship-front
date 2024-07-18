@@ -1,6 +1,7 @@
 extends /pages/index/index
 
 include /components/event-info/event-info
+include /components/form-settings/form-settings
 
 append variables
   -
@@ -10,8 +11,15 @@ block aside
   +event-info()
 
   nav.aside__nav
-    a.aside__nav-item.is-current(href="event-settings.html") Общие настройки
-    a.aside__nav-item(href="event-settings-datetime.html") Дата и время
+    a.aside__nav-item(
+      class={ 'is-current': url === 'event-settings' }
+      href="event-settings.html"
+    ) Общие настройки
+    a.aside__nav-item(
+      href="event-settings-datetime.html"
+      class={ 'is-current': url === 'event-settings-datetime' }
+    ) Дата и время
 
 block main
   h1.h3.content Общие настройки
+  +form-settings()

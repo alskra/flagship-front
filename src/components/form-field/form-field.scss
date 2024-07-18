@@ -1,15 +1,21 @@
 .form-field {
-  --height: 40rem;
   --line-height: 1.25;
+  --content-height: calc(1em * var(--line-height));
+  --height: 40rem;
+  --padding-y: calc(0.5 * (var(--height) - var(--content-height) - 2 * var(--border-width)));
+  --padding-x: 12rem;
+  --border-width: 0px;
 
   max-width: 100%;
-  padding: calc((var(--height) - 1em * var(--line-height) - 2px) / 2) 12rem;
+  padding: var(--padding-y) var(--padding-x);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  color: currentcolor;
+  color: var(--color);
   vertical-align: top;
-  background: #FFF;
-  border: 1px solid var(--color-light);
+  background: var(--gray-3);
+  border: var(--border-width) solid var(--light);
+  border-radius: 8rem;
+  box-shadow: inset 2px 2px 8.7px rgb(var(--black-rgb) / 15%);
   transition: var(--transition);
   transition-property: color, background-color, border-color, box-shadow;
 
