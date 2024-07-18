@@ -1,8 +1,23 @@
-mixin form-settings
+mixin form-settings(view = 'common')
   form.form-settings(
     x-data="formSettings"
     action=""
   )&attributes(attributes)
-    .form-settings__row(x-id=['form-field'])
-      label.form-label(x-bind:for="$id('form-field')")
-      +form-field().form-settings__field(x-bind:id="$id('form-field')")
+    .form-settings__body
+      if view === 'common'
+        .form-settings__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Название события
+          +form-field()(x-bind:id="$id('form-field')" value="Новое событие Флагманы Образования")
+      if view === 'datetime'
+        .form-settings__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
+          +form-field()(x-bind:id="$id('form-field')")
+        .form-settings__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
+          +form-field()(x-bind:id="$id('form-field')")
+
+      .form-settings__footer
+        if view === 'common'
+          +btn({ content: 'Далее' }).btn-primary(type="submit")
+        if view === 'datetime'
+          +btn({ content: 'Сохранить' }).btn-primary(type="submit")

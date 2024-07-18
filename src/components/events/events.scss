@@ -1,6 +1,5 @@
 .events__action-add {
-  display: flex;
-  flex-flow: column;
+  display: block;
   container-type: inline-size;
 }
 
@@ -10,11 +9,11 @@
 
   position: relative;
   display: flex;
-  flex: 1 0 calc(217 / 1073 * 100cqi);
   flex-flow: column;
   gap: 8rem 12rem;
   align-items: center;
   justify-content: center;
+  height: calc(217 / 1073 * 100cqi);
   padding: 12rem;
   color: var(--gray-5);
   border-radius: calc(15 / 1073 * 100%) / calc(15 / 217 * 100%);

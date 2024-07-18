@@ -13,14 +13,9 @@
   --bg: var(--secondary);
   --hover-bg: var(--secondary);
 
+  display: flex;
+  flex-flow: column;
   container-type: inline-size;
-  background: var(--bg);
-  border-radius: 8rem;
-  transition: background-color var(--transition);
-
-  @include hover {
-    background: var(--hover-bg);
-  }
 
   &--student {
     --bg: var(--accent);
@@ -55,7 +50,13 @@
   flex: 1;
   flex-flow: column;
   padding: 64rem 12rem 56rem;
-  border-radius: inherit;
+  background: var(--bg);
+  border-radius: 8rem;
+  transition: background-color var(--transition);
+
+  @include hover {
+    background: var(--hover-bg);
+  }
 
   @container (width > 253rem) {
     padding-top: 30rem;

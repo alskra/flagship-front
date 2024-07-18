@@ -1,14 +1,23 @@
 .form-settings {
-  display: flex;
-  flex-flow: column;
+  container-type: inline-size;
+
+  &--max-width {
+    max-width: 488rem;
+  }
 }
 
-.form-settings__row {
+.form-settings__body {
   display: flex;
   flex-flow: column;
+  gap: 28rem;
 }
 
-.form-settings__field {
-  display: block;
-  width: 100%;
+.form-settings__group {
+  display: flex;
+  flex-flow: column;
+  gap: 8rem;
+}
+
+.form-settings__footer {
+  margin-top: 8rem;
 }
