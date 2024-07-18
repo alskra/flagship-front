@@ -2,6 +2,9 @@ extends /pug/base
 
 include /components/header/header
 include /components/footer/footer
+include /components/aside/aside
+include /components/user-info/user-info
+include /components/target-groups/target-groups
 
 append variables
   -
@@ -13,33 +16,15 @@ block app
   main.app__main(x-bind="appMain")
     .container.grid-12.app__main-container
       .col-span-3-min-lg.app__main-aside
-        aside.aside
-          .aside__body
-            block aside
-              .user
-                +content().user__content
-                  .h5 Иванов Иван
-                  .p
-                    a(href="mailto:ivanov@mail.ru") ivanov@mail.ru
+        +aside()
+          block aside
+            +user-info()
 
-              nav.aside__nav
-                a.aside__nav-item(href="") Пользователи
-                a.aside__nav-item(href="") Настройки
+            nav.aside__nav
+              a.aside__nav-item(href="") Пользователи
+              a.aside__nav-item(href="") Настройки
 
       .col-span-12.col-span-9-min-lg.col-span-7-min-xl.col-start-5-min-xl.app__main-body
         block main
           h1.h3.content Целевые группы
-
-          .target-groups
-            a.target-groups__item.target-groups__item--student(href="")
-              .target-groups__item-body
-                .target-groups__item-icon
-                .target-groups__item-title Студент
-            a.target-groups__item.target-groups__item--teacher(href="")
-              .target-groups__item-body
-                .target-groups__item-icon
-                .target-groups__item-title Педагог
-            a.target-groups__item.target-groups__item--manager(href="")
-              .target-groups__item-body
-                .target-groups__item-icon
-                .target-groups__item-title Управленец
+          +target-groups()

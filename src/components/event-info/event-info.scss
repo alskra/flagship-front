@@ -4,8 +4,27 @@
   }
 }
 
-.user__content {
+.event-info__content {
   --h5-spacing-top: 8rem;
   --h5-spacing-bottom: 8rem;
   --p-spacing: 6rem;
+}
+
+.event-info__badges {
+  display: flex;
+  gap: 8rem;
+
+  :has(+ &) {
+    margin-bottom: 12rem;
+  }
+}
+
+.event-info__badge {
+  padding: 1.125rem 22rem;
+  font-size: 15rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--white);
+  background: var(--gray-2);
+  border-radius: 19rem;
 }

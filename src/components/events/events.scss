@@ -1,5 +1,6 @@
 .events__action-add {
-  display: block;
+  display: flex;
+  flex-flow: column;
   container-type: inline-size;
 }
 
@@ -9,18 +10,17 @@
 
   position: relative;
   display: flex;
+  flex: 1 0 calc(217 / 1073 * 100cqi);
   flex-flow: column;
   gap: 8rem 12rem;
   align-items: center;
   justify-content: center;
-  height: calc(217 / 1073 * 100cqi);
   padding: 12rem;
   color: var(--gray-5);
   border-radius: calc(15 / 1073 * 100%) / calc(15 / 217 * 100%);
   transition: color var(--transition);
 
   @include hover {
-    // --fill: var(--secondary);
     --stroke: var(--primary);
 
     color: var(--primary);

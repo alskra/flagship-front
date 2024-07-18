@@ -1,9 +1,0 @@
-mixin breadcrumb(arr)
-  nav.breadcrumb&attributes(attributes)
-    a.breadcrumb__item(href="/") На главную
-    each item, index in arr
-      if index !== arr.length - 1
-        span.breadcrumb__item
-          a(href=item.url)!= item.title
-      else
-        span.breadcrumb__item!= item.title

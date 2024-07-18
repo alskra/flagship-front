@@ -1,15 +1,13 @@
 extends /pages/index/index
 
+include /components/event-info/event-info
+
 append variables
   -
     title = `${projectName} - ${store.getPage('event-settings').title}`;
 
 block aside
-  .event-info
-    +content().event-info__content
-      .h5 Название события
-      .event-info__badges
-        .event-info__badge Черновик
+  +event-info()
 
   nav.aside__nav
     a.aside__nav-item.is-current(href="") Общие настройки
