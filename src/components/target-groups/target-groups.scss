@@ -11,7 +11,7 @@
 
 .target-groups__item {
   --bg: var(--secondary);
-  --hover-bg: var(--secondary);
+  --hover-bg: var(--gray);
 
   display: flex;
   flex-flow: column;
@@ -38,12 +38,13 @@
   flex: 1;
   flex-flow: column;
   padding: 64rem 12rem 56rem;
-  background: var(--bg);
+  color: var(--bg);
+  background: currentcolor;
   border-radius: 8rem;
-  transition: background-color var(--transition);
+  transition: color var(--transition);
 
   @include hover {
-    --bg: var(--hover-bg);
+    color: var(--hover-bg);
   }
 
   @container (width > 253rem) {
@@ -55,13 +56,8 @@
 .target-groups__item-icon {
   --width: 59.2rem;
   --height: auto;
-  --bg: inherit;
-  --transition: background-color var(--transition);
 
-  // display: flex;
   flex-shrink: 0;
-  // align-items: center;
-  // justify-content: center;
   width: 74rem;
   aspect-ratio: 1;
   margin: 0 auto;
