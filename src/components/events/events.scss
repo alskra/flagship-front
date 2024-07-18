@@ -1,0 +1,64 @@
+.events__action-add {
+  display: block;
+  container-type: inline-size;
+}
+
+.events__action-add-body {
+  --fill: var(--gray-3);
+  --stroke: var(--gray-4);
+
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  gap: 8rem 12rem;
+  align-items: center;
+  justify-content: center;
+  height: calc(217 / 1073 * 100cqi);
+  padding: 12rem;
+  color: var(--gray-5);
+  border-radius: calc(15 / 1073 * 100%) / calc(15 / 217 * 100%);
+  transition: color var(--transition);
+
+  @include hover {
+    // --fill: var(--secondary);
+    --stroke: var(--primary);
+
+    color: var(--primary);
+  }
+
+  @container (width < 500px) {
+    flex-flow: row;
+  }
+}
+
+.events__action-add-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  fill: var(--fill);
+  stroke: var(--stroke);
+  transition: var(--transition);
+  transition-property: fill, stroke;
+}
+
+.events__action-add-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: 34rem;
+  aspect-ratio: 1;
+  padding-bottom: 2rem;
+  font-size: 28rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+  background: var(--primary);
+  border-radius: 8rem;
+}
+
+.events__action-add-content {
+  font-size: 18rem;
+  font-weight: 600;
+}

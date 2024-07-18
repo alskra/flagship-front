@@ -37,3 +37,14 @@
 .app__main-container {
   flex: 1;
 }
+
+.app__main-col-1 {
+  @media (--max-lg) {
+    position: absolute;
+  }
+}
+
+.app__main-col-2 {
+  position: relative;
+  z-index: 0;
+}

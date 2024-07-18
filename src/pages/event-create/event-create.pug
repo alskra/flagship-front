@@ -1,8 +1,11 @@
 extends /pages/index/index
 
+include /components/events/events
+
 append variables
   -
     title = `${projectName} - ${store.getPage('event-create').title}`;
 
 block main
   h1.h3.content Список событий
+  +events()

@@ -2,12 +2,6 @@
   --aside_-_width: 270px;
 }
 
-.aside-box {
-  @media (--max-lg) {
-    position: absolute;
-  }
-}
-
 .aside {
   position: sticky;
   top: var(--header_-_height);
