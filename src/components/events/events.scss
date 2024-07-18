@@ -6,6 +6,7 @@
 .events__action-add-body {
   --fill: var(--gray-3);
   --stroke: var(--gray-4);
+  --icon-bg: var(--primary);
 
   position: relative;
   display: flex;
@@ -17,12 +18,10 @@
   padding: 12rem;
   color: var(--gray-5);
   border-radius: calc(15 / 1073 * 100%) / calc(15 / 217 * 100%);
-  transition: color var(--transition);
 
   @include hover {
     --stroke: var(--primary);
-
-    color: var(--primary);
+    --icon-bg: var(--primary-dark);
   }
 
   @container (width < 500px) {
@@ -48,13 +47,14 @@
   justify-content: center;
   height: 34rem;
   aspect-ratio: 1;
-  padding-bottom: 1.8rem;
-  font-size: 28rem;
-  font-weight: 600;
-  line-height: 1;
   color: var(--white);
-  background: var(--primary);
+  background: var(--icon-bg);
   border-radius: 8rem;
+  transition: background-color var(--transition);
+
+  icon-svg {
+    height: 13rem;
+  }
 }
 
 .events__action-add-content {
