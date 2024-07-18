@@ -5,7 +5,7 @@ mixin btn({ tag = 'button', content, icons = [] } = {})
   )&attributes(attributes)
     if icons.length
       each icon in icons
-        span.btn__icon-box: icon-svg.btn__icon(name=icon)
+        icon-svg.btn__icon(name=icon)
     if content
       span.btn__content!= content
     block

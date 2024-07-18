@@ -1,8 +1,7 @@
 :host {
-  --width: auto;
-  --height: 1em;
-  --fill: currentcolor;
-  --transition: none;
+  --icon-width: auto;
+  --icon-height: 1em;
+  --icon-transition: none;
 
   display: inline-flex;
   align-items: center;
@@ -12,12 +11,9 @@
 
 svg {
   display: block;
-  width: var(--width);
-  height: var(--height);
+  width: var(--icon-width);
+  height: var(--icon-height);
   pointer-events: none;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  fill: var(--fill);
-  transition: var(--transition);
+  fill: currentcolor;
+  transition: var(--icon-transition);
 }

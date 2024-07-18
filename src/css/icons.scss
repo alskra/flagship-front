@@ -16,11 +16,10 @@ $icons-set:
 }
 
 .icon {
-  --width: auto;
-  --height: 1em;
-  --aspect-ratio: 1;
-  --bg: currentcolor;
-  --transition: none;
+  --icon-width: auto;
+  --icon-height: 1em;
+  --icon-aspect-ratio: 1;
+  --icon-transition: none;
 
   display: inline-flex;
   align-items: center;
@@ -29,16 +28,16 @@ $icons-set:
 
   &::before {
     display: block;
-    width: var(--width);
-    height: var(--height);
-    aspect-ratio: var(--aspect-ratio);
+    width: var(--icon-width);
+    height: var(--icon-height);
+    aspect-ratio: var(--icon-aspect-ratio);
     pointer-events: none;
     content: "";
-    background: var(--bg);
+    background: currentcolor;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
-    transition: var(--transition);
+    transition: var(--icon-transition);
   }
 }
 

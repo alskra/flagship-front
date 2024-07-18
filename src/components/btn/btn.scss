@@ -9,6 +9,8 @@
   --border-width: 0px;
   --icon-box-width: auto;
   --icon-height: var(--content-height);
+  --hover-color: var(--color);
+  --hover-bg: var(--bg);
 
   display: inline-flex;
   column-gap: 8rem;
@@ -32,23 +34,26 @@
   transition: var(--transition);
   transition-property: color, background-color, border-color, box-shadow;
 
+  @include hover-not-disabled {
+    color: var(--hover-color);
+    background: var(--hover-bg);
+  }
+
   &:--disabled {
     pointer-events: none;
     cursor: default;
   }
 }
 
-.btn__icon-box {
+.btn__icon {
+  --icon-height: inherit;
+
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: var(--icon-box-width);
   height: var(--content-height);
-}
-
-.btn__icon {
-  height: var(--icon-height);
 }
 
 .btn__content {
@@ -63,10 +68,7 @@
   --font-weight: 700;
   --color: var(--white);
   --bg: var(--primary);
+  --hover-bg: var(--primary-dark);
 
   border-radius: 8rem;
-
-  @include hover-not-disabled {
-    --bg: var(--primary-dark);
-  }
 }
