@@ -17,8 +17,11 @@ mixin events
             th: span Ссылка на этапы
             th(colspan="3"): span Действия
         tbody
-          tr
-            td: span badge
+          tr(
+            data-target-group="student"
+            data-datetime="2024-07-19T12:00Z"
+          )
+            td: span student
             td: span Новое событие Флагманы Образования
             td: span 19.07.2024
             td: a(href="") зарегистрироваться
@@ -27,8 +30,11 @@ mixin events
             td: a(href="") Edit
             td: a(href="") Del
 
-          tr
-            td: span badge
+          tr(
+            data-target-group="teacher"
+            data-datetime="2024-07-18T12:00Z"
+          )
+            td: span teacher
             td: span Новое событие Флагманы Образования
             td: span 19.07.2024
             td: a(href="") зарегистрироваться
@@ -37,8 +43,11 @@ mixin events
             td: a(href="") Edit
             td: a(href="") Del
 
-          tr
-            td: span badge
+          tr(
+            data-target-group="manager"
+            data-datetime="2024-07-17T12:00Z"
+          )
+            td: span manager
             td: span Новое событие Флагманы Образования
             td: span 19.07.2024
             td: a(href="") зарегистрироваться

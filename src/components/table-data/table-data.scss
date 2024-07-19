@@ -48,5 +48,21 @@
     thead tr:first-child th:last-child {
       background: var(--accent);
     }
+
+    tbody td:first-child {
+      color: var(--white);
+    }
+
+    tbody tr[data-target-group="student"] td:first-child {
+      background: var(--accent);
+    }
+
+    tbody tr[data-target-group="teacher"] td:first-child {
+      background: var(--primary);
+    }
+
+    tbody tr[data-target-group="manager"] td:first-child {
+      background: var(--tertiary);
+    }
   }
 }
