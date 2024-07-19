@@ -37,6 +37,6 @@ mixin form-settings(view = 'common')
 
       .form-settings__footer
         if view === 'common'
-          +btn({ content: 'Далее' }).btn-primary(type="submit")
+          +btn({ content: 'Далее' }).btn-primary.w-208(type="submit")
         if view === 'datetime'
-          +btn({ content: 'Сохранить' }).btn-primary(type="submit")
+          +btn({ content: 'Сохранить' }).btn-primary.w-208(type="submit")

@@ -43,6 +43,14 @@
     pointer-events: none;
     cursor: default;
   }
+
+  &.wrap {
+    white-space: normal;
+  }
+
+  &.w-208 {
+    --width: 208rem;
+  }
 }
 
 .btn__icon {
@@ -62,7 +70,6 @@
 }
 
 .btn-primary {
-  --width: 208rem;
   --height: 40rem;
   --padding-x: 16rem;
   --font-weight: 700;
@@ -71,6 +78,23 @@
   --hover-bg: var(--primary-dark);
 
   border-radius: 8rem;
+}
+
+.btn-accent {
+  --height: 40rem;
+  --padding-x: 16rem;
+  --font-weight: 700;
+  --color: var(--white);
+  --bg: var(--accent);
+  --hover-bg: var(--accent-dark);
+
+  border-radius: 8rem;
+
+  &.size-lg {
+    --height: 67rem;
+    --padding-x: 32rem;
+    --font-size: 20rem;
+  }
 }
 
 .btn-action {
