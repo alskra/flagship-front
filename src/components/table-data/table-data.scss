@@ -1,9 +1,14 @@
+:root {
+  --table-data_-_border-spacing: 7rem;
+}
+
 .table-data {
   display: table;
-  width: 100%;
+  width: calc(100% + 2 * var(--table-data_-_border-spacing));
+  margin: negate(var(--table-data_-_border-spacing));
   text-align: center;
   cursor: default;
-  border-spacing: 7rem;
+  border-spacing: var(--table-data_-_border-spacing);
 
   thead {
     position: sticky;
@@ -69,8 +74,16 @@
     text-decoration: underline;
   }
 
-  .table-responsive:has(> &) {
-    max-height: calc(100vh - var(--header_-_height) - var(--app__main_-_padding-top) - var(--app__main_-_padding-bottom));
+  .table-responsive:has(&) {
+    max-height: calc(100vh - var(--header_-_height) - var(--app__main_-_padding-top) - var(--app__main_-_padding-bottom) + 2 * var(--table-data_-_border-spacing));
+  }
+
+  .overflow-clip:has(&) {
+    &::before,
+    &::after {
+      display: table;
+      content: "";
+    }
   }
 
   &--events {
