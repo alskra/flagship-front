@@ -1,9 +1,10 @@
-mixin header
+mixin header(aside = true)
   header.header(x-data="header")&attributes(attributes)
     .container.grid-12.header__container
       .col-span-3.col-span-6-max-lg
-        +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
-        a.header__logo(href="index.html")
+        if aside
+          +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
+        a.header__logo(href="guide.html")
           img(
             src="~@images/logo.png?as=webp"
             srcset="~@images/logo@1.5x.png?as=webp 1.5x, ~@images/logo@2x.png?as=webp 2x"

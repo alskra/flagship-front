@@ -62,7 +62,10 @@
 
   @media (--max-lg) {
     height: 36rem;
-    margin-left: calc(var(--header_-_height) - var(--container-padding) + 10rem);
+
+    &:is(.header__btn-menu + *) {
+      margin-left: calc(var(--header_-_height) - var(--container-padding) + 10rem);
+    }
   }
 }
 

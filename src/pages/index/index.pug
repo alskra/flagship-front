@@ -9,22 +9,26 @@ include /components/target-groups/target-groups
 append variables
   -
     url = 'index';
+    let aside = true;
 
 block app
-  +header()
+  +header(aside)
 
   main.app__main(x-bind="appMain")
     .container.grid-12.app__main-container
-      .col-span-3-min-lg.app__main-aside
-        +aside()
-          block aside
-            +user-info()
+      if aside
+        .col-span-3-min-lg.app__main-aside
+          +aside()
+            block aside
+              +user-info()
 
-            nav.aside__nav
-              a.aside__nav-item(href="") Пользователи
-              a.aside__nav-item(href="") Настройки
+              nav.aside__nav
+                a.aside__nav-item(href="") Пользователи
+                a.aside__nav-item(href="") Настройки
 
-      .col-span-12.col-span-9-min-lg.col-span-7-min-xl.col-start-5-min-xl.app__main-body
+      .col-span-12(
+        class=aside ? ['col-span-9-min-lg', 'col-span-7-min-xl', 'col-start-5-min-xl', 'app__main-body'] : 'app__main-body'
+      )
         block main
           h1.h3.content Целевые группы
           +target-groups()
