@@ -4,7 +4,7 @@ import './table-data.scss';
 Alpine.data('tableData', () => ({
   data: null,
   sortBy: null,
-  reverse: false,
+  sortOrder: 1,
   doSort() {
     this.data.sort((a, b) => {
       let a1;
@@ -20,11 +20,9 @@ Alpine.data('tableData', () => ({
         b1 = new Date(b.dataset[this.sortBy]);
       }
 
-      return a1 - b1;
+      return this.sortOrder * (a1 - b1);
     });
 
-    // eslint-disable-next-line no-console
-    console.log(this.data);
     this.$refs.body.innerHTML = '';
     this.$refs.body.append(...this.data);
   },
@@ -33,9 +31,15 @@ Alpine.data('tableData', () => ({
   },
   sortBtn: {
     '@click'() {
-      this.sortBy = this.$event.currentTarget.dataset.sort;
-      // eslint-disable-next-line no-console
-      console.log(this.sortBy);
+      const sortBy = this.$event.currentTarget.dataset.sort;
+
+      if (this.sortBy === sortBy) {
+        this.sortOrder = -this.sortOrder;
+      } else {
+        this.sortOrder = 1;
+      }
+
+      this.sortBy = sortBy;
       this.doSort();
     },
   },
