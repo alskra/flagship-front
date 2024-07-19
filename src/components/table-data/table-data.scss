@@ -2,6 +2,7 @@
   display: table;
   width: 100%;
   text-align: center;
+  cursor: default;
   border-spacing: 7rem;
 
   thead tr {
@@ -25,19 +26,33 @@
   }
 
   tbody tr {
+    --hover-td-bg: none;
+
     background: var(--secondary);
     transition: var(--transition);
     transition-property: color, background-color;
 
     @include hover {
       background: var(--secondary-dark);
+
+      td {
+        background: var(--hover-td-bg);
+      }
+
+      .table-data__target-group {
+        color: var(--hover-td-bg);
+      }
     }
   }
 
   td {
+    --bg: none;
+
     padding: 8rem 16rem;
     font-size: 12rem;
     line-height: calc(16 / 12);
+    background: var(--bg);
+    transition: inherit;
   }
 
   a {
@@ -54,15 +69,30 @@
     }
 
     tbody tr[data-target-group="student"] td:first-child {
-      background: var(--accent);
+      --bg: var(--accent);
+      --hover-td-bg: var(--accent-dark);
     }
 
     tbody tr[data-target-group="teacher"] td:first-child {
-      background: var(--primary);
+      --bg: var(--primary);
+      --hover-td-bg: var(--primary-dark);
     }
 
     tbody tr[data-target-group="manager"] td:first-child {
-      background: var(--tertiary);
+      --bg: var(--tertiary);
+      --hover-td-bg: var(--tertiary-dark);
     }
   }
+}
+
+.table-data__target-group {
+  --icon-width: 24rem;
+  --icon-height: auto;
+
+  width: 30rem;
+  aspect-ratio: 1;
+  color: var(--bg);
+  background: var(--white);
+  border-radius: 50%;
+  transition: inherit;
 }
