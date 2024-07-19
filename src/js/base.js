@@ -26,4 +26,4 @@ import '@components/text-style/text-style';
 import '@components/block-style/block-style';
 
 // eslint-disable-next-line import/prefer-default-export
-export const viewport = new Viewport();
+export const viewport = new Viewport({ vhProperty: false });

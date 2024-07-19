@@ -22,14 +22,11 @@ export default class Viewport {
     this.html.style.setProperty('--vh', `${window.innerHeight / 100}px`);
   }
 
-  setSizesProperties(contentSizes) {
-    let contentWidth;
-
-    if (contentSizes) {
-      contentWidth = contentSizes.inlineSize || contentSizes.width;
-    } else {
+  setSizesProperties(contentWidth) {
+    if (!contentWidth) {
       const style = getComputedStyle(this.body);
 
+      // eslint-disable-next-line no-param-reassign
       contentWidth = this.body.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
     }
 
@@ -62,13 +59,16 @@ export default class Viewport {
 
       this.resizeObserver = new ResizeObserver((entries) => {
         entries.forEach((entry) => {
-          // eslint-disable-next-line no-nested-ternary
-          const contentSizes = entry.contentBoxSize
-            ? entry.contentBoxSize[0] ? entry.contentBoxSize[0] : entry.contentBoxSize
-            : entry.contentRect;
+          // eslint-disable-next-line no-console
+          console.log(entry.contentBoxSize[0].inlineSize);
+
+          let contentWidth = entry.contentBoxSize && (entry.contentBoxSize[0] || entry.contentBoxSize);
+
+          contentWidth = contentWidth || entry.contentRect;
+          contentWidth = contentWidth.inlineSize || contentWidth.width;
 
           if (entry.target === this.body) {
-            this.setSizesProperties(contentSizes);
+            this.setSizesProperties(contentWidth);
           }
         });
       });
