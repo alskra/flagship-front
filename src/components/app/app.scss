@@ -1,6 +1,6 @@
 :root {
   --app__main_-_padding-top: 60rem;
-  --app__main_-_padding-bottom: 40rem;
+  --app__main_-_padding-bottom: 60rem;
 }
 
 .app {
@@ -47,4 +47,6 @@
 .app__main-body {
   position: relative;
   z-index: 0;
+  display: flex;
+  flex-flow: column;
 }
