@@ -59,9 +59,6 @@ export default class Viewport {
 
       this.resizeObserver = new ResizeObserver((entries) => {
         entries.forEach((entry) => {
-          // eslint-disable-next-line no-console
-          console.log(entry.contentBoxSize[0].inlineSize);
-
           let contentWidth = entry.contentBoxSize && (entry.contentBoxSize[0] || entry.contentBoxSize);
 
           contentWidth = contentWidth || entry.contentRect;
