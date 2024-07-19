@@ -17,7 +17,7 @@ mixin events
             th: span Ссылка на этапы
             th(colspan="3"): span Действия
         tbody
-          each i in Array(3)
+          each i in Array(10)
             tr(
               data-target-group="student"
               data-datetime="2024-07-19T12:00Z"
@@ -27,9 +27,9 @@ mixin events
               td: span 19.07.2024
               td: a(href="") зарегистрироваться
               td: a(href="") этапы
-              td: a(href="") QR
-              td: a(href="") Edit
-              td: a(href="") Del
+              td: +btn({tag: 'a', icons: ['qr']}).btn-action(title="QR-код")
+              td: +btn({tag: 'a', icons: ['edit']}).btn-action(title="Редактировать")
+              td: +btn({tag: 'a', icons: ['remove']}).btn-action(title="Удалить")
 
             tr(
               data-target-group="teacher"
@@ -41,8 +41,8 @@ mixin events
               td: a(href="") зарегистрироваться
               td: a(href="") этапы
               td: +btn({ tag: 'a', icons: ['qr'] }).btn-action(title="QR-код")
-              td: a(href="") Edit
-              td: a(href="") Del
+              td: +btn({ tag: 'a', icons: ['edit'] }).btn-action(title="Редактировать")
+              td: +btn({ tag: 'a', icons: ['remove'] }).btn-action(title="Удалить")
 
             tr(
               data-target-group="manager"
@@ -53,6 +53,6 @@ mixin events
               td: span 20.07.2024
               td: a(href="") зарегистрироваться
               td: a(href="") этапы
-              td: a(href="") QR
-              td: a(href="") Edit
-              td: a(href="") Del
+              td: +btn({tag: 'a', icons: ['qr']}).btn-action(title="QR-код")
+              td: +btn({tag: 'a', icons: ['edit']}).btn-action(title="Редактировать")
+              td: +btn({tag: 'a', icons: ['remove']}).btn-action(title="Удалить")

@@ -82,4 +82,10 @@
   --hover-color: var(--primary-dark);
 
   border-radius: 50%;
+
+  &:has([name="remove"]) {
+    --color: var(--accent);
+    --icon-height: 13rem;
+    --hover-color: var(--accent-dark);
+  }
 }
