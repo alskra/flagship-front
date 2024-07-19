@@ -85,6 +85,10 @@
   }
 }
 
+.table-data__filter {
+  cursor: pointer;
+}
+
 .table-data__target-group {
   --icon-width: 24rem;
   --icon-height: auto;
