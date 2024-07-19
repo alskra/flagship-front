@@ -50,6 +50,7 @@ $colors: (
 $primary: #00A9D7;
 $primary-dark: color.mix(black, $primary, 15%);
 $secondary: $foam;
+$secondary-dark: color.mix(black, $secondary, 15%);
 // Additional
 $tertiary: $endeavour;
 $tertiary-dark: color.mix(black, $tertiary, 15%);
@@ -59,6 +60,7 @@ $accent-dark: color.mix(black, $accent, 15%);
 $primary: #0D6EFD !default;
 $primary-dark: color.mix(black, $primary, 20%) !default;
 $secondary: #6C757D !default;
+$secondary-dark: color.mix(black, $secondary, 20%) !default;
 $success: #198754 !default;
 $info: #0DCAF0 !default;
 $warning: #FFC107 !default;
@@ -69,6 +71,7 @@ $theme-colors: (
   "primary": $primary,
   "primary-dark": $primary-dark,
   "secondary": $secondary,
+  "secondary-dark": $secondary-dark,
   "success": $success,
   "info": $info,
   "warning": $warning,
