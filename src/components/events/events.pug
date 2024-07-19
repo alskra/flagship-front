@@ -1,3 +1,5 @@
+include /components/table-data/table-data
+
 mixin events
   .events&attributes(attributes)
     a.events__action-add(href="")
@@ -6,53 +8,4 @@ mixin events
         icon-svg.events__action-add-icon(name="plus")
         .events__action-add-content Добавить событие
 
-    .table-responsive
-      table.table-data.table-data--events
-        thead
-          tr
-            th.table-data__filter: span Группа
-            th: span Название события
-            th.table-data__filter: span Дата
-            th: span Ссылка на регистрацию
-            th: span Ссылка на этапы
-            th(colspan="3"): span Действия
-        tbody
-          each i in Array(10)
-            tr(
-              data-target-group="student"
-              data-datetime="2024-07-19T12:00Z"
-            )
-              td: span.icon.icon-student.table-data__target-group
-              td: span Новое событие Флагманы Образования
-              td: span 19.07.2024
-              td: a(href="") зарегистрироваться
-              td: a(href="") этапы
-              td: +btn({tag: 'a', icons: ['qr']}).btn-action(title="QR-код")
-              td: +btn({tag: 'a', icons: ['edit']}).btn-action(title="Редактировать")
-              td: +btn({tag: 'a', icons: ['remove']}).btn-action(title="Удалить")
-
-            tr(
-              data-target-group="teacher"
-              data-datetime="2024-07-18T12:00Z"
-            )
-              td: span.icon.icon-teacher.table-data__target-group
-              td: span Новое событие Флагманы Образования
-              td: span 18.07.2024
-              td: a(href="") зарегистрироваться
-              td: a(href="") этапы
-              td: +btn({ tag: 'a', icons: ['qr'] }).btn-action(title="QR-код")
-              td: +btn({ tag: 'a', icons: ['edit'] }).btn-action(title="Редактировать")
-              td: +btn({ tag: 'a', icons: ['remove'] }).btn-action(title="Удалить")
-
-            tr(
-              data-target-group="manager"
-              data-datetime="2024-07-20T12:00Z"
-            )
-              td: span.icon.icon-manager.table-data__target-group
-              td: span Новое событие Флагманы Образования
-              td: span 20.07.2024
-              td: a(href="") зарегистрироваться
-              td: a(href="") этапы
-              td: +btn({tag: 'a', icons: ['qr']}).btn-action(title="QR-код")
-              td: +btn({tag: 'a', icons: ['edit']}).btn-action(title="Редактировать")
-              td: +btn({tag: 'a', icons: ['remove']}).btn-action(title="Удалить")
+    +table-data()

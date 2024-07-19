@@ -29,6 +29,10 @@
     font-weight: 700;
     line-height: calc(19 / 14);
     color: var(--gray-3);
+
+    &[data-sort] {
+      cursor: pointer;
+    }
   }
 
   tbody tr {
@@ -78,25 +82,21 @@
       color: var(--white);
     }
 
-    tbody tr[data-target-group="student"] td:first-child {
+    tbody tr[data-target-group="1-student"] td:first-child {
       --bg: var(--accent);
       --hover-td-bg: var(--accent-dark);
     }
 
-    tbody tr[data-target-group="teacher"] td:first-child {
+    tbody tr[data-target-group="2-teacher"] td:first-child {
       --bg: var(--primary);
       --hover-td-bg: var(--primary-dark);
     }
 
-    tbody tr[data-target-group="manager"] td:first-child {
+    tbody tr[data-target-group="3-manager"] td:first-child {
       --bg: var(--tertiary);
       --hover-td-bg: var(--tertiary-dark);
     }
   }
-}
-
-.table-data__filter {
-  cursor: pointer;
 }
 
 .table-data__target-group {
