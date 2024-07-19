@@ -30,6 +30,12 @@ Alpine.data('tableData', () => ({
     this.data = Array.from(this.$root.querySelectorAll('tbody tr'));
   },
   sortBtn: {
+    ':class'() {
+      return {
+        'is-active': this.$el.dataset.sort === this.sortBy,
+        'is-reverse': this.sortOrder - 1,
+      };
+    },
     '@click'() {
       const sortBy = this.$event.currentTarget.dataset.sort;
 

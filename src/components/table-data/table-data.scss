@@ -99,6 +99,34 @@
   }
 }
 
+.table-data__sort {
+  --icon-height: 14rem;
+
+  display: inline-flex;
+  gap: 8rem;
+  align-items: center;
+
+  .is-active > & {
+    &::after {
+      margin: 0 2.5rem;
+      content: "";
+      border-right: 4rem solid transparent;
+      border-bottom: 4rem solid;
+      border-left: 4rem solid transparent;
+    }
+
+    icon-svg {
+      display: none;
+    }
+  }
+
+  .is-active.is-reverse > & {
+    &::after {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
 .table-data__target-group {
   --icon-width: 24rem;
   --icon-height: auto;

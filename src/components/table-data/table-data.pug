@@ -10,12 +10,18 @@ mixin table-data(type = 'events')
             th(
               data-sort="targetGroup"
               x-bind="sortBtn"
-            ): span Группа
+            )
+              span.table-data__sort
+                | Группа
+                icon-svg(name="filter")
             th: span Название события
             th(
               data-sort="datetime"
               x-bind="sortBtn"
-            ): span Дата
+            )
+              span.table-data__sort
+                | Дата
+                icon-svg(name="filter")
             th: span Ссылка на регистрацию
             th: span Ссылка на этапы
             th(colspan="3"): span Действия
