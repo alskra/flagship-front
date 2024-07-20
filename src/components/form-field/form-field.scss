@@ -9,17 +9,18 @@
   --color: var(--body-color);
   --bg: var(--gray-3);
   --border-width: 0px;
+  --border-color: transparent;
 
-  display: inline-block;
-  max-width: 100%;
+  display: block;
+  width: 100%;
   padding: var(--padding-y) var(--padding-x);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   color: var(--color);
-  vertical-align: middle;
+  appearance: none;
   background: var(--bg);
-  border: var(--border-width) solid var(--light);
+  border: var(--border-width) solid var(--border-color);
   border-radius: 8rem;
   box-shadow: inset 2px 2px 8.7px rgb(var(--black-rgb) / 15%);
   transition: var(--base-transition);
@@ -36,11 +37,7 @@
     padding-bottom: 0;
   }
 
-  &:where(:not(:blank)) {
-    border-color: var(--dark);
-  }
-
-  &:invalid:where(.validate-active) {
+  &:invalid:where(.validation-on) {
     border-color: var(--danger);
   }
 
