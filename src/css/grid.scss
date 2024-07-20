@@ -51,10 +51,11 @@
   }
 
   @for $size from 1 through $grid-count {
-    .col-size-#{$size}#{$suffix},
-    .col-size-#{$size}#{$suffix}.swiper-slide {
+    .col-size-#{$size}#{$suffix} {
+      --width: calc(#{$size} * var(--col-size) + #{($size - 1)} * var(--grid-gutter));
+
       flex-shrink: 0;
-      width: calc($size * var(--col-size) + ($size - 1) * var(--grid-gutter));
+      width: var(--width);
     }
   }
 

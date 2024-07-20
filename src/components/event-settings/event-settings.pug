@@ -1,11 +1,11 @@
-mixin form-settings(view = 'common')
-  form.form-settings(
-    x-data="formSettings"
+mixin event-settings(view = 'common')
+  form.event-settings(
+    x-data="eventSettings"
     action=""
   )&attributes(attributes)
-    .form-settings__body
+    .event-settings__body
       if view === 'common'
-        .form-settings__group(x-id=['form-field'])
+        .event-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Название события
           +form-field()(
             name="name"
@@ -14,7 +14,7 @@ mixin form-settings(view = 'common')
             value="Новое событие Флагманы Образования"
           )
       if view === 'datetime'
-        .form-settings__group(x-id=['form-field'])
+        .event-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
           +form-field()(
             required
@@ -24,7 +24,7 @@ mixin form-settings(view = 'common')
             type="hidden"
             name="start-date"
           )
-        .form-settings__group(x-id=['form-field'])
+        .event-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
           +form-field()(
             required
@@ -35,7 +35,7 @@ mixin form-settings(view = 'common')
             name="end-date"
           )
 
-      .form-settings__footer
+      .event-settings__footer
         if view === 'common'
           +btn({ content: 'Далее' }).btn--primary.btn--width-208(type="submit")
         if view === 'datetime'

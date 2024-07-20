@@ -1,7 +1,7 @@
 extends /pages/index/index
 
 include /components/event-info/event-info
-include /components/form-settings/form-settings
+include /components/event-settings/event-settings
 
 append variables
   -
@@ -22,4 +22,4 @@ block aside
 
 block main
   h1.h3.content Общие настройки
-  +form-settings()
+  +event-settings()

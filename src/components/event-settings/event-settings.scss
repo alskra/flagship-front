@@ -1,4 +1,4 @@
-.form-settings {
+.event-settings {
   container-type: inline-size;
 
   &--max-width {
@@ -6,18 +6,18 @@
   }
 }
 
-.form-settings__body {
+.event-settings__body {
   display: flex;
   flex-flow: column;
   gap: 28rem;
 }
 
-.form-settings__group {
+.event-settings__group {
   display: flex;
   flex-flow: column;
   gap: 8rem;
 }
 
-.form-settings__footer {
+.event-settings__footer {
   margin-top: 8rem;
 }
