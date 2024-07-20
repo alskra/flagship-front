@@ -42,12 +42,11 @@ class IconSvg extends HTMLElement {
   constructor() {
     super();
 
+    const sheet = new CSSStyleSheet();
+
     this.attachShadow({ mode: 'open' });
-
-    const styleEl = document.createElement('style');
-
-    styleEl.innerHTML = style.toString();
-    this.shadowRoot.append(styleEl);
+    sheet.replaceSync(style);
+    this.shadowRoot.adoptedStyleSheets = [sheet];
     this.svgEl = document.createElement('svg');
     this.shadowRoot.append(this.svgEl);
   }
@@ -61,7 +60,7 @@ class IconSvg extends HTMLElement {
 
     resizeObserver.unobserve(this);
 
-    if (['arrow-left', 'arrow-right'].includes(this.name)) {
+    if ([].includes(this.name)) {
       this.svgViewBoxHeight = +this.svgEl.getAttribute('viewBox').split(/\s+/).pop();
       resizeObserver.observe(this);
     }

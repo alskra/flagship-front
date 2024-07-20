@@ -59,10 +59,9 @@ export default class Viewport {
 
       this.resizeObserver = new ResizeObserver((entries) => {
         entries.forEach((entry) => {
-          let contentWidth = entry.contentBoxSize && (entry.contentBoxSize[0] || entry.contentBoxSize);
+          let contentWidth = (entry.contentBoxSize && entry.contentBoxSize[0]) || entry.contentBoxSize;
 
-          contentWidth = contentWidth || entry.contentRect;
-          contentWidth = contentWidth.inlineSize || contentWidth.width;
+          contentWidth = (contentWidth && contentWidth.inlineSize) || entry.contentRect.width;
 
           if (entry.target === this.body) {
             this.setSizesProperties(contentWidth);
