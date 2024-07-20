@@ -1,8 +1,8 @@
 import Alpine from 'alpinejs';
 
 Alpine.data('lineClamp', () => ({
-  hasClamp: false,
   isClamped: true,
+  hasClamp: false,
   init() {
     this.update();
   },

@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "functions" as *;
+
 @mixin make-grid($suffix: "") {
   .container#{$suffix} {
     width: 100%;

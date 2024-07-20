@@ -1,5 +1,7 @@
 @use "sass:math";
 @use "sass:color";
+@use "variables" as *;
+@use "functions" as *;
 
 // stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
 // Responsive sizes
@@ -9,10 +11,6 @@
   @media (--max-xxl) {
     font-size: max(0.2 / strip-unit($xxl) * 100vw + 0.8px, 14px / 16);
   }
-
-  // @media (--max-lg) {
-  //   font-size: calc(0.3 / strip-unit($lg) * 100vw + 0.7px);
-  // }
 }
 
 // Layout
