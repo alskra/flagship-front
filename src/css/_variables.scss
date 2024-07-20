@@ -89,6 +89,10 @@ $theme-colors: (
 $gradients: (
 );
 
+// Base
+$base-em: 16px;
+$base-vw: $xxl;
+
 // Utilities
 $spacer: 4rem;
 $spacers: 0, px, auto,

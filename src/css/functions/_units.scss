@@ -14,10 +14,10 @@
   @return calc($number * min(var(--vh, 1vh), 1vh));
 }
 
-@function to-em($number, $base: 16) {
+@function to-em($number, $base: strip-unit($base-em)) {
   @return math.div($number, $base) * 1em;
 }
 
-@function to-vw($number, $base: $xxl) {
-  @return math.div($number, strip-unit($base)) * 100vw;
+@function to-vw($number, $base: strip-unit($base-vw)) {
+  @return math.div($number, $base) * 100vw;
 }

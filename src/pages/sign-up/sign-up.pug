@@ -1,0 +1,13 @@
+extends /pages/index/index
+
+include /components/info-box/info-box
+
+append variables
+  -
+    aside = false;
+
+block main
+  .grid-12.my-auto
+    .col-span-12.col-span-10-min-lg.col-start-2-min-lg.col-span-8-min-xl.col-start-3-min-xl
+      +info-box('Регистрация').info-box--sign-up
+
