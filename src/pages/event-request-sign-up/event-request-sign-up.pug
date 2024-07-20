@@ -14,11 +14,6 @@ block main
           .block-heading__event-col-1
             .block-heading__event-title Новое событие Флагманы Образования
           .block-heading__event-col-2
-            img.block-heading__event-gr(
-              src="~@images/QR-Code.png?as=webp"
-              srcset="~@images/QR-Code@1.5x.png?as=webp 1.5x, ~@images/QR-Code@2x.png?as=webp 2x"
-              loading="lazy"
-              alt=""
-            )
+            +img-2x().block-heading__event-gr(src="~@images/QR-Code.png")
           .block-heading__event-col-3
             +btn({content: 'Пожалуйста, зарегистрируйтесь!'}).btn--accent.btn--lg.btn--text-wrap

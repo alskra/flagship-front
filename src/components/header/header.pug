@@ -5,12 +5,7 @@ mixin header(aside = true)
         if aside
           +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
         a.header__logo(href="guide.html")
-          img(
-            src="~@images/logo.png?as=webp"
-            srcset="~@images/logo@1.5x.png?as=webp 1.5x, ~@images/logo@2x.png?as=webp 2x"
-            loading="lazy"
-            alt=""
-          )
+          +img-2x()(src="~@images/logo.png")
       .col-6.header__nav-box
         nav.header__nav(x-bind="nav")
           a.header__nav-item(href="index.html") Главная

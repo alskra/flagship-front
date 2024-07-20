@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "functions/colors" as *;
 
 // Layout
 $xs: 375px;
@@ -48,19 +49,19 @@ $colors: (
 // Theme colors
 // Overwrite
 $primary: #00A9D7;
-$primary-dark: color.mix(black, $primary, 15%);
+$primary-dark: shade-color($primary, 15%);
 $secondary: $foam;
-$secondary-dark: color.mix(black, $secondary, 15%);
+$secondary-dark: shade-color($secondary, 15%);
 // Additional
 $tertiary: $endeavour;
-$tertiary-dark: color.mix(black, $tertiary, 15%);
+$tertiary-dark: shade-color($tertiary, 15%);
 $accent: $persimmon;
-$accent-dark: color.mix(black, $accent, 15%);
+$accent-dark: shade-color($accent, 15%);
 // Default theme colors
 $primary: #0D6EFD !default;
-$primary-dark: color.mix(black, $primary, 20%) !default;
+$primary-dark: shade-color($primary, 20%) !default;
 $secondary: #6C757D !default;
-$secondary-dark: color.mix(black, $secondary, 20%) !default;
+$secondary-dark: shade-color($secondary, 20%) !default;
 $success: #198754 !default;
 $info: #0DCAF0 !default;
 $warning: #FFC107 !default;

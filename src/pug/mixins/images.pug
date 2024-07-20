@@ -1,7 +1,16 @@
-mixin img-2x
+mixin img-2x()
+  -
+    const dppx = [1.5, 2];
+    const src = `${attributes.src}?as=webp`;
+    const srcset = dppx.map((item) => `${src.replace(/\.[\w?=]+$/, `@${item}x$&`)} ${item}x`).join(', ');
+
+    delete attributes.src;
+    delete attributes.srcset;
+
   img(
-    src!=attributes.src
-    srcset!=`${attributes.src.replace(/\.\w+$/, '@2x$&')} 2x`
+    src!=src
+    srcset!=srcset
+    loading="lazy"
     alt=""
   )&attributes(attributes)
 

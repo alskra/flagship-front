@@ -17,7 +17,7 @@ module.exports = [
         outputStyle: 'expanded',
       },
       sourceMap: true,
-      additionalData: `@use "@css/global" as *;
+      additionalData: `@use "@css/env" as *;
 
 $PRODUCTION: ${process.env.NODE_ENV === 'production'};
 `,
