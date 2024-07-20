@@ -30,6 +30,11 @@ requireIcon.keys().forEach((iconPath) => {
   icons[iconName] = requireIcon(iconPath).default || requireIcon(iconPath);
 });
 
+const template = document.createElement('template');
+const styleSheet = new CSSStyleSheet();
+
+styleSheet.replaceSync(style);
+
 class IconSvg extends HTMLElement {
   static get observedAttributes() {
     return ['name'];
@@ -39,25 +44,21 @@ class IconSvg extends HTMLElement {
     return this.getAttribute('name');
   }
 
+  get svgEl() {
+    return this.shadowRoot.querySelector('svg') || document.createElement('svg');
+  }
+
   constructor() {
     super();
 
-    const sheet = new CSSStyleSheet();
-
     this.attachShadow({ mode: 'open' });
-    sheet.replaceSync(style);
-    this.shadowRoot.adoptedStyleSheets = [sheet];
-    this.svgEl = document.createElement('svg');
+    this.shadowRoot.adoptedStyleSheets = [styleSheet];
     this.shadowRoot.append(this.svgEl);
   }
 
   update() {
-    const template = document.createElement('template');
-
     template.innerHTML = icons[this.name];
     this.svgEl.replaceWith(template.content);
-    this.svgEl = this.shadowRoot.lastElementChild;
-
     resizeObserver.unobserve(this);
 
     if ([].includes(this.name)) {
