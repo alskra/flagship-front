@@ -9,18 +9,6 @@ const requireIcon = require.context(
 
 const icons = {};
 
-const resizeObserver = new ResizeObserver((entries) => {
-  entries.forEach((entry) => {
-    const contentBoxSize = (entry.contentBoxSize && entry.contentBoxSize[0]) || entry.contentBoxSize;
-    const iconWidth = (contentBoxSize && contentBoxSize.inlineSize) || entry.contentRect.width;
-    const iconHeight = (contentBoxSize && contentBoxSize.blockSize) || entry.contentRect.height;
-    // eslint-disable-next-line max-len
-    const viewBox = `0 0 ${(iconWidth / (iconHeight || 1)) * entry.target.svgViewBoxHeight} ${entry.target.svgViewBoxHeight}`;
-
-    entry.target.svgEl.setAttribute('viewBox', viewBox);
-  });
-});
-
 requireIcon.keys().forEach((iconPath) => {
   const iconName = iconPath
     .split('/')
@@ -34,6 +22,18 @@ const template = document.createElement('template');
 const styleSheet = new CSSStyleSheet();
 
 styleSheet.replaceSync(style);
+
+const resizeObserver = new ResizeObserver((entries) => {
+  entries.forEach((entry) => {
+    const contentBoxSize = (entry.contentBoxSize && entry.contentBoxSize[0]) || entry.contentBoxSize;
+    const iconWidth = (contentBoxSize && contentBoxSize.inlineSize) || entry.contentRect.width;
+    const iconHeight = (contentBoxSize && contentBoxSize.blockSize) || entry.contentRect.height;
+    // eslint-disable-next-line max-len
+    const viewBox = `0 0 ${(iconWidth / (iconHeight || 1)) * entry.target.svgViewBoxHeight} ${entry.target.svgViewBoxHeight}`;
+
+    entry.target.svgEl.setAttribute('viewBox', viewBox);
+  });
+});
 
 class IconSvg extends HTMLElement {
   static get observedAttributes() {
@@ -59,16 +59,19 @@ class IconSvg extends HTMLElement {
   update() {
     template.innerHTML = icons[this.name];
     this.svgEl.replaceWith(template.content);
-    resizeObserver.unobserve(this);
 
     if ([].includes(this.name)) {
       this.svgViewBoxHeight = +this.svgEl.getAttribute('viewBox').split(/\s+/).pop();
       resizeObserver.observe(this);
+    } else {
+      resizeObserver.unobserve(this);
     }
   }
 
   disconnectedCallback() {
-    resizeObserver.unobserve(this);
+    if ([].includes(this.name)) {
+      resizeObserver.unobserve(this);
+    }
   }
 
   attributeChangedCallback(name) {
