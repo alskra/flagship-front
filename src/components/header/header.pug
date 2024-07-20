@@ -1,7 +1,7 @@
 mixin header(aside = true)
   header.header(x-data="header")&attributes(attributes)
     .container.grid-12.header__container
-      .col-span-3.col-span-6-max-lg
+      .col-3.col-6-max-lg
         if aside
           +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
         a.header__logo(href="guide.html")
@@ -11,11 +11,11 @@ mixin header(aside = true)
             loading="lazy"
             alt=""
           )
-      .col-span-6.header__nav-box
+      .col-6.header__nav-box
         nav.header__nav(x-bind="nav")
           a.header__nav-item(href="index.html") Главная
           a.header__nav-item(href="") Пункт меню 2
           a.header__nav-item(href="") Пункт меню 3
-      .col-span-3.col-span-6-max-lg.header__actions
+      .col-3.col-6-max-lg.header__actions
         +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
         +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent

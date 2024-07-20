@@ -1,13 +1,17 @@
 .info-box {
   --padding-y: 60rem;
   --padding-x: 48rem;
-  --border-radius: 53rem;
+  --border-radius: 50rem;
 
   container-type: inline-size;
 
   &--event {
     max-width: 1130rem;
     margin: 0 auto;
+  }
+
+  &--sign-up {
+    // .
   }
 }
 
@@ -22,7 +26,7 @@
 }
 
 .info-box__header {
-  padding: 18.5rem var(--padding-x);
+  padding: 20rem var(--padding-x) 12rem;
   background: var(--primary);
   border: 3px solid var(--primary);
   border-bottom: 0;

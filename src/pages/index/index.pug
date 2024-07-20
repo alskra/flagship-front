@@ -17,7 +17,7 @@ block app
   main.app__main(x-bind="appMain")
     .container.grid-12.app__main-container
       if aside
-        .col-span-3-min-lg.app__main-aside
+        .col-3-min-lg.app__main-aside
           +aside()
             block aside
               +user-info()
@@ -26,8 +26,8 @@ block app
                 a.aside__nav-item(href="") Пользователи
                 a.aside__nav-item(href="") Настройки
 
-      .col-span-12(
-        class=aside ? ['col-span-9-min-lg', 'col-span-7-min-xl', 'col-start-5-min-xl', 'app__main-body'] : 'app__main-body'
+      .col-12(
+        class=aside ? ['col-9-min-lg', 'col-7-min-xl', 'col-start-5-min-xl', 'app__main-body'] : 'app__main-body'
       )
         block main
           h1.h3.content Целевые группы

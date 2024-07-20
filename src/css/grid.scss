@@ -8,6 +8,7 @@
     // container: container / inline-size;
   }
 
+  // Grid
   @for $size from 1 through $grid-count {
     .grid-#{$size}#{$suffix} {
       display: grid;
@@ -17,13 +18,13 @@
   }
 
   @for $size from 1 through $grid-count {
-    .col-span-#{$size}#{$suffix} {
+    .col-#{$size}#{$suffix} {
       grid-column: span $size / span $size;
     }
   }
 
   // stylelint-disable-next-line order/order
-  .col-span-auto#{$suffix} {
+  .col-auto#{$suffix} {
     grid-column: auto;
   }
 
@@ -37,6 +38,7 @@
     }
   }
 
+  // Flex
   @for $size from 1 through $grid-count {
     .grid-flex-#{$size}#{$suffix} {
       --grid-count: #{$size};
@@ -49,15 +51,15 @@
   }
 
   @for $size from 1 through $grid-count {
-    .col-#{$size}#{$suffix},
-    .col-#{$size}#{$suffix}.swiper-slide {
+    .col-size-#{$size}#{$suffix},
+    .col-size-#{$size}#{$suffix}.swiper-slide {
       flex-shrink: 0;
       width: calc($size * var(--col-size) + ($size - 1) * var(--grid-gutter));
     }
   }
 
   // stylelint-disable-next-line order/order
-  .col-auto#{$suffix} {
+  .col-size-auto#{$suffix} {
     flex-shrink: 0;
     width: auto;
   }
