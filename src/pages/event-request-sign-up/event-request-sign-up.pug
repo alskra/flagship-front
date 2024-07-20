@@ -1,6 +1,6 @@
 extends /pages/index/index
 
-include /components/info-box/info-box
+include /components/block-heading/block-heading
 
 append variables
   -
@@ -9,16 +9,16 @@ append variables
 block main
   .grid-12.my-auto
     .col-12.col-10-min-lg.col-start-2-min-lg.col-8-min-xl.col-start-3-min-xl
-      +info-box('27.06.2024').info-box--event
-        .info-box__event
-          .info-box__event-col-1
-            .info-box__event-title Новое событие Флагманы Образования
-          .info-box__event-col-2
-            img.info-box__event-gr(
+      +block-heading('27.06.2024').block-heading--event
+        .block-heading__event
+          .block-heading__event-col-1
+            .block-heading__event-title Новое событие Флагманы Образования
+          .block-heading__event-col-2
+            img.block-heading__event-gr(
               src="~@images/QR-Code.png?as=webp"
               srcset="~@images/QR-Code@1.5x.png?as=webp 1.5x, ~@images/QR-Code@2x.png?as=webp 2x"
               loading="lazy"
               alt=""
             )
-          .info-box__event-col-3
+          .block-heading__event-col-3
             +btn({content: 'Пожалуйста, зарегистрируйтесь!'}).btn--accent.btn--lg.btn--text-wrap

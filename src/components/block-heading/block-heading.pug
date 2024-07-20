@@ -1,0 +1,7 @@
+mixin block-heading(title = '')
+  .block-heading&attributes(attributes)
+    .block-heading__body
+      .block-heading__header
+        .block-heading__title!= title
+      .block-heading__main
+        block

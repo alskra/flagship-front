@@ -1,4 +1,4 @@
-.info-box {
+.block-heading {
   --padding-y: 60rem;
   --padding-x: 48rem;
   --border-radius: 50rem;
@@ -15,7 +15,7 @@
   }
 }
 
-.info-box__body {
+.block-heading__body {
   display: flex;
   flex-flow: column;
 
@@ -25,7 +25,7 @@
   }
 }
 
-.info-box__header {
+.block-heading__header {
   padding: 20rem var(--padding-x) 12rem;
   background: var(--primary);
   border: 3px solid var(--primary);
@@ -33,7 +33,7 @@
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.info-box__title {
+.block-heading__title {
   font-family: var(--h-font-family);
   font-size: 32rem;
   font-weight: var(--h-font-weight);
@@ -45,7 +45,7 @@
   }
 }
 
-.info-box__main {
+.block-heading__main {
   padding: var(--padding-y) var(--padding-x);
   background: var(--white);
   border: 3px solid var(--primary);
@@ -53,7 +53,7 @@
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
-.info-box__event {
+.block-heading__event {
   display: grid;
   gap: 32rem;
 
@@ -74,17 +74,17 @@
   }
 }
 
-.info-box__event-col-2 {
+.block-heading__event-col-2 {
   @container (width >= 768px) {
     grid-row: span 2;
   }
 }
 
-.info-box__event-col-3 {
+.block-heading__event-col-3 {
   margin-top: auto;
 }
 
-.info-box__event-title {
+.block-heading__event-title {
   font-family: var(--h-font-family);
   font-size: 42rem;
   font-weight: var(--h-font-weight);
@@ -96,7 +96,7 @@
   }
 }
 
-.info-box__event-gr {
+.block-heading__event-gr {
   display: block;
   width: 100%;
 

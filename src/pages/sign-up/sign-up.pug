@@ -1,6 +1,6 @@
 extends /pages/index/index
 
-include /components/info-box/info-box
+include /components/block-heading/block-heading
 
 append variables
   -
@@ -9,5 +9,5 @@ append variables
 block main
   .grid-12.my-auto
     .col-12.col-8-min-md.col-start-3-min-md.col-6-min-lg.col-start-4-min-lg.col-4-min-xl.col-start-5-min-xl
-      +info-box('Регистрация').info-box--sign-up
+      +block-heading('Регистрация').block-heading--sign-up
 
