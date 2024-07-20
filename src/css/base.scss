@@ -6,7 +6,7 @@
 }
 
 :root {
-  scroll-padding-top: var(--scroll-padding-top);
+  scroll-padding-top: var(--root-scroll-padding-top);
 
   &.is-device-desktop {
     ::-webkit-scrollbar {
@@ -27,24 +27,24 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: var(--scroll-behavior);
+    scroll-behavior: var(--root-scroll-behavior);
   }
 }
 
 body {
-  overscroll-behavior: var(--overscroll-behavior);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height);
-  color: var(--color);
+  overscroll-behavior: var(--body-overscroll-behavior);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+  color: var(--body-color);
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   text-decoration-skip: objects;
   text-rendering: optimizelegibility;
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  background: var(--bg);
+  background: var(--body-bg);
 }
 
 h1,
@@ -113,8 +113,8 @@ fieldset {
 }
 
 ::selection {
-  color: var(--selection-color);
-  background: var(--selection-bg);
+  color: var(--body-selection-color);
+  background: var(--body-selection-bg);
 }
 
 /**

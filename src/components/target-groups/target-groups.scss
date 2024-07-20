@@ -41,7 +41,7 @@
   color: var(--bg);
   background: currentcolor;
   border-radius: 8rem;
-  transition: color var(--transition);
+  transition: color var(--base-transition);
 
   @include hover {
     color: var(--hover-bg);

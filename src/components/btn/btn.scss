@@ -5,6 +5,9 @@
   --height: var(--content-height);
   --padding-y: calc(0.5 * (var(--height) - var(--content-height) - 2 * var(--border-width)));
   --padding-x: 0;
+  --font-size: var(--body-font-size);
+  --font-weight: var(--body-font-weight);
+  --color: var(--body-color);
   --bg: none;
   --border-width: 0px;
   --icon-box-width: auto;
@@ -25,13 +28,14 @@
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   color: var(--color);
+  text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background: var(--bg);
   border: var(--border-width);
-  transition: var(--transition);
+  transition: var(--base-transition);
   transition-property: color, background-color, border-color, box-shadow;
 
   @include hover-not-disabled {

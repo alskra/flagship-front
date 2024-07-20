@@ -54,14 +54,24 @@
 
 // Defaults
 :root {
-  --font-family: var(--font-manrope);
-  --font-size: 16rem;
-  --font-weight: 500;
-  --line-height: #{calc(22 / 16)}; // normal: 1.1 - 1.25
-  --color: var(--black);
-  --color-rgb: var(--black-rgb);
-  --bg: var(--white);
-  --bg-rgb: var(--white-rgb);
+  --base-duration: 0.15s;
+  --base-timing-function: ease-in-out;
+  --base-transition: var(--base-duration) var(--base-timing-function);
+
+  --root-scroll-behavior: smooth;
+  --root-scroll-padding-top: calc(var(--header-height) + var(--app__main-padding-top));
+
+  --body-overscroll-behavior: auto;
+  --body-font-family: var(--font-manrope);
+  --body-font-size: 16rem;
+  --body-font-weight: 500;
+  --body-line-height: #{calc(22 / 16)}; // normal: 1.1 - 1.25
+  --body-color: var(--black);
+  --body-color-rgb: var(--black-rgb);
+  --body-bg: var(--white);
+  --body-bg-rgb: var(--white-rgb);
+  --body-selection-color: var(--white);
+  --body-selection-bg: var(--primary);
 
   --h-spacing-top: 1em;
   --h-spacing-bottom: 1em;
@@ -127,15 +137,4 @@
   --link-hover-color: var(--primary-dark);
   --link-hover-color-rgb: var(--primary-dark-rgb);
   --link-hover-decoration: underline;
-
-  --selection-color: var(--white);
-  --selection-bg: var(--primary);
-
-  --transition-duration: 0.15s;
-  --transition-timing-function: ease-in-out;
-  --transition: var(--transition-duration) var(--transition-timing-function);
-
-  --scroll-behavior: smooth;
-  --overscroll-behavior: auto;
-  --scroll-padding-top: calc(var(--header_-_height) + var(--app__main_-_padding-top));
 }

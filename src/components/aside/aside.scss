@@ -1,27 +1,27 @@
 :root {
-  --aside_-_width: 270px;
+  --aside-width: 270px;
 }
 
 .aside {
   position: sticky;
-  top: var(--header_-_height);
+  top: var(--header-height);
   display: flex;
   flex-flow: column;
-  height: calc(100% + var(--app__main_-_padding-top) + var(--app__main_-_padding-bottom));
-  max-height: calc(100vh - var(--header_-_height));
-  margin: negate(var(--app__main_-_padding-top)) 0 negate(var(--app__main_-_padding-bottom)) negate(var(--container-padding));
+  height: calc(100% + var(--app__main-padding-top) + var(--app__main-padding-bottom));
+  max-height: calc(100vh - var(--header-height));
+  margin: negate(var(--app__main-padding-top)) 0 negate(var(--app__main-padding-bottom)) negate(var(--container-padding));
   background: var(--primary);
 
   @media (--max-lg) {
     position: fixed;
-    inset: var(--header_-_height) auto 0 0;
+    inset: var(--header-height) auto 0 0;
     z-index: -1;
-    width: var(--aside_-_width);
+    width: var(--aside-width);
     height: auto;
     max-height: none;
     margin: 0;
     visibility: hidden;
-    transition: visibility 0.25s var(--transition-timing-function);
+    transition: visibility 0.25s var(--base-timing-function);
 
     .is-menu-open & {
       visibility: visible;
@@ -33,13 +33,13 @@
   --padding-x: 30rem;
 
   flex: 1;
-  padding: var(--app__main_-_padding-top) var(--padding-x) var(--app__main_-_padding-bottom);
+  padding: var(--app__main-padding-top) var(--padding-x) var(--app__main-padding-bottom);
   margin-left: calc(107 / 473 * 100%);
   overflow-y: auto;
   background: var(--secondary);
 
   @media (--max-lg) {
-    margin-left: var(--header_-_height);
+    margin-left: var(--header-height);
   }
 }
 
@@ -51,7 +51,7 @@
   display: block;
   padding: 26rem var(--padding-x) 29rem;
   background: var(--white);
-  transition: var(--transition);
+  transition: var(--base-transition);
   transition-property: color, background-color;
 
   @include hover {

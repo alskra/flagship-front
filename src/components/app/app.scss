@@ -1,6 +1,6 @@
 :root {
-  --app__main_-_padding-top: 60rem;
-  --app__main_-_padding-bottom: 60rem;
+  --app__main-padding-top: 60rem;
+  --app__main-padding-bottom: 60rem;
 }
 
 .app {
@@ -19,17 +19,17 @@
   flex: 1;
   flex-flow: column;
   width: 100%;
-  padding: var(--app__main_-_padding-top) 0 var(--app__main_-_padding-bottom);
-  background: image-set(url("~@images/bg.png?as=webp") 1x, url("~@images/bg@2x.png?as=webp") 2x) var(--bg);
+  padding: var(--app__main-padding-top) 0 var(--app__main-padding-bottom);
+  background: image-set(url("~@images/bg.png?as=webp") 1x, url("~@images/bg@2x.png?as=webp") 2x) var(--body-bg);
   background-attachment: fixed;
   background-size: min(735rem, 735px);
 
   @media (--max-lg) {
     box-shadow: -3px 0 5px rgb(var(--black-rgb) / 10%);
-    transition: margin-left 0.25s var(--transition-timing-function);
+    transition: margin-left 0.25s var(--base-timing-function);
 
     &.is-menu-open {
-      margin-left: var(--aside_-_width);
+      margin-left: var(--aside-width);
     }
   }
 }

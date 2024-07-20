@@ -1,8 +1,8 @@
 :root {
-  --header_-_height: 80rem;
+  --header-height: 80rem;
 
   @media (--max-lg) {
-    --header_-_height: 56rem;
+    --header-height: 56rem;
   }
 }
 
@@ -12,7 +12,7 @@
   z-index: 100;
   display: flex;
   flex-flow: column;
-  height: var(--header_-_height);
+  height: var(--header-height);
 }
 
 .header__container {
@@ -64,7 +64,7 @@
     height: 36rem;
 
     &:is(.header__btn-menu + *) {
-      margin-left: calc(var(--header_-_height) - var(--container-padding) + 10rem);
+      margin-left: calc(var(--header-height) - var(--container-padding) + 10rem);
     }
   }
 }
@@ -91,7 +91,7 @@
     scroll-padding: 0 var(--container-padding);
     background: var(--primary);
     box-shadow: 0 3px 4px rgb(var(--black-rgb) / 4%);
-    transition: var(--transition);
+    transition: var(--base-transition);
     transition-property: visibility, transform;
 
     &.is-hidden {
@@ -111,7 +111,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 8rem;
-  transition: var(--transition);
+  transition: var(--base-transition);
   transition-property: color, background-color;
 
   @media (--min-lg) {

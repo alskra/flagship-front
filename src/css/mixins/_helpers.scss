@@ -59,6 +59,9 @@
 }
 
 @mixin line-clamp {
+  --line-height: var(--body-line-height);
+  --line-clamp: 2;
+
   // stylelint-disable
   display: -webkit-box;
   -webkit-box-orient: vertical;

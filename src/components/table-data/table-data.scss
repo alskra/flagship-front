@@ -1,14 +1,14 @@
 :root {
-  --table-data_-_border-spacing: 7rem;
+  --table-data-border-spacing: 7rem;
 }
 
 .table-data {
   display: table;
-  width: calc(100% + 2 * var(--table-data_-_border-spacing));
-  margin: negate(var(--table-data_-_border-spacing));
+  width: calc(100% + 2 * var(--table-data-border-spacing));
+  margin: negate(var(--table-data-border-spacing));
   text-align: center;
   cursor: default;
-  border-spacing: var(--table-data_-_border-spacing);
+  border-spacing: var(--table-data-border-spacing);
 
   thead {
     position: sticky;
@@ -44,7 +44,7 @@
     --hover-td-bg: none;
 
     background: var(--secondary);
-    transition: var(--transition);
+    transition: var(--base-transition);
     transition-property: color, background-color;
 
     @include hover {
@@ -75,7 +75,7 @@
   }
 
   .table-responsive:has(&) {
-    max-height: calc(100vh - var(--header_-_height) - var(--app__main_-_padding-top) - var(--app__main_-_padding-bottom) + 2 * var(--table-data_-_border-spacing));
+    max-height: calc(100vh - var(--header-height) - var(--app__main-padding-top) - var(--app__main-padding-bottom));
   }
 
   .overflow-clip:has(&) {
