@@ -4,21 +4,13 @@ Alpine.store('isDeviceDesktop', document.documentElement.classList.contains('is-
 Alpine.store('minLg', window.innerWidth >= 1025);
 window.addEventListener('resize', () => Alpine.store('minLg', window.innerWidth >= 1025));
 
-let scrollLast = window.scrollY;
+let { scrollY } = window;
 
-const scrollDir = () => {
-  const dir = window.scrollY - scrollLast > 0 ? 1 : -1;
-
-  scrollLast = window.scrollY;
-
-  return dir;
-};
-
-Alpine.store('scrollY', window.scrollY);
-Alpine.store('scrollDir', scrollDir());
+Alpine.store('scrollDir', -1);
+Alpine.store('scrollY', scrollY);
 window.addEventListener('scroll', () => {
-  Alpine.store('scrollY', window.scrollY);
-  Alpine.store('scrollDir', scrollDir());
+  Alpine.store('scrollDir', window.scrollY - scrollY > 0 ? 1 : -1);
+  Alpine.store('scrollY', scrollY = window.scrollY);
 }, { passive: true });
 
 Alpine.store('hash', window.location.hash);
