@@ -6,11 +6,11 @@
 // stylelint-enable scss/operator-no-unspaced
 
 @mixin spacing($top, $bottom: $top) {
-  &:where(:--not-f-c, .content :--not-f-c *) {
+  &:where(:--not-f-c, .content :--not-f-c *, .mt) {
     margin-top: $top;
   }
 
-  &:where(:--not-l-c, .content :--not-l-c *) {
+  &:where(:--not-l-c, .content :--not-l-c *, .mb) {
     margin-bottom: $bottom;
   }
 }
