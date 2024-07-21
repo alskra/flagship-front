@@ -11,26 +11,16 @@ block app
   +header()
 
   main.app__main
-    .container
-      div(style="width: 50%;")
-        .el
-    .el-2
-    .el-3(title="Конкурс среди организаций высшего образования")
+    .container.grid-12
+      .col-8.col-start-3
+        div(x-text="$store.time")
+        div(x-text="$store.formatTime($store.time, true)")
+        div(x-text="$store.formatTime($store.time)")
 
-    div(style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-columns: 1fr; grid-auto-flow: column;")
-      div 1
-      div 2
-      div 3
-
-    .container.grid-12.grid-12-min-lg.grid-max-xl.mb-3_5.mb-8-min-lg
-      .col-1 1
-      .col-2.col-2-min-lg 2
-      .col-3 3
-
-    .container.grid-flex-12.grid-flex-12-min-lg.flex-max-xl
-      .col-size-1 1
-      .col-size-2.col-size-2-min-lg 2
-      .col-size-3 3
+        div(x-data="timer" x-text="formatTime")
+        div(x-data="timer(Date.now() + 15 * 1000)" x-text="formatTime")
+        div(x-data="timer(Date.now() + 1.5 * 60 * 1000)" x-text="formatTime")
+        div(x-data={ endTime: 0 }): div(x-data="timer(endTime)" x-text="formatTime")
 
     .container.guide
       +content()
@@ -85,5 +75,28 @@ block app
 
         button Кнопка
         button(style="border-color: black;") Кнопка
+
+    .container.content.mt-8: h2#containers: code containers
+
+    .container
+      div(style="width: 50%;")
+        .el
+    .el-2
+    .el-3(title="Конкурс среди организаций высшего образования")
+
+    .container(style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-columns: 1fr; grid-auto-flow: column;")
+      div 1
+      div 2
+      div 3
+
+    .container.grid-12.grid-12-min-lg.grid-max-xl.mb-3_5.mb-8-min-lg
+      .col-1 1
+      .col-2.col-2-min-lg 2
+      .col-3 3
+
+    .container.grid-flex-12.grid-flex-12-min-lg.flex-max-xl
+      .col-size-1 1
+      .col-size-2.col-size-2-min-lg 2
+      .col-size-3 3
 
   +footer()

@@ -16,19 +16,20 @@ window.addEventListener('scroll', () => {
 Alpine.store('hash', window.location.hash);
 window.addEventListener('hashchange', () => Alpine.store('hash', window.location.hash));
 
-(function updateDate() {
-  Alpine.store('date', Math.floor(Date.now() / 1000));
+(function updateTime() {
+  Alpine.store('time', Math.floor(Date.now() / 1000));
 
-  requestAnimationFrame(updateDate);
+  requestAnimationFrame(updateTime);
 }());
 
-// Time
+// Datetime
 const MINUTE = 60;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 const MONTH = 30 * DAY;
 const YEAR = 365 * DAY;
+
 Alpine.store('formatTime', (time, full = false) => {
   const years = full && Math.floor(time / YEAR);
   const q = Math.floor(years / 4);

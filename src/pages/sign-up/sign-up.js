@@ -1,3 +1,3 @@
 import '@pages/index/index';
 
-import '@components/block-heading/block-heading.scss';
+import '@components/block-heading/block-heading';
