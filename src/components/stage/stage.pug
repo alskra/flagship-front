@@ -63,5 +63,11 @@ mixin stage(type = 'cabinet')
                 // Показать заполненную таблицу, получив предварительно данные
                 +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(x-on:click="isFilled = true")
 
-          +table-data('tribune-empty')(x-show="!isFilled")
-          +table-data(type)(x-show="isFilled")
+          +table-data('tribune-empty')(
+            x-cloak
+            x-show="!isFilled"
+          )
+          +table-data(type)(
+            x-cloak
+            x-show="isFilled"
+          )
