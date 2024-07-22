@@ -18,8 +18,15 @@ mixin stage(type = 'cabinet')
       )
         if type === 'cabinet'
           .stage__params(x-data="timer")
-            div(x-show="!isStarted")
-              +form-field({ tag: 'select' }).form-field--lg(x-model.number="controlTime")
+            div(
+              x-show="!isStarted"
+              x-id=['form-field']
+            )
+              label.form-label.block.mb-2(x-bind:for="$id('form-field')") Таймер (задать время)
+              +form-field({ tag: 'select' }).form-field--lg(
+                x-bind:id="$id('form-field')"
+                x-model.number="controlTime"
+              )
                 option(value=5 * 1000) 5 сек. тест
                 option(value=5 * 60 * 1000) 5 мин.
                 option(value=15 * 60 * 1000) 15 мин.

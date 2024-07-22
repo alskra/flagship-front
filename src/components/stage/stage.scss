@@ -36,6 +36,7 @@
 .stage__params {
   display: grid;
   gap: var(--table-data-border-spacing);
+  align-items: end;
   margin-bottom: 24rem;
 
   .stage-item--cabinet & {

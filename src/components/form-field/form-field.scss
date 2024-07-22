@@ -35,6 +35,8 @@
     // height: var(--height);
     // padding-top: 0;
     // padding-bottom: 0;
+    padding-right: calc(2 * var(--padding-x) + 15rem);
+    background: url("~@images/icons/svg/angle-down.svg") right 16rem top 50% / 15rem no-repeat var(--bg);
   }
 
   &:invalid:where(.validation-on) {
