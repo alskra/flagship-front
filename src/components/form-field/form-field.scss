@@ -32,9 +32,9 @@
   }
 
   &:where(select) {
-    height: var(--height);
-    padding-top: 0;
-    padding-bottom: 0;
+    // height: var(--height);
+    // padding-top: 0;
+    // padding-bottom: 0;
   }
 
   &:invalid:where(.validation-on) {
@@ -44,5 +44,14 @@
   &:--disabled {
     pointer-events: none;
     cursor: default;
+  }
+
+  &--lg {
+    --height: 48rem;
+  }
+
+  &--timer {
+    --font-size: 32rem;
+    --font-weight: 700;
   }
 }

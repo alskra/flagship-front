@@ -90,13 +90,14 @@
   }
 
   &--lg {
+    --height: 48rem;
+    --padding-x: 24rem;
+  }
+
+  &--xl {
     --height: 68rem;
     --padding-x: 32rem;
     --font-size: 20rem;
-  }
-
-  &--text-wrap {
-    white-space: normal;
   }
 
   &--width-208 {
@@ -105,6 +106,10 @@
 
   &--width-full {
     --width: 100%;
+  }
+
+  &--text-wrap {
+    white-space: normal;
   }
 }
 

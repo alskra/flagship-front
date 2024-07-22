@@ -37,15 +37,14 @@ Alpine.store('formatTime', (time, { full = false, timer = false } = {}) => {
     full = false;
   }
 
-  /* eslint-disable */
-  let years = full && Math.floor(time / YEAR);
+  const years = full && Math.floor(time / YEAR);
   const q = Math.floor(years / 4);
   const yearsRest = (time % YEAR) - q * DAY;
 
-  let months = full && Math.floor(yearsRest / MONTH);
+  const months = full && Math.floor(yearsRest / MONTH);
   const monthsRest = yearsRest % MONTH;
 
-  let weeks = full && Math.floor(monthsRest / WEEK);
+  const weeks = full && Math.floor(monthsRest / WEEK);
   const weeksRest = monthsRest % WEEK;
 
   let days = Math.floor((full ? weeksRest : time) / DAY);
@@ -58,9 +57,7 @@ Alpine.store('formatTime', (time, { full = false, timer = false } = {}) => {
   const minutesRest = hoursRest % MINUTE;
 
   let seconds = Math.floor(minutesRest / SECOND);
-  const secondsRest = minutesRest % SECOND;
-
-  const milliSeconds = secondsRest;
+  const milliSeconds = minutesRest % SECOND;
 
   if (timer) {
     days = hours === 23 && minutes === 59 && seconds === 59 && milliSeconds > 0 ? days + 1 : days;
@@ -71,13 +68,8 @@ Alpine.store('formatTime', (time, { full = false, timer = false } = {}) => {
 
   const str = [hours, minutes, seconds].map((number) => number.toString().padStart(2, '0')).join(':');
 
-  return `
-    ${years ? `${years} г. ` : ''}
-    ${months ? `${months} м. ` : ''}
-    ${weeks ? `${weeks} н. ` : ''}
-    ${days ? `${days} д. ` : ''}
-    ${str}
-  `;
+  // eslint-disable-next-line max-len
+  return `${years ? `${years} г. ` : ''}${months ? `${months} м. ` : ''}${weeks ? `${weeks} н. ` : ''}${days ? `${days} д. ` : ''}${str}`;
 });
 
 /* Alpine.store('formatTime2', (time, full = true) => {
@@ -95,5 +87,5 @@ Alpine.store('formatTime', (time, { full = false, timer = false } = {}) => {
   let weeks = Math.floor(days / 7);
   days -= weeks * 7;
 
-  let months = Math.floor(days / MONTH);
+  let months = Math.floor(weeks / MONTH); // ??????
 }); */
