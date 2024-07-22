@@ -11,5 +11,11 @@ mixin stage(type = 'cabinet')
 
       .stage__main
         if type === 'cabinet'
+          .stage__params(class=`stage__params--${type}`)
+            div 1
+            div 1
+            div 1
+            div 1
+
           +table-data(type)
         block

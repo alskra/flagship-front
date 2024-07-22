@@ -32,3 +32,12 @@
     margin-left: auto;
   }
 }
+
+.stage__params {
+  display: grid;
+  gap: var(--table-data-border-spacing);
+
+  &--cabinet {
+    grid-template-columns: 223fr 189fr 227fr 139fr;
+  }
+}
