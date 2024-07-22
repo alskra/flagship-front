@@ -3,7 +3,7 @@ import '@components/table-data/table-data';
 import '@components/timer/timer';
 import './stage.scss';
 
-Alpine.data('stageParams', () => ({
+Alpine.data('stageItem', () => ({
   loading: false,
   fakeSendData() {
     return new Promise((resolve) => {

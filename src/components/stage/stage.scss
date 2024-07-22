@@ -45,4 +45,14 @@
       grid-column: span 2;
     }
   }
+
+  @media (--max-md) {
+    .stage--cabinet & {
+      grid-template-columns: 223fr 189fr 227fr 139fr;
+
+      > :nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+  }
 }

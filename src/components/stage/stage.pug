@@ -11,9 +11,9 @@ mixin stage(type = 'cabinet')
             | Этап кабинет
         +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
 
-      .stage__main
+      .stage__main(x-data="stageItem")
         if type === 'cabinet'
-          .stage__params(x-data="stageParams")
+          .stage__params
             .stage__params-body(x-data="timer")
               div
                 +form-field({ tag: 'select' }).form-field--lg(x-model.number="controlTime")
@@ -23,6 +23,7 @@ mixin stage(type = 'cabinet')
                   option(value=45 * 60 * 1000) 45 мин.
                   option(value=60 * 60 * 1000) 1 час
               div
+                // `fakeSendData` фейковый метод для демонстрации (ничего не отправляет)
                 +btn({ content: 'Старт' }).btn--accent.btn--lg.btn--width-full(
                   x-bind:disabled="loading"
                   x-on:click="loading = true; fakeSendData().then(() => { loading = false; start() })"
