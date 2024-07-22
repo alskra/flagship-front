@@ -12,15 +12,21 @@ block app
 
   main.app__main
     .container.grid-12
-      .col-8.col-start-3
+      .col-2-min-lg.col-start-3-min-lg
         div(x-text="$store.time")
         div(x-text="$store.formatTime($store.time, true)")
         div(x-text="$store.formatTime($store.time)")
-
+      .col-2-min-lg
         div(x-data="timer" x-text="formatTime")
-        div(x-data="timer(Date.now() + 15 * 1000)" x-text="formatTime")
-        div(x-data="timer(Date.now() + 1.5 * 60 * 1000)" x-text="formatTime")
-        div(x-data={ endTime: 0 }): div(x-data="timer(endTime)" x-text="formatTime")
+        div(x-data="timer($store.time + 15 * 1000)" x-text="formatTime")
+        div(x-data="timer($store.time + 1.25 * 60 * 1000)" x-text="formatTime")
+      .col-2-min-lg
+        div(x-data={ timerEndTime: 1 })
+          input(:value="timerEndTime")
+          div(x-data="timer(timerEndTime)" x-text="formatTime")
+          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
+          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
+          button(@click="timerEndTime = $store.time + 15 * 1000") Set & Start
 
     .container.guide
       +content()
