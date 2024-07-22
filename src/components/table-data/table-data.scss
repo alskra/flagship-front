@@ -44,7 +44,6 @@
     --hover-td-bg: none;
 
     scroll-snap-align: start;
-    scroll-margin: calc(30rem + var(--table-data-border-spacing));
     background: var(--secondary);
     transition: var(--base-transition);
     transition-property: color, background-color;
@@ -81,6 +80,7 @@
     display: flex;
     max-height: calc(100vh - var(--header-height) - var(--app__main-padding-top) - var(--app__main-padding-bottom));
     scroll-snap-type: y mandatory;
+    scroll-padding-top: calc(30rem + var(--table-data-border-spacing));
 
     &::-webkit-scrollbar {
       display: none;
@@ -127,19 +127,19 @@
 
   &--cabinet {
     th:nth-child(1) {
-      width: 223rem;
+      width: calc(223 / 799 * 100%);
     }
 
     th:nth-child(2) {
-      width: 189rem;
+      width: calc(189 / 799 * 100%);
     }
 
     th:nth-child(3) {
-      width: 227rem;
+      width: calc(227 / 799 * 100%);
     }
 
     th:nth-child(4) {
-      width: 139rem;
+      width: calc(139 / 799 * 100%);
     }
   }
 }
