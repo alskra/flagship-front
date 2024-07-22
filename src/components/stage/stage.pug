@@ -30,7 +30,7 @@ mixin stage(type = 'cabinet')
               // `fakeSendData` фейковый метод для демонстрации (ничего не отправляет)
               +btn({ content: 'Старт' }).btn--accent.btn--lg.btn--width-full(
                 x-bind:disabled="isLoading"
-                x-on:click="isLoading = true; fakeSendData(controlTime).then(() => { isLoading = false; isStarted = true; start(); })"
+                x-on:click="isLoading = true; fakeSendData(controlTime).then(() => { isLoading = false; isStarted = true; start(); setTimeout(() => isCompleted = true, controlTime)})"
               )
             div
               +form-field().form-field.form-field--timer.form-field--lg(

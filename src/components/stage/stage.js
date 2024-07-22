@@ -7,13 +7,10 @@ Alpine.data('stageItem', () => ({
   isLoading: false,
   isStarted: false,
   isCompleted: false,
-  fakeSendData(controlTime) {
+  fakeSendData() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-        setTimeout(() => {
-          this.isCompleted = true;
-        }, controlTime);
       }, 1000);
     });
   },

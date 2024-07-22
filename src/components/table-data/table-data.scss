@@ -89,9 +89,9 @@
   }
 
   .overflow-clip:has(> &) {
-    flex-shrink: 0;
+    flex: 0 0 100%;
     align-self: flex-start;
-    min-width: 100%;
+    min-width: auto;
     border-radius: 8rem 8rem 0 0;
 
     &::before,
