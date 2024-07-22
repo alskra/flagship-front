@@ -14,9 +14,12 @@
   // Grid
   @for $size from 1 through $grid-count {
     .grid-#{$size}#{$suffix} {
+      --gap-x: var(--grid-gutter);
+      --gap-y: var(--gap-x);
+
       display: grid;
       grid-template-columns: repeat($size, 1fr);
-      column-gap: var(--grid-gutter);
+      gap: var(--gap-y) var(--gap-x);
     }
   }
 

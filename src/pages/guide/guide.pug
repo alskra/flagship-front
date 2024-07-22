@@ -11,23 +11,23 @@ block app
   +header()
 
   main.app__main
-    .container.grid-12
-      .col-2-min-lg.col-start-3-min-lg
+    .container.grid-1.grid-8-min-md.grid-12-min-lg.mb-8
+      .col-2-min-md.col-start-3-min-lg
         div(x-text="$store.time")
         div(x-text="$store.formatTime($store.time, { full: true })")
         div(x-text="$store.formatTime($store.time)")
-      .col-2-min-lg
+      .col-2-min-md
         div(x-data="timer" x-text="formatTime")
         div(x-data="timer($store.time + 15 * 1000)" x-text="formatTime")
         div(x-data="timer($store.time + 1.25 * 60 * 1000)" x-text="formatTime")
-      .col-2-min-lg
+      .col-2-min-md
         div(x-data={ timerEndTime: 1 })
           input(:value="timerEndTime")
           div(x-data="timer(timerEndTime)" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
           button(@click="timerEndTime = $store.time + 15 * 1000") Set & Start
-      .col-2-min-lg
+      .col-2-min-md
         div(x-data={timerEndTime: 1})
           input(:value="timerEndTime")
           div(x-data="timer(timerEndTime)" x-text="formatTime")
