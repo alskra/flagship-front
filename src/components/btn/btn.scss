@@ -1,4 +1,5 @@
 .btn {
+  --gap: 8rem;
   --line-height: 1.25;
   --content-height: calc(1em * var(--line-height));
   --width: auto;
@@ -17,7 +18,7 @@
   --hover-bg: var(--bg);
 
   display: inline-flex;
-  column-gap: 8rem;
+  gap: var(--gap);
   align-items: center;
   justify-content: center;
   width: var(--width);

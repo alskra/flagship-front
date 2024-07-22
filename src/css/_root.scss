@@ -3,10 +3,14 @@
 @use "variables" as *;
 @use "functions" as *;
 
-// stylelint-disable no-duplicate-selectors, custom-property-empty-line-before
+// stylelint-disable no-duplicate-selectors, custom-property-empty-line-before, scss/no-global-function-names
 // Responsive sizes
 :root {
   font-size: min(0.8 / strip-unit($xxl) * 100vw + 0.2px, 18px / 16);
+
+  // @supports (font-size: round(1rem, 1px)) {
+  //   font-size: round(min(0.8 / strip-unit($xxl) * 100vw + 0.2px, 18px / 16), 0.25px);
+  // }
 
   @media (--max-xxl) {
     font-size: max(0.2 / strip-unit($xxl) * 100vw + 0.8px, 14px / 16);
@@ -79,48 +83,48 @@
   --h-line-height: 1.25;
   --h-color: inherit;
 
-  --h1-spacing-top: var(--h-spacing-top);
-  --h1-spacing-bottom: var(--h-spacing-bottom);
+  --h1-spacing-top: #{calc(40em / 44)};
+  --h1-spacing-bottom: #{calc(40em / 44)};
   --h1-font-family: var(--h-font-family);
-  --h1-font-size: 32rem;
+  --h1-font-size: 44rem;
   --h1-font-weight: var(--h-font-weight);
   --h1-line-height: var(--h-line-height);
   --h1-color: var(--h-color);
 
-  --h2-spacing-top: var(--h-spacing-top);
-  --h2-spacing-bottom: var(--h-spacing-bottom);
+  --h2-spacing-top: #{calc(40em / 32)};
+  --h2-spacing-bottom: #{calc(40em / 32)};
   --h2-font-family: var(--h-font-family);
-  --h2-font-size: 28rem;
+  --h2-font-size: 32rem;
   --h2-font-weight: var(--h-font-weight);
   --h2-line-height: var(--h-line-height);
   --h2-color: var(--h-color);
 
   --h3-spacing-top: #{calc(40em / 24)};
-  --h3-spacing-bottom: var(--h3-spacing-top);
+  --h3-spacing-bottom: #{calc(40em / 24)};
   --h3-font-family: var(--h-font-family);
   --h3-font-size: 24rem;
   --h3-font-weight: var(--h-font-weight);
   --h3-line-height: var(--h-line-height);
   --h3-color: var(--h-color);
 
-  --h4-spacing-top: var(--h-spacing-top);
-  --h4-spacing-bottom: var(--h-spacing-bottom);
+  --h4-spacing-top: #{calc(40em / 20)};
+  --h4-spacing-bottom: #{calc(40em / 20)};
   --h4-font-family: var(--h-font-family);
   --h4-font-size: 20rem;
   --h4-font-weight: var(--h-font-weight);
   --h4-line-height: var(--h-line-height);
   --h4-color: var(--h-color);
 
-  --h5-spacing-top: var(--h-spacing-top);
-  --h5-spacing-bottom: var(--h-spacing-bottom);
+  --h5-spacing-top: #{calc(40em / 18)};
+  --h5-spacing-bottom: #{calc(40em / 18)};
   --h5-font-family: var(--h-font-family);
   --h5-font-size: 18rem;
   --h5-font-weight: 600;
   --h5-line-height: var(--h-line-height);
   --h5-color: var(--h-color);
 
-  --h6-spacing-top: var(--h-spacing-top);
-  --h6-spacing-bottom: var(--h-spacing-bottom);
+  --h6-spacing-top: #{calc(40em / 16)};
+  --h6-spacing-bottom: #{calc(40em / 16)};
   --h6-font-family: var(--h-font-family);
   --h6-font-size: 16rem;
   --h6-font-weight: var(--h-font-weight);
