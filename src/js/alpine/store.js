@@ -31,7 +31,12 @@ const WEEK = 7 * DAY;
 const MONTH = 30 * DAY;
 const YEAR = 365 * DAY;
 
-Alpine.store('formatTime', (time, full = false, timer = false) => {
+Alpine.store('formatTime', (time, { full = false, timer = false } = {}) => {
+  if (timer) {
+    // eslint-disable-next-line no-param-reassign
+    full = false;
+  }
+
   /* eslint-disable */
   let years = full && Math.floor(time / YEAR);
   const q = Math.floor(years / 4);

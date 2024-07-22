@@ -8,7 +8,7 @@ Alpine.data('timer', (endTime = 0) => ({
     return d > 0 ? d : 0;
   },
   get formatTime() {
-    return this.$store.formatTime(this.time, false, true);
+    return this.$store.formatTime(this.time, { timer: true });
   },
   init() {
     // eslint-disable-next-line no-console

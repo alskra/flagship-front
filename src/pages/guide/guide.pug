@@ -14,7 +14,7 @@ block app
     .container.grid-12
       .col-2-min-lg.col-start-3-min-lg
         div(x-text="$store.time")
-        div(x-text="$store.formatTime($store.time, true)")
+        div(x-text="$store.formatTime($store.time, { full: true })")
         div(x-text="$store.formatTime($store.time)")
       .col-2-min-lg
         div(x-data="timer" x-text="formatTime")
