@@ -23,11 +23,10 @@ mixin stage(type = 'cabinet')
             x-data="timer"
             x-id=['form-field']
           )
-            div
-              label.form-label.block.mb-2(
-                x-bind:for="$id('form-field')"
-                x-bind:class="{ 'visibility-hidden': isStarted }"
-              ) Таймер (задать время)
+            label.form-label.mb-2(
+              x-bind:for="$id('form-field')"
+              x-show="!isStarted"
+            ) Таймер (задать время)
 
             .stage__params-body
               div(x-show="!isStarted")

@@ -217,6 +217,7 @@
   }
 
   &.is-started {
-    grid-template-columns: 104rem;
+    display: block;
+    min-width: 104rem;
   }
 }
