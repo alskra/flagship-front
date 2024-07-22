@@ -26,14 +26,14 @@ block app
           div(x-data="timer(timerEndTime)" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          button(@click="timerEndTime = $store.time + 15 * 1000") Set & Start
+          button(@click="timerEndTime = $store.time + 15000") Set +15000
       .col-2-min-md
         div(x-data={timerEndTime: 1})
           input(:value="timerEndTime")
           div(x-data="timer(timerEndTime)" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
           div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          button(@click="timerEndTime = $store.time + 15 * 1000 + 123") Set & Start
+          button(@click="timerEndTime = $store.time + 15123") Set +15123
 
     .container.guide
       +content()
