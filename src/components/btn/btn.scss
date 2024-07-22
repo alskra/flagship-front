@@ -89,6 +89,12 @@
     }
   }
 
+  &--lg {
+    --height: 68rem;
+    --padding-x: 32rem;
+    --font-size: 20rem;
+  }
+
   &--text-wrap {
     white-space: normal;
   }
@@ -99,12 +105,6 @@
 
   &--width-full {
     --width: 100%;
-  }
-
-  &--lg {
-    --height: 67rem;
-    --padding-x: 32rem;
-    --font-size: 20rem;
   }
 }
 
