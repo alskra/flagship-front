@@ -34,6 +34,7 @@
     font-weight: 700;
     line-height: calc(19 / 14);
     color: var(--gray-3);
+    white-space: nowrap;
 
     &[data-sort] {
       cursor: pointer;
@@ -185,9 +186,9 @@
 }
 
 .table-data__status {
-  color: var(--tertiary);
+  color: var(--accent);
 
-  &--not-complete {
-    color: var(--accent);
+  &:where(.is-completed) {
+    color: var(--tertiary);
   }
 }

@@ -4,10 +4,17 @@ import '@components/timer/timer';
 import './stage.scss';
 
 Alpine.data('stageItem', () => ({
-  loading: false,
-  fakeSendData() {
+  isLoading: false,
+  isStarted: false,
+  isCompleted: false,
+  fakeSendData(controlTime) {
     return new Promise((resolve) => {
-      setTimeout(resolve, 1000);
+      setTimeout(() => {
+        resolve();
+        setTimeout(() => {
+          this.isCompleted = true;
+        }, controlTime);
+      }, 1000);
     });
   },
 }));

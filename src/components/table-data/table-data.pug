@@ -86,16 +86,25 @@ mixin table-data(type = 'events')
                 td: span Иванов
                 td: span Иван
                 td: span Петрович
-                td: span.table-data__status.table-data__status--not-complete Не завершен
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )
 
               tr
                 td: span Петров
                 td: span Петр
                 td: span Иванович
-                td: span.table-data__status.table-data__status--not-complete Не завершен
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )
 
               tr
                 td: span Сидоров
                 td: span Николай
                 td: span Александрович
-                td: span.table-data__status.table-data__status--not-complete Не завершен
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )

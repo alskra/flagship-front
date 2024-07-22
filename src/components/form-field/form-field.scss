@@ -45,12 +45,14 @@
     cursor: default;
   }
 
-  &--lg {
-    --height: 48rem;
-  }
-
   &--timer {
     --font-size: 32rem;
     --font-weight: 700;
+
+    text-align: center;
+  }
+
+  &--lg {
+    --height: 48rem;
   }
 }
