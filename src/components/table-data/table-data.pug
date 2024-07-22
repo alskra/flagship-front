@@ -1,11 +1,11 @@
 mixin table-data(type = 'events')
-  if type === 'events'
-    .table-responsive
-      .overflow-clip
-        table.table-data(
-          class=`table-data--${type}`
-          x-data="tableData"
-        )
+  .table-responsive&attributes(attributes)
+    .overflow-clip
+      table.table-data(
+        class=`table-data--${type}`
+        x-data="tableData"
+      )
+        if type === 'events'
           thead
             tr
               th(
@@ -67,13 +67,7 @@ mixin table-data(type = 'events')
                 td: +btn({tag: 'a', icons: ['edit']}).btn--action(title="Редактировать")
                 td: +btn({tag: 'a', icons: ['remove']}).btn--action(title="Удалить")
 
-  if type === 'cabinet'
-    .table-responsive
-      .overflow-clip
-        table.table-data(
-          class=`table-data--${type}`
-          x-data="tableData"
-        )
+        if type === 'cabinet'
           thead
             tr
               th: span Фамилия
@@ -109,13 +103,7 @@ mixin table-data(type = 'events')
                   x-text="isCompleted ? 'Завершен' : 'Не завершен'"
                 )
 
-  if type === 'tribune'
-    .table-responsive
-      .overflow-clip
-        table.table-data(
-          class=`table-data--${type}`
-          x-data="tableData"
-        )
+        if type === 'tribune-empty'
           thead
             tr
               th: span №
@@ -123,11 +111,61 @@ mixin table-data(type = 'events')
               th: span Имя
               th: span Отчество
               th: span Статус
+              th(colspan="2")
           tbody(x-ref="body")
             each item, index in Array(6)
               tr
-                td: span
-                td: span
-                td: span
-                td: span
-                td: span.table-data__status
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+
+        if type === 'tribune'
+          thead
+            tr
+              th: span №
+              th: span Фамилия
+              th: span Имя
+              th: span Отчество
+              th: span Статус
+              th(colspan="2")
+          tbody(x-ref="body")
+            each item, index in Array(10)
+              tr(x-data="stageItem")
+                td: span= index * 3 + 1
+                td: span Иванов
+                td: span Иван
+                td: span Петрович
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )
+                td
+                td
+
+              tr(x-data="stageItem")
+                td: span= index * 3 + 2
+                td: span Петров
+                td: span Петр
+                td: span Иванович
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )
+                td
+                td
+
+              tr(x-data="stageItem")
+                td: span= index * 3 + 3
+                td: span Сидоров
+                td: span Николай
+                td: span Александрович
+                td: span.table-data__status(
+                  x-bind:class="{ 'is-completed': isCompleted }"
+                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
+                )
+                td
+                td

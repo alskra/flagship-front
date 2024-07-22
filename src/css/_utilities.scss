@@ -5,6 +5,7 @@
 @use "utilities/overflow";
 @use "utilities/spacing" as *;
 @use "utilities/typography";
+@use "utilities/visibility";
 
 @mixin make-utilities($suffix: "") {
   @include make-display($suffix);

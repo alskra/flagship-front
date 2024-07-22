@@ -34,10 +34,13 @@
 }
 
 .stage__params {
+  margin-bottom: 24rem;
+}
+
+.stage__params-body {
   display: grid;
   gap: var(--table-data-border-spacing);
   align-items: end;
-  margin-bottom: 24rem;
 
   .stage--cabinet & {
     grid-template-columns: 223fr 189fr 227fr 139fr;
