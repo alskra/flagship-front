@@ -58,10 +58,7 @@ Alpine.store('formatTime', (time, full = false, timer = false) => {
   const milliSeconds = secondsRest;
 
   if (timer) {
-    // years += months > 0 ? 1 : 0;
-    // months += weeks > 0 ? 1 : 0;
-    // weeks += days > 0 ? 1 : 0;
-    // days += hours > 0 ? 1 : 0;
+    days = hours === 23 && minutes === 59 && seconds === 59 && milliSeconds > 0 ? days + 1 : days;
     hours = minutes === 59 && seconds === 59 && milliSeconds > 0 ? (hours + 1) % 24 : hours;
     minutes = seconds === 59 && milliSeconds > 0 ? (minutes + 1) % 60 : minutes;
     seconds = milliSeconds > 0 ? (seconds + 1) % 60 : seconds;
