@@ -66,3 +66,36 @@ mixin table-data(type = 'events')
                 td: +btn({tag: 'a', icons: ['qr']}).btn--action(title="QR-код")
                 td: +btn({tag: 'a', icons: ['edit']}).btn--action(title="Редактировать")
                 td: +btn({tag: 'a', icons: ['remove']}).btn--action(title="Удалить")
+
+  if type === 'cabinet'
+    .table-responsive
+      .overflow-clip
+        table.table-data(
+          class=`table-data--${type}`
+          x-data="tableData"
+        )
+          thead
+            tr
+              th: span Фамилия
+              th: span Имя
+              th: span Отчество
+              th: span Статус
+          tbody(x-ref="body")
+            each item, index in Array(10)
+              tr
+                td: span Иванов
+                td: span Иван
+                td: span Петрович
+                td: span.table-data__status.table-data__status--not-complete Не завершен
+
+              tr
+                td: span Иванов
+                td: span Иван
+                td: span Петрович
+                td: span.table-data__status.table-data__status--not-complete Не завершен
+
+              tr
+                td: span Иванов
+                td: span Иван
+                td: span Петрович
+                td: span.table-data__status.table-data__status--not-complete Не завершен
