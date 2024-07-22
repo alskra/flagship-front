@@ -32,8 +32,10 @@
   }
 
   &:where(select) {
-    padding-right: calc(2 * var(--padding-x) + 15rem);
-    background: url("~@images/icons/svg/angle-down.svg") right 16rem top 50% / 15rem no-repeat var(--bg);
+    --angle-width: 12rem;
+
+    padding-right: calc(16rem + 8rem + var(--angle-width));
+    background: url("~@images/icons/svg/angle-down.svg") right 16rem top 50% / var(--angle-width) no-repeat var(--bg);
   }
 
   &:invalid:where(.validation-on) {
@@ -53,5 +55,6 @@
 
   &--lg {
     --height: 48rem;
+    --angle-width: 15rem;
   }
 }
