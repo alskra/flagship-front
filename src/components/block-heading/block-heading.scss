@@ -1,5 +1,6 @@
 .block-heading {
-  --padding-y: 60rem;
+  --padding-top: 60rem;
+  --padding-bottom: 68rem;
   --padding-x: 48rem;
   --border-radius: 50rem;
 
@@ -20,7 +21,8 @@
   flex-flow: column;
 
   @container (width < 600px) {
-    --padding-y: 44rem;
+    --padding-top: 44rem;
+    --padding-bottom: 52rem;
     --padding-x: 32rem;
   }
 }
@@ -46,7 +48,7 @@
 }
 
 .block-heading__main {
-  padding: var(--padding-y) var(--padding-x);
+  padding: var(--padding-top) var(--padding-x) var(--padding-bottom);
   background: var(--white);
   border: 3px solid var(--primary);
   border-top: 0;
