@@ -39,7 +39,7 @@
   align-items: end;
   margin-bottom: 24rem;
 
-  .stage-item--cabinet & {
+  .stage--cabinet & {
     grid-template-columns: 223fr 189fr 227fr 139fr;
 
     > :nth-child(3) {
@@ -47,18 +47,18 @@
     }
   }
 
-  .stage-item--is-processed & {
+  .stage-item--is-started & {
     > :nth-child(3) {
       grid-column: auto;
     }
   }
 
   @media (--max-md) {
-    .stage-item--cabinet & {
+    .stage--cabinet & {
       grid-template-columns: 1fr 1fr;
     }
 
-    .stage-item--is-processed & {
+    .stage-item--is-started & {
       > :nth-child(3) {
         grid-column: span 2;
       }

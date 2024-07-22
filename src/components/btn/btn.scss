@@ -61,6 +61,17 @@
     border-radius: 8rem;
   }
 
+  &--tertiary {
+    --height: 40rem;
+    --padding-x: 16rem;
+    --font-weight: 700;
+    --color: var(--white);
+    --bg: var(--tertiary);
+    --hover-bg: var(--tertiary-dark);
+
+    border-radius: 8rem;
+  }
+
   &--accent {
     --height: 40rem;
     --padding-x: 16rem;

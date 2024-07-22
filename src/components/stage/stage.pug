@@ -9,12 +9,14 @@ mixin stage(type = 'cabinet')
         h1.h1.content.stage__title
           if type === 'cabinet'
             | Этап кабинет
+          if type === 'tribune'
+            | Этап “Трибуна”
         +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
 
       .stage__main.stage-item(
         class=`stage-item--${type}`
         x-data="stageItem"
-        x-bind:class="{ 'stage-item--is-processed': isStarted }"
+        x-bind:class="{ 'stage-item--is-started': isStarted }"
       )
         if type === 'cabinet'
           .stage__params(x-data="timer")
@@ -46,4 +48,12 @@ mixin stage(type = 'cabinet')
               )
 
           +table-data(type)
+
+        if type === 'tribune'
+          .stage__params
+            div
+              +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg
+
+          +table-data(type)
+
         block
