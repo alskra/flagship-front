@@ -111,7 +111,7 @@ mixin table-data(type = 'events')
               th: span Имя
               th: span Отчество
               th: span Статус
-              th(colspan="2")
+              th(colspan="2"): span Таймер
           tbody(x-ref="body")
             each item, index in Array(6)
               tr
@@ -131,7 +131,7 @@ mixin table-data(type = 'events')
               th: span Имя
               th: span Отчество
               th: span Статус
-              th(colspan="2")
+              th(colspan="2"): span Таймер
           tbody(x-ref="body")
             each item, index in Array(10)
               tr(x-data="stageItem")

@@ -60,7 +60,7 @@ mixin stage(type = 'cabinet')
           .stage__params
             .stage__params-body
               div
-                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(x-on:click="isFilled = !isFilled")
+                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(x-on:click="isFilled = true")
 
           +table-data('tribune-empty')(x-show="!isFilled")
           +table-data(type)(x-show="isFilled")
