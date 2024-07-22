@@ -43,6 +43,8 @@
   tbody tr {
     --hover-td-bg: none;
 
+    scroll-snap-align: start;
+    scroll-margin: calc(30rem + var(--table-data-border-spacing));
     background: var(--secondary);
     transition: var(--base-transition);
     transition-property: color, background-color;
@@ -76,7 +78,9 @@
   }
 
   .table-responsive:has(.overflow-clip > &) {
+    display: flex;
     max-height: calc(100vh - var(--header-height) - var(--app__main-padding-top) - var(--app__main-padding-bottom));
+    scroll-snap-type: y mandatory;
 
     &::-webkit-scrollbar {
       display: none;
@@ -84,6 +88,9 @@
   }
 
   .overflow-clip:has(> &) {
+    flex-shrink: 0;
+    align-self: flex-start;
+    min-width: 100%;
     border-radius: 8rem 8rem 0 0;
 
     &::before,
