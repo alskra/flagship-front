@@ -11,9 +11,12 @@ Alpine.data('timer', (endTime = 0) => ({
   get formatTime() {
     return this.$store.formatTime(this.time, { timer: true });
   },
+  start() {
+    this.endTime = this.$store.time + this.controlTime;
+  },
   btnStart: {
     '@click'() {
-      this.endTime = this.$store.time + this.controlTime;
+      this.start();
     },
   },
   init() {

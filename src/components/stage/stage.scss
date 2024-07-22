@@ -33,12 +33,12 @@
   }
 }
 
-.stage__params {
+.stage__params-body {
   display: grid;
   gap: var(--table-data-border-spacing);
   margin-bottom: 24rem;
 
-  &--cabinet {
+  .stage--cabinet & {
     grid-template-columns: 223fr 189fr 227fr 139fr;
 
     > :nth-child(3) {
