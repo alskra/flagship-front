@@ -96,6 +96,10 @@
     --width: 208rem;
   }
 
+  &--width-full {
+    --width: 100%;
+  }
+
   &--lg {
     --height: 67rem;
     --padding-x: 32rem;

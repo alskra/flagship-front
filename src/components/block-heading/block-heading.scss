@@ -19,7 +19,7 @@
   display: flex;
   flex-flow: column;
 
-  @container (width < 768px) {
+  @container (width < 600px) {
     --padding-y: 44rem;
     --padding-x: 32rem;
   }
@@ -40,7 +40,7 @@
   line-height: 1.25;
   color: var(--white);
 
-  @container (width < 768px) {
+  @container (width < 600px) {
     font-size: 28rem;
   }
 }
@@ -57,14 +57,14 @@
   display: grid;
   gap: 32rem;
 
-  @container (width >= 768px) {
+  @container (width >= 600px) {
     --col-1: #{calc((1028 - 32 - 316) / (1028 - 32) * 1fr)};
     --col-2: #{calc(316 / (1028 - 32) * 1fr)};
 
     grid-template-columns: var(--col-1) var(--col-2);
   }
 
-  @container (width < 768px) {
+  @container (width < 600px) {
     justify-items: center;
     text-align: center;
 
@@ -75,7 +75,7 @@
 }
 
 .block-heading__event-col-2 {
-  @container (width >= 768px) {
+  @container (width >= 600px) {
     grid-row: span 2;
   }
 }
@@ -91,7 +91,7 @@
   line-height: 1.25;
   color: var(--accent);
 
-  @container (width < 768px) {
+  @container (width < 600px) {
     font-size: 38rem;
   }
 }
@@ -100,7 +100,7 @@
   display: block;
   width: 100%;
 
-  @container (width < 768px) {
+  @container (width < 600px) {
     max-width: 196rem;
   }
 }

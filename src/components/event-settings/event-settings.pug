@@ -4,36 +4,37 @@ mixin event-settings(view = 'common')
     action=""
   )&attributes(attributes)
     .event-settings__body
-      if view === 'common'
-        .event-settings__group(x-id=['form-field'])
-          label.form-label(x-bind:for="$id('form-field')") Название события
-          +form-field()(
-            name="name"
-            required
-            x-bind:id="$id('form-field')"
-            value="Новое событие Флагманы Образования"
-          )
-      if view === 'datetime'
-        .event-settings__group(x-id=['form-field'])
-          label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
-          +form-field()(
-            required
-            x-bind:id="$id('form-field')"
-          )
-          input(
-            type="hidden"
-            name="start-date"
-          )
-        .event-settings__group(x-id=['form-field'])
-          label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
-          +form-field()(
-            required
-            x-bind:id="$id('form-field')"
-          )
-          input(
-            type="hidden"
-            name="end-date"
-          )
+      .event-settings__main
+        if view === 'common'
+          .event-settings__group(x-id=['form-field'])
+            label.form-label(x-bind:for="$id('form-field')") Название события
+            +form-field()(
+              name="name"
+              required
+              x-bind:id="$id('form-field')"
+              value="Новое событие Флагманы Образования"
+            )
+        if view === 'datetime'
+          .event-settings__group(x-id=['form-field'])
+            label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
+            +form-field()(
+              required
+              x-bind:id="$id('form-field')"
+            )
+            input(
+              type="hidden"
+              name="start-date"
+            )
+          .event-settings__group(x-id=['form-field'])
+            label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
+            +form-field()(
+              required
+              x-bind:id="$id('form-field')"
+            )
+            input(
+              type="hidden"
+              name="end-date"
+            )
 
       .event-settings__footer
         if view === 'common'

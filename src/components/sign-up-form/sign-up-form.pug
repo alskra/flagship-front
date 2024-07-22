@@ -1,0 +1,28 @@
+mixin sign-up-form
+  form.sign-up-form(action="")&attributes(attributes)
+    .sign-up-form__body
+      .sign-up-form__main
+        .sign-up-form__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Имя
+          +form-field()(
+            name="name"
+            required
+            x-bind:id="$id('form-field')"
+          )
+        .sign-up-form__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Фамилия
+          +form-field()(
+            name="surname"
+            required
+            x-bind:id="$id('form-field')"
+          )
+        .sign-up-form__group(x-id=['form-field'])
+          label.form-label(x-bind:for="$id('form-field')") Отчество
+          +form-field()(
+            name="second-name"
+            required
+            x-bind:id="$id('form-field')"
+          )
+
+      .sign-up-form__footer
+        +btn({content: 'Зарегистрироваться'}).btn--primary.btn--width-full(type="submit")

@@ -1,24 +1,20 @@
-.event-settings {
+.sign-up-form {
   container-type: inline-size;
-
-  &--max-width {
-    max-width: 488rem;
-  }
 }
 
-.event-settings__body {
+.sign-up-form__body {
   display: flex;
   flex-flow: column;
   gap: 36rem;
 }
 
-.event-settings__main {
+.sign-up-form__main {
   display: flex;
   flex-flow: column;
-  gap: 28rem;
+  gap: 20rem;
 }
 
-.event-settings__group {
+.sign-up-form__group {
   display: flex;
   flex-flow: column;
   gap: 8rem;

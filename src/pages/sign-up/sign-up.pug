@@ -1,6 +1,7 @@
 extends /pages/index/index
 
 include /components/block-heading/block-heading
+include /components/sign-up-form/sign-up-form
 
 append variables
   -
@@ -10,3 +11,4 @@ block main
   .grid-12
     .col-12.col-8-min-md.col-start-3-min-md.col-6-min-lg.col-start-4-min-lg.col-4-min-xl.col-start-5-min-xl
       +block-heading('Регистрация').block-heading--sign-up
+        +sign-up-form()
