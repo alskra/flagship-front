@@ -1,13 +1,11 @@
 import Alpine from 'alpinejs';
 
-Alpine.data('timer', (timeLeft = 0) => ({
+Alpine.data('timer', () => ({
   get formatTime() {
     return this.$store.formatTime(this.timeLeft, { timer: true });
   },
   init() {
-    if (typeof this.timeLeft === 'undefined') {
-      this.timeLeft = timeLeft;
-    }
+    this.$root.alpine = this;
 
     this.$watch('$store.time', (val, oldValue) => {
       if (this.timeLeft - (val - oldValue) >= 0) {

@@ -14,6 +14,9 @@ Alpine.data('app', () => ({
       };
     },
   },
+  init() {
+    this.$root.alpine = this;
+  },
 }));
 
 Alpine.start();

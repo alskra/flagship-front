@@ -41,7 +41,7 @@ mixin stage(type = 'cabinet')
                 // `fakeSendData` - фейковый метод для демонстрации (ничего не отправляет)
                 +btn({ content: 'Старт' }).btn--accent.btn--lg.btn--width-full(
                   x-bind="btnStart"
-                  x-on:click="beforeSendData(); fetch('/', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
+                  x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                 )
               div
                 +form-field().form-field.form-field--timer.form-field--lg(

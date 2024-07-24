@@ -16,24 +16,22 @@ block app
         div(x-text="$store.time")
         div(x-text="$store.formatTime($store.time, { full: true })")
         div(x-text="$store.formatTime($store.time)")
+
       .col-2-min-md
         div(x-data="timer" x-text="formatTime")
-        div(x-data="timer($store.time + 15 * 1000)" x-text="formatTime")
-        div(x-data="timer($store.time + 1.25 * 60 * 1000)" x-text="formatTime")
+        div(x-data="{ timeLeft: 9000 }")
+          div(x-data="timer" x-text="formatTime")
+        div(x-data="Object.assign(timer(), { timeLeft: 11000 })" x-text="formatTime")
+
       .col-2-min-md
-        div(x-data={ timerEndTime: 1 })
-          input(:value="timerEndTime")
-          div(x-data="timer(timerEndTime)" x-text="formatTime")
-          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          button(@click="timerEndTime = $store.time + 15000") Set +15000ms
+        div(x-data="{ timeLeft: 0 }")
+          div(x-data="timer" x-text="formatTime")
+          button(@click="timeLeft = 15000") Set 15000 ms
+
       .col-2-min-md
-        div(x-data={timerEndTime: 1})
-          input(:value="timerEndTime")
-          div(x-data="timer(timerEndTime)" x-text="formatTime")
-          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          div(x-data="timer(timerEndTime)" x-effect="endTime = timerEndTime" x-text="formatTime")
-          button(@click="timerEndTime = $store.time + 15123") Set +15123ms
+        div(x-data="{ timeLeft: 0 }")
+          div(x-data="timer" x-text="formatTime")
+          button(@click="timeLeft = 15123") Set 15123 ms
 
     .container.guide
       +content()
