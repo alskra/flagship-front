@@ -12,7 +12,15 @@ mixin stage(type = 'cabinet')
             | Этап кабинет
           if type === 'tribune'
             | Этап “Трибуна”
+          if type === 'brainstorm'
+            | Командные этапы
+
         +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
+
+        if ['brainstorm'].includes(type)
+          p.stage__subtitle
+            if type === 'brainstorm'
+              | Мозговой штурм
 
       if type === 'cabinet'
         .stage-item.stage__main(
@@ -64,8 +72,8 @@ mixin stage(type = 'cabinet')
               div
                 +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
                   x-bind="btnLoad"
-                  x-on:click="isLoading = true; $refs.tableDataBox.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
+                  x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
                 )
 
-          div(x-ref="tableDataBox")
+          div(x-ref="stageItems")
             +table-data('tribune-empty')

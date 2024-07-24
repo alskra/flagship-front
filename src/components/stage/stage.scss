@@ -19,8 +19,9 @@
 }
 
 .stage__header {
-  display: flex;
-  gap: var(--grid-gutter);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--grid-gutter);
   align-items: center;
   font-size: var(--h1-font-size);
 
@@ -29,14 +30,20 @@
   }
 
   @media (--max-md) {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: none;
   }
 }
 
 .stage__title {
-  flex: 1;
   margin: 0;
+}
+
+.stage__subtitle {
+  align-self: start;
+  margin-top: -7rem;
+  font-size: 24rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .stage__btn-next {
@@ -48,7 +55,7 @@
   flex-direction: row-reverse;
 
   @media (--max-md) {
-    order: -1;
+    grid-row-start: 1;
     margin-left: auto;
   }
 }
