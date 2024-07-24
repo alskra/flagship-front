@@ -66,8 +66,8 @@
       animation: btn-is-loading 0.5s linear infinite;
     }
 
-    .btn__content {
-      display: none;
+    > * {
+      visibility: hidden;
     }
 
     @keyframes btn-is-loading {

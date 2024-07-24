@@ -133,6 +133,7 @@ mixin table-data(type = 'events')
                 class=`stage-item--${type}`
                 x-data="stageItem(false, 0)"
                 x-bind="stageItem"
+                x-cloak
               )
                 td: span= index * 3 + 1
                 td: span Иванов
@@ -165,6 +166,7 @@ mixin table-data(type = 'events')
                 class=`stage-item--${type}`
                 x-data="stageItem(true, 45000)"
                 x-bind="stageItem"
+                x-cloak
               )
                 td: span= index * 3 + 2
                 td: span Петров
@@ -197,6 +199,7 @@ mixin table-data(type = 'events')
                 class=`stage-item--${type}`
                 x-data="stageItem(true, 0)"
                 x-bind="stageItem"
+                x-cloak
               )
                 td: span= index * 3 + 3
                 td: span Сидоров

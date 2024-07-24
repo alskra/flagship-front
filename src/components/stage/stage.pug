@@ -3,6 +3,7 @@ include /components/table-data/table-data
 mixin stage(type = 'cabinet')
   .stage(
     class=`stage--${type}`
+    x-data="stage"
   )&attributes(attributes)
     .stage__body
       .stage__header
@@ -18,15 +19,18 @@ mixin stage(type = 'cabinet')
           class=`stage-item--${type}`
           x-data="stageItem(false, 0)"
           x-bind="stageItem"
+          x-cloak
         )
-          .stage__params(x-id=['form-field'])
-            label.form-label.mb-2(
-              x-bind:for="$id('form-field')"
-              x-show="!isStarted"
-            ) Таймер (задать время)
-
+          .stage__params
             .stage__params-body
-              div(x-show="!isStarted")
+              div(
+                x-id=['form-field']
+                x-show="!isStarted"
+              )
+                label.form-label.mb-2(
+                  x-bind:for="$id('form-field')"
+                ) Таймер (задать время)
+
                 +form-field({ tag: 'select' }).form-field--lg(
                   x-bind:id="$id('form-field')"
                   x-model.number="controlTime"
@@ -37,12 +41,13 @@ mixin stage(type = 'cabinet')
                   option(value=30 * 60 * 1000) 30 мин.
                   option(value=45 * 60 * 1000) 45 мин.
                   option(value=60 * 60 * 1000) 1 час
+
               div(x-show="!isStarted")
-                // `fakeSendData` - фейковый метод для демонстрации (ничего не отправляет)
                 +btn({ content: 'Старт' }).btn--accent.btn--lg.btn--width-full(
                   x-bind="btnStart"
                   x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                 )
+
               div
                 +form-field().form-field.form-field--timer.form-field--lg(
                   readonly
@@ -57,14 +62,17 @@ mixin stage(type = 'cabinet')
           .stage__params(x-show="!isFilled")
             .stage__params-body
               div
-                // Показать заполненную таблицу, получив предварительно данные
-                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(x-on:click="isFilled = true")
+                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
+                  x-bind="btnLoad"
+                  x-on:click="isLoading = true;"
+                )
 
-          +table-data('tribune-empty')(
-            x-cloak
-            x-show="!isFilled"
-          )
-          +table-data(type)(
-            x-cloak
-            x-show="isFilled"
-          )
+          div(x-ref="tableDataBox")
+            +table-data('tribune-empty')(
+              x-cloak
+              x-show="!isFilled"
+            )
+            +table-data(type)(
+              x-cloak
+              x-show="isFilled"
+            )
