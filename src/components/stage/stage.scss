@@ -106,22 +106,33 @@
 
 .stage__command-header {
   display: flex;
-  gap: 20rem;
+  gap: 8rem 20rem;
   align-items: center;
-  min-height: 58rem;
-  padding: 6rem 16rem;
+  min-height: 60rem;
+  padding: 4rem 16rem;
   cursor: pointer;
   background: var(--primary);
   border: 3px solid var(--primary);
-  border-bottom: 0;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+  @media (--max-sm) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
 }
 
 .stage__command-title {
   flex: 1;
+  overflow: hidden;
   font-size: 24rem;
   font-weight: 700;
   color: var(--white);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (--max-sm) {
+    font-size: 22rem;
+  }
 }
 
 .stage__command-header-icon {
@@ -156,5 +167,14 @@
 
   .btn {
     --height: 46rem;
+  }
+
+  @media (--max-sm) {
+    grid-row: 2;
+    margin-right: auto;
+
+    & + .stage__command-header-icon {
+      grid-row: span 2;
+    }
   }
 }

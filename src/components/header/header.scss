@@ -47,6 +47,12 @@
   @media (--min-lg) {
     display: none;
   }
+
+  @media (--max-lg) {
+    & + .header__logo {
+      margin-left: calc(var(--header-height) - var(--container-padding) + 10rem);
+    }
+  }
 }
 
 .header__logo {
@@ -62,10 +68,6 @@
 
   @media (--max-lg) {
     height: 36rem;
-
-    &:is(.header__btn-menu + *) {
-      margin-left: calc(var(--header-height) - var(--container-padding) + 10rem);
-    }
   }
 }
 

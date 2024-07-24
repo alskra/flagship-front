@@ -15,10 +15,10 @@
 
 @each $name, $value in $grid-breakpoints {
   // stylelint-disable-next-line
-  @custom-media --min-#{$name} (width >= #{$value});
+  @custom-media --min-#{$name} (min-width: #{$value});
 }
 
 @each $name, $value in $grid-breakpoints {
   // stylelint-disable-next-line
-  @custom-media --max-#{$name} (width < #{$value});
+  @custom-media --max-#{$name} (max-width: #{$value - 0.02});
 }
