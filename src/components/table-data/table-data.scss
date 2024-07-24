@@ -198,7 +198,7 @@
 .table-data__status {
   color: var(--accent);
 
-  &:where(.is-completed) {
+  &.is-completed {
     color: var(--tertiary);
   }
 }

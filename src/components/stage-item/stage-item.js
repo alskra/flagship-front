@@ -3,16 +3,43 @@ import '@components/timer/timer';
 import '@components/table-data/table-data';
 import './stage-item.scss';
 
-Alpine.data('stageItem', () => ({
-  endDate: 0,
+Alpine.data('stageItem', (isStarted = false, timeLeft = 0) => ({
+  isStarted,
+  timeLeft,
+  controlTime: 0,
   isLoading: false,
-  isStarted: false,
-  isCompleted: false,
+  get isCompleted() {
+    return this.isStarted && this.timeLeft === 0;
+  },
+  start() {
+    this.isStarted = true;
+    this.timeLeft = this.controlTime;
+  },
+  beforeSendData() {
+    this.isLoading = true;
+  },
   fakeSendData() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
       }, 1000);
     });
+  },
+  afterSendData() {
+    this.isLoading = false;
+    this.start();
+  },
+  stageItem: {
+    ':class'() {
+      return { 'stage-item--is-started': this.isStarted };
+    },
+  },
+  btnStart: {
+    ':class'() {
+      return { 'is-loading': this.isLoading };
+    },
+    ':disabled'() {
+      return this.isLoading;
+    },
   },
 }));
