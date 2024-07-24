@@ -1,5 +1,6 @@
 .stage-item {
-  &--cabinet {
+  &--cabinet,
+  &--brainstorm {
     &.is-started {
       .stage__params-body > :nth-child(3) {
         grid-column: auto;
@@ -26,7 +27,8 @@
   }
 
   @media (--max-md) {
-    &--cabinet {
+    &--cabinet,
+    &--brainstorm {
       &.is-started {
         .stage__params-body > :nth-child(3) {
           grid-column: span 2;

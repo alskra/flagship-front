@@ -1,6 +1,6 @@
 .stage {
   &--cabinet,
-  &--brainstorm.is-filled,
+  &--brainstorm:where(.is-filled),
   &--conference {
     .stage__params-body {
       grid-template-columns: 223fr 189fr 227fr 139fr;
@@ -13,7 +13,7 @@
 
   // stylelint-disable-next-line
   &--tribune,
-  &--brainstorm:not(.is-filled) {
+  &--brainstorm:where(:not(.is-filled)) {
     .stage__params-body {
       grid-template-columns: 223fr 223fr 223fr;
     }
@@ -21,7 +21,7 @@
 
   @media (--max-md) {
     &--cabinet,
-    &--brainstorm.is-filled,
+    &--brainstorm:where(.is-filled),
     &--conference {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
@@ -30,7 +30,7 @@
 
     // stylelint-disable-next-line
     &--tribune,
-    &--brainstorm:not(.is-filled) {
+    &--brainstorm:where(:not(.is-filled)) {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
       }
