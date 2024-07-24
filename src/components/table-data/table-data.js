@@ -31,6 +31,11 @@ Alpine.data('tableData', () => ({
   init() {
     this.data = Array.from(this.$root.querySelectorAll('tbody tr'));
   },
+  tableData: {
+    ':class'() {
+      return { 'is-filled': this.isFilled };
+    },
+  },
   sortBtn: {
     ':class'() {
       return {

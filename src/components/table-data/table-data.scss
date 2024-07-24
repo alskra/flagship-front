@@ -130,7 +130,9 @@
     }
   }
 
-  &--cabinet {
+  // stylelint-disable-next-line
+  &--cabinet,
+  &--brainstorm.is-filled {
     th:nth-child(1) {
       width: calc(223 / 778 * 100%);
     }
@@ -154,7 +156,7 @@
     }
   }
 
-  &--brainstorm-ungrouped {
+  &--brainstorm:not(.is-filled) {
     th {
       width: calc(223 / 778 * 100%);
     }

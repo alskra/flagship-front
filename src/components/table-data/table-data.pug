@@ -2,8 +2,9 @@ mixin table-data(type = 'events')
   .table-responsive&attributes(attributes)
     .overflow-clip
       table.table-data(
-        class=`table-data--${type}`
+        class=`table-data--${type.replace('-not-filled', '')}`
         x-data="tableData"
+        x-bind="tableData"
       )
         if type === 'events'
           thead
@@ -96,7 +97,7 @@ mixin table-data(type = 'events')
                 td: span Александрович
                 td: span.table-data__status(x-bind="status")
 
-        if type === 'tribune-empty'
+        if type === 'tribune-not-filled'
           thead
             tr
               th: span №
@@ -237,7 +238,7 @@ mixin table-data(type = 'events')
                         x-bind:value="formatTime"
                       )
 
-        if type === 'brainstorm-ungrouped'
+        if type === 'brainstorm-not-filled'
           thead
             tr
               th: span Фамилия
