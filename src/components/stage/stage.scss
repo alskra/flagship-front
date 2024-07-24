@@ -1,6 +1,7 @@
 .stage {
   &--cabinet,
-  &--brainstorm.is-filled {
+  &--brainstorm.is-filled,
+  &--conference {
     .stage__params-body {
       grid-template-columns: 223fr 189fr 227fr 139fr;
     }
@@ -20,7 +21,8 @@
 
   @media (--max-md) {
     &--cabinet,
-    &--brainstorm.is-filled {
+    &--brainstorm.is-filled,
+    &--conference {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
       }
@@ -136,4 +138,23 @@
   border: 3px solid var(--primary);
   border-top: 0;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.stage__command-timer {
+  display: grid;
+  grid-template-columns: 104rem 104rem;
+  gap: var(--table-data-border-spacing);
+
+  .form-field {
+    --height: 46rem;
+    --font-size: 14rem;
+  }
+
+  .form-field--timer {
+    --font-size: 14rem;
+  }
+
+  .btn {
+    --height: 46rem;
+  }
 }

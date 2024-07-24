@@ -16,6 +16,15 @@
     }
   }
 
+  &--conference {
+    &.is-started {
+      .stage__command-timer {
+        display: block;
+        width: 104rem;
+      }
+    }
+  }
+
   @media (--max-md) {
     &--cabinet {
       &.is-started {

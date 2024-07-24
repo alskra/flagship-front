@@ -132,7 +132,8 @@
 
   // stylelint-disable-next-line
   &--cabinet,
-  &--brainstorm.is-filled {
+  &--brainstorm.is-filled,
+  &--conference {
     th:nth-child(1) {
       width: calc(223 / 778 * 100%);
     }

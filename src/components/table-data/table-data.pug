@@ -252,7 +252,7 @@ mixin table-data(type = 'events')
                 td: span Иван
                 td: span Петрович
 
-        if type === 'brainstorm'
+        if ['brainstorm', 'conference'].includes(type)
           thead
             tr
               th: span Фамилия

@@ -20,7 +20,9 @@ Alpine.data('stage', ({ isFilled = false } = {}) => ({
   },
   commandHeader: {
     '@click'() {
-      this.$el.nextElementSibling.hidden = !this.$el.nextElementSibling.hidden;
+      if (!this.$event.target.closest('.stage__command-timer')) {
+        this.$el.nextElementSibling.hidden = !this.$el.nextElementSibling.hidden;
+      }
     },
   },
 }));
