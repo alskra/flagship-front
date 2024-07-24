@@ -1,10 +1,10 @@
 include /components/table-data/table-data
 
-mixin stage(type = 'cabinet')
+mixin stage(type = 'cabinet', isFilled = false)
   // `stage(false)` - передаем параметр жеребьевки
   .stage(
     class=`stage--${type}`
-    x-data=`stage(false)`
+    x-data=`stage(${isFilled})`
     x-bind=`stage`
   )&attributes(attributes)
     .stage__body
