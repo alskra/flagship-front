@@ -150,11 +150,14 @@ mixin table-data(type = 'events')
                         option(value=30 * 60 * 1000) 30 мин.
                         option(value=45 * 60 * 1000) 45 мин.
                         option(value=60 * 60 * 1000) 1 час
+                        option(value=90 * 60 * 1000) 1 час 30 мин
+
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
                         x-bind="btnStart"
                         x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
+
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
@@ -183,11 +186,14 @@ mixin table-data(type = 'events')
                         option(value=30 * 60 * 1000) 30 мин.
                         option(value=45 * 60 * 1000) 45 мин.
                         option(value=60 * 60 * 1000) 1 час
+                        option(value=90 * 60 * 1000) 1 час 30 мин
+
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
                         x-bind="btnStart"
                         x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
+
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
@@ -216,11 +222,14 @@ mixin table-data(type = 'events')
                         option(value=30 * 60 * 1000) 30 мин.
                         option(value=45 * 60 * 1000) 45 мин.
                         option(value=60 * 60 * 1000) 1 час
+                        option(value=90 * 60 * 1000) 1 час 30 мин
+
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
                         x-bind="btnStart"
                         x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
+
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
@@ -228,21 +237,16 @@ mixin table-data(type = 'events')
                         x-bind:value="formatTime"
                       )
 
-        if type === 'brainstorm-empty'
+        if type === 'brainstorm-ungrouped'
           thead
             tr
               th: span Фамилия
               th: span Имя
               th: span Отчество
-              th: span Статус
 
           tbody(x-ref="body")
-            each item, index in Array(6)
+            each item, index in Array(24)
               tr
-                td
-                td
-                td
-                td
-                td
-                td
-                td
+                td: span Иванов
+                td: span Иван
+                td: span Петрович

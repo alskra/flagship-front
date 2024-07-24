@@ -49,6 +49,7 @@ mixin stage(type = 'cabinet')
                   option(value=30 * 60 * 1000) 30 мин.
                   option(value=45 * 60 * 1000) 45 мин.
                   option(value=60 * 60 * 1000) 1 час
+                  option(value=90 * 60 * 1000) 1 час 30 мин
 
               div(x-show="!isStarted")
                 +btn({ content: 'Старт' }).btn--accent.btn--lg.btn--width-full(
@@ -70,7 +71,7 @@ mixin stage(type = 'cabinet')
           .stage__params(x-show="!isFilled")
             .stage__params-body
               div
-                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
+                +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                   x-bind="btnLoad"
                   x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
                 )
@@ -83,19 +84,16 @@ mixin stage(type = 'cabinet')
           .stage__params(x-show="!isFilled")
             .stage__params-body
               div
-                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
+                +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                   x-bind="btnLoad"
                   x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
                 )
 
               div
                 +form-field({tag: 'select'}).form-field--lg(x-model.number="controlTime")
-                  option(value=5 * 1000) 5 сек.
-                  option(value=5 * 60 * 1000) 5 мин.
-                  option(value=15 * 60 * 1000) 15 мин.
-                  option(value=30 * 60 * 1000) 30 мин.
-                  option(value=45 * 60 * 1000) 45 мин.
-                  option(value=60 * 60 * 1000) 1 час
+                  option(value="6") 6 человек в команде
+                  option(value="9") 9 человек в команде
+                  option(value="12") 12 человек в команде
 
           div(x-ref="stageItems")
-            +table-data('brainstorm-empty')
+            +table-data('brainstorm-ungrouped')

@@ -132,25 +132,31 @@
 
   &--cabinet {
     th:nth-child(1) {
-      width: calc(223 / 799 * 100%);
+      width: calc(223 / 778 * 100%);
     }
 
     th:nth-child(2) {
-      width: calc(189 / 799 * 100%);
+      width: calc(189 / 778 * 100%);
     }
 
     th:nth-child(3) {
-      width: calc(227 / 799 * 100%);
+      width: calc(227 / 778 * 100%);
     }
 
     th:nth-child(4) {
-      width: calc(139 / 799 * 100%);
+      width: calc(139 / 778 * 100%);
     }
   }
 
   &--tribune {
     th:last-child {
       width: 1%;
+    }
+  }
+
+  &--brainstorm-ungrouped {
+    th {
+      width: calc(223 / 778 * 100%);
     }
   }
 }

@@ -9,8 +9,24 @@
     }
   }
 
+  // stylelint-disable-next-line
+  &--tribune,
+  &--brainstorm {
+    .stage__params-body {
+      grid-template-columns: 223fr 223fr 223fr;
+    }
+  }
+
   @media (--max-md) {
     &--cabinet {
+      .stage__params-body {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    // stylelint-disable-next-line
+    &--tribune,
+    &--brainstorm {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
       }
