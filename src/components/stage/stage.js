@@ -4,6 +4,7 @@ import './stage.scss';
 
 Alpine.data('stage', () => ({
   isLoading: false,
+  isFilled: false,
   btnLoad: {
     ':class'() {
       return { 'is-loading': this.isLoading };

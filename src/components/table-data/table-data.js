@@ -57,7 +57,7 @@ Alpine.data('tableData', () => ({
       };
     },
     'x-text'() {
-      return this.isCompleted ? 'Завершен' : 'Не завершен';
+      return this.isCompleted ? 'Этап завершен' : 'Не завершен';
     },
   },
 }));

@@ -58,21 +58,14 @@ mixin stage(type = 'cabinet')
           +table-data(type)
 
       if type === 'tribune'
-        .stage__main(x-data="{ isFilled: false }")
+        .stage__main
           .stage__params(x-show="!isFilled")
             .stage__params-body
               div
                 +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
                   x-bind="btnLoad"
-                  x-on:click="isLoading = true;"
+                  x-on:click="isLoading = true; $refs.tableDataBox.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
                 )
 
           div(x-ref="tableDataBox")
-            +table-data('tribune-empty')(
-              x-cloak
-              x-show="!isFilled"
-            )
-            +table-data(type)(
-              x-cloak
-              x-show="isFilled"
-            )
+            +table-data('tribune-empty')

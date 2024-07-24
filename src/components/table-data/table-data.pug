@@ -164,7 +164,7 @@ mixin table-data(type = 'events')
 
               tr(
                 class=`stage-item--${type}`
-                x-data="stageItem(true, 45000)"
+                x-data=`stageItem(true, ${45000 * (index + 1)})`
                 x-bind="stageItem"
                 x-cloak
               )
