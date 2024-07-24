@@ -31,7 +31,7 @@ Alpine.data('stageItem', (isStarted = false, timeLeft = 0) => ({
   },
   stageItem: {
     ':class'() {
-      return { 'stage-item--is-started': this.isStarted };
+      return { 'is-started': this.isStarted };
     },
   },
   btnStart: {

@@ -50,4 +50,14 @@ Alpine.data('tableData', () => ({
       this.doSort();
     },
   },
+  status: {
+    ':class'() {
+      return {
+        'is-completed': this.isCompleted,
+      };
+    },
+    'x-text'() {
+      return this.isCompleted ? 'Завершен' : 'Не завершен';
+    },
+  },
 }));

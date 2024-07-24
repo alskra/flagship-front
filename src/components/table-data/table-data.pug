@@ -26,6 +26,7 @@ mixin table-data(type = 'events')
               th: span Ссылка на регистрацию
               th: span Ссылка на этапы
               th(colspan="3"): span Действия
+
           tbody(x-ref="body")
             each item, index in Array(10)
               tr(
@@ -74,34 +75,26 @@ mixin table-data(type = 'events')
               th: span Имя
               th: span Отчество
               th: span Статус
+
           tbody(x-ref="body")
             each item, index in Array(10)
               tr
                 td: span Иванов
                 td: span Иван
                 td: span Петрович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
 
               tr
                 td: span Петров
                 td: span Петр
                 td: span Иванович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
 
               tr
                 td: span Сидоров
                 td: span Николай
                 td: span Александрович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
 
         if type === 'tribune-empty'
           thead
@@ -112,6 +105,7 @@ mixin table-data(type = 'events')
               th: span Отчество
               th: span Статус
               th(colspan="2"): span Таймер
+
           tbody(x-ref="body")
             each item, index in Array(6)
               tr
@@ -132,22 +126,21 @@ mixin table-data(type = 'events')
               th: span Отчество
               th: span Статус
               th: span Таймер
+
           tbody(x-ref="body")
             each item, index in Array(2)
-              tr.stage-item.stage-item--tribune(x-data="stageItem")
+              tr.stage-item(
+                class=`stage-item--${type}`
+                x-data="stageItem(false, 0)"
+                x-bind="stageItem"
+              )
                 td: span= index * 3 + 1
                 td: span Иванов
                 td: span Иван
                 td: span Петрович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
                 td
-                  .table-data__timer(
-                    x-bind:class="{ 'is-started': isStarted }"
-                    x-data="timer"
-                  )
+                  .table-data__timer
                     div(x-show="!isStarted")
                       +form-field({tag: 'select'})(x-model.number="controlTime")
                         option(value=5 * 1000) 5 сек.
@@ -158,29 +151,28 @@ mixin table-data(type = 'events')
                         option(value=60 * 60 * 1000) 1 час
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
-                        x-bind:disabled="isLoading"
-                        x-on:click="isLoading = true; fakeSendData(controlTime).then(() => { isLoading = false; isStarted = true; start(); setTimeout(() => isCompleted = true, controlTime)})"
+                        x-bind="btnStart"
+                        x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
+                        x-data="timer"
                         x-bind:value="formatTime"
                       )
 
-              tr(x-data="stageItem")
+              tr(
+                class=`stage-item--${type}`
+                x-data="stageItem(true, 45000)"
+                x-bind="stageItem"
+              )
                 td: span= index * 3 + 2
                 td: span Петров
                 td: span Петр
                 td: span Иванович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
                 td
-                  .table-data__timer(
-                    x-bind:class="{ 'is-started': isStarted }"
-                    x-data="timer"
-                  )
+                  .table-data__timer
                     div(x-show="!isStarted")
                       +form-field({tag: 'select'})(x-model.number="controlTime")
                         option(value=5 * 1000) 5 сек.
@@ -191,29 +183,28 @@ mixin table-data(type = 'events')
                         option(value=60 * 60 * 1000) 1 час
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
-                        x-bind:disabled="isLoading"
-                        x-on:click="isLoading = true; fakeSendData(controlTime).then(() => { isLoading = false; isStarted = true; start(); setTimeout(() => isCompleted = true, controlTime)})"
+                        x-bind="btnStart"
+                        x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
+                        x-data="timer"
                         x-bind:value="formatTime"
                       )
 
-              tr(x-data="stageItem")
+              tr(
+                class=`stage-item--${type}`
+                x-data="stageItem(true, 0)"
+                x-bind="stageItem"
+              )
                 td: span= index * 3 + 3
                 td: span Сидоров
                 td: span Николай
                 td: span Александрович
-                td: span.table-data__status(
-                  x-bind:class="{ 'is-completed': isCompleted }"
-                  x-text="isCompleted ? 'Завершен' : 'Не завершен'"
-                )
+                td: span.table-data__status(x-bind="status")
                 td
-                  .table-data__timer(
-                    x-bind:class="{ 'is-started': isStarted }"
-                    x-data="timer"
-                  )
+                  .table-data__timer
                     div(x-show="!isStarted")
                       +form-field({tag: 'select'})(x-model.number="controlTime")
                         option(value=5 * 1000) 5 сек.
@@ -224,11 +215,12 @@ mixin table-data(type = 'events')
                         option(value=60 * 60 * 1000) 1 час
                     div(x-show="!isStarted")
                       +btn({content: 'Старт'}).btn--accent.btn--width-full(
-                        x-bind:disabled="isLoading"
-                        x-on:click="isLoading = true; fakeSendData(controlTime).then(() => { isLoading = false; isStarted = true; start(); setTimeout(() => isCompleted = true, controlTime)})"
+                        x-bind="btnStart"
+                        x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() => { afterSendData() })"
                       )
                     div(x-show="isStarted")
                       +form-field().form-field.form-field--timer(
                         readonly
+                        x-data="timer"
                         x-bind:value="formatTime"
                       )

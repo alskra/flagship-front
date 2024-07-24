@@ -1,3 +1,28 @@
 .stage-item {
-//   .
+  &--cabinet {
+    &.is-started {
+      .stage__params-body > :nth-child(3) {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &--tribune {
+    &.is-started {
+      .table-data__timer {
+        display: block;
+        min-width: 104rem;
+      }
+    }
+  }
+
+  @media (--max-md) {
+    &--cabinet {
+      &.is-started {
+        .stage__params-body > :nth-child(3) {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
 }

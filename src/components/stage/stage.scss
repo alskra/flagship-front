@@ -7,20 +7,12 @@
     .stage__params-body > :nth-child(3) {
       grid-column: span 2;
     }
-
-    .stage-item--is-started .stage__params-body > :nth-child(3) {
-      grid-column: auto;
-    }
   }
 
   @media (--max-md) {
     &--cabinet {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .stage-item--is-started .stage__params-body > :nth-child(3) {
-        grid-column: span 2;
       }
     }
   }
