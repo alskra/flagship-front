@@ -77,3 +77,25 @@ mixin stage(type = 'cabinet')
 
           div(x-ref="stageItems")
             +table-data('tribune-empty')
+
+      if type === 'brainstorm'
+        .stage__main
+          .stage__params(x-show="!isFilled")
+            .stage__params-body
+              div
+                +btn({content: 'Провести жеребьевку'}).btn--tertiary.btn--lg(
+                  x-bind="btnLoad"
+                  x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
+                )
+
+              div
+                +form-field({tag: 'select'}).form-field--lg(x-model.number="controlTime")
+                  option(value=5 * 1000) 5 сек.
+                  option(value=5 * 60 * 1000) 5 мин.
+                  option(value=15 * 60 * 1000) 15 мин.
+                  option(value=30 * 60 * 1000) 30 мин.
+                  option(value=45 * 60 * 1000) 45 мин.
+                  option(value=60 * 60 * 1000) 1 час
+
+          div(x-ref="stageItems")
+            +table-data('brainstorm-empty')

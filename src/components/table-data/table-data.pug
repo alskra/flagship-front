@@ -227,3 +227,22 @@ mixin table-data(type = 'events')
                         x-data="timer"
                         x-bind:value="formatTime"
                       )
+
+        if type === 'brainstorm-empty'
+          thead
+            tr
+              th: span Фамилия
+              th: span Имя
+              th: span Отчество
+              th: span Статус
+
+          tbody(x-ref="body")
+            each item, index in Array(6)
+              tr
+                td
+                td
+                td
+                td
+                td
+                td
+                td

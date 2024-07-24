@@ -26,6 +26,7 @@ Alpine.data('tableData', () => ({
 
     this.$refs.body.innerHTML = '';
     this.$refs.body.append(...this.data);
+    this.$root.closest('.table-responsive').scrollTop = 0;
   },
   init() {
     this.data = Array.from(this.$root.querySelectorAll('tbody tr'));
