@@ -1,0 +1,13 @@
+extends /pug/base
+
+include /components/table-data/table-data
+
+block document
+  each item, index in Array(4)
+    .stage__command
+      .stage__command-body
+        .stage__command-header(x-bind="commandHeader")
+          .stage__command-title Команда #{index + 1}
+          icon-svg(name="angle-down").stage__command-header-icon
+        .stage__command-main(hidden)
+          +table-data('brainstorm')

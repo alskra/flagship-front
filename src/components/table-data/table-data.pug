@@ -251,3 +251,19 @@ mixin table-data(type = 'events')
                 td: span Иванов
                 td: span Иван
                 td: span Петрович
+
+        if type === 'brainstorm'
+          thead
+            tr
+              th: span Фамилия
+              th: span Имя
+              th: span Отчество
+              th: span Статус
+
+          tbody(x-ref="body")
+            each item, index in Array(4)
+              tr
+                td: span Иванов
+                td: span Иван
+                td: span Петрович
+                td: span.table-data__status(x-bind="status")

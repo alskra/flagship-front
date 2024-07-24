@@ -78,7 +78,7 @@ mixin stage(type = 'cabinet')
                 div
                   +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                     x-bind="btnLoad"
-                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
+                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-tribune.html')).text(); isLoading = false; isFilled = true"
                   )
 
           div(x-ref="stageItems")
@@ -97,7 +97,7 @@ mixin stage(type = 'cabinet')
                 div
                   +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                     x-bind="btnLoad"
-                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/table-data-tribune.html')).text(); isLoading = false; isFilled = true"
+                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-brainstorm.html')).text(); isLoading = false; isFilled = true"
                   )
 
                 div

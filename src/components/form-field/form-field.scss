@@ -35,7 +35,7 @@
     --angle-width: 12rem;
 
     padding-right: calc(16rem + 8rem + var(--angle-width));
-    background: url("~@images/icons/svg/angle-down.svg") right 16rem center / var(--angle-width) no-repeat var(--bg);
+    background: url("~@images/icons/svg/triangle-down.svg") right 16rem center / var(--angle-width) no-repeat var(--bg);
   }
 
   &:invalid:where(.validation-on) {

@@ -18,4 +18,9 @@ Alpine.data('stage', (isFilled = false) => ({
       return this.isLoading;
     },
   },
+  commandHeader: {
+    '@click'() {
+      this.$el.nextElementSibling.hidden = !this.$el.nextElementSibling.hidden;
+    },
+  },
 }));
