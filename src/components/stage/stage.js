@@ -2,9 +2,9 @@ import Alpine from 'alpinejs';
 import '@components/stage-item/stage-item';
 import './stage.scss';
 
-Alpine.data('stage', () => ({
+Alpine.data('stage', (isFilled = false) => ({
   isLoading: false,
-  isFilled: false,
+  isFilled,
   btnLoad: {
     ':class'() {
       return { 'is-loading': this.isLoading };
