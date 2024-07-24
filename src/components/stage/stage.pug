@@ -1,10 +1,10 @@
 include /components/table-data/table-data
 
-mixin stage(type = 'cabinet', isFilled = false)
+mixin stage(type = 'cabinet', { isFilled = false } = {})
   // `stage(false)` - передаем параметр жеребьевки
   .stage(
     class=`stage--${type}`
-    x-data=`stage(${isFilled})`
+    x-data=`stage({ isFilled: ${isFilled} })`
     x-bind=`stage`
   )&attributes(attributes)
     .stage__body
@@ -27,7 +27,7 @@ mixin stage(type = 'cabinet', isFilled = false)
       if type === 'cabinet'
         .stage__main.stage-item(
           class=`stage-item--${type}`
-          x-data="stageItem(false, 0)"
+          x-data="stageItem({ isStarted: false, timeLeft: 0 })"
           x-bind="stageItem"
           x-cloak
         )
@@ -87,7 +87,7 @@ mixin stage(type = 'cabinet', isFilled = false)
       if type === 'brainstorm'
         .stage__main.stage-item(
           class=`stage-item--${type}`
-          x-data="stageItem(false, 0)"
+          x-data="stageItem({ isStarted: false, timeLeft: 0 })"
           x-bind="stageItem"
           x-cloak
         )

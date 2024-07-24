@@ -3,7 +3,7 @@ import '@components/timer/timer';
 import '@components/table-data/table-data';
 import './stage-item.scss';
 
-Alpine.data('stageItem', (isStarted = false, timeLeft = 0) => ({
+Alpine.data('stageItem', ({ isStarted = false, timeLeft = 0 } = {}) => ({
   isStarted,
   timeLeft,
   controlTime: 0,

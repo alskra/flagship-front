@@ -132,7 +132,7 @@ mixin table-data(type = 'events')
             each item, index in Array(2)
               tr.stage-item(
                 class=`stage-item--${type}`
-                x-data="stageItem(false, 0)"
+                x-data="stageItem({ isStarted: false, timeLeft: 0 })"
                 x-bind="stageItem"
                 x-cloak
               )
@@ -168,7 +168,7 @@ mixin table-data(type = 'events')
 
               tr(
                 class=`stage-item--${type}`
-                x-data=`stageItem(true, ${45000 * (index + 1)})`
+                x-data=`stageItem({ isStarted: true, timeLeft: ${45000 * (index + 1)} })`
                 x-bind="stageItem"
                 x-cloak
               )
@@ -204,7 +204,7 @@ mixin table-data(type = 'events')
 
               tr(
                 class=`stage-item--${type}`
-                x-data="stageItem(true, 0)"
+                x-data="stageItem({ isStarted: true, timeLeft: 0 })"
                 x-bind="stageItem"
                 x-cloak
               )

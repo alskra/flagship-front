@@ -2,7 +2,7 @@ import Alpine from 'alpinejs';
 import '@components/stage-item/stage-item';
 import './stage.scss';
 
-Alpine.data('stage', (isFilled = false) => ({
+Alpine.data('stage', ({ isFilled = false } = {}) => ({
   isLoading: false,
   isFilled,
   stage: {
