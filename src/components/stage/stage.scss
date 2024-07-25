@@ -96,13 +96,19 @@
   --border-radius: 15rem;
 
   &:--not-l-c {
-    margin-bottom: 30rem;
+    margin-bottom: 28rem;
   }
 
   &:has(.stage__command-main:not([hidden])) {
     .stage__command-header-icon {
       transform: rotateX(180deg);
     }
+  }
+}
+
+.stage__command-body {
+  &:--not-l-c {
+    margin-bottom: 28rem;
   }
 }
 

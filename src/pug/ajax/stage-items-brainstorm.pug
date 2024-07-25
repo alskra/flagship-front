@@ -9,5 +9,6 @@ block document
         .stage__command-header(x-bind="commandHeader")
           .stage__command-title Команда #{index + 1}
           icon-svg(name="angle-down").stage__command-header-icon
+
         .stage__command-main(hidden)
           +table-data('brainstorm')

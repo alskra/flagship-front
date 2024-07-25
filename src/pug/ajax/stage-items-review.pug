@@ -20,7 +20,7 @@ block document
           +table-data('review')
 
       template(x-teleport=`#command-review-${index + 1}`)
-        .stage__command-review-body
+        .stage__command-review
           .stage__command-review-title Команда #{index > 0 ? index : 4} рецензирует команду #{index + 1}
 
           .stage__command-timer
@@ -47,4 +47,4 @@ block document
                 x-bind:value="formatTime"
               )
 
-      .stage__command-review(id=`command-review-${index < 3 ? index + 2 : 1}`)
+      div(id=`command-review-${index < 3 ? index + 2 : 1}`)
