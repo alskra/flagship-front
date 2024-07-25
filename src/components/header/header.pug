@@ -14,7 +14,7 @@ mixin header
             a.header__nav-item(href="") Пункт меню 2
             a.header__nav-item(href="") Пункт меню 3
 
-      .col-3.col-6-max-lg(class={ 'header__actions': aside })
+      .col-3.col-6-max-lg.header__actions
         if aside
           +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
           +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent
