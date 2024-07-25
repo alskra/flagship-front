@@ -56,7 +56,7 @@
 
   &:has(input:checked) {
     color: rgb(var(--hover-bg));
-    box-shadow: 0 0 0 5px rgb(var(--bg) / 75%);
+    box-shadow: 0 0 0 5px rgb(var(--bg) / 65%);
   }
 
   @include hover {
