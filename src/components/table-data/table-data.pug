@@ -1,6 +1,7 @@
 mixin table-data(type = 'events')
   mixin editable(val)
     td.table-data__editable(
+      title="Двойной клик - Редактировать"
       x-data=`editable('${val}')`
       x-bind="editable"
     )
