@@ -21,3 +21,6 @@ import '@components/form-label/form-label';
 
 // eslint-disable-next-line import/prefer-default-export
 export const viewport = new Viewport({ vhProperty: false });
+
+// eslint-disable-next-line no-alert
+alert(document.documentElement.className);
