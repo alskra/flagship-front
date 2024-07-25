@@ -14,17 +14,19 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
             | Этап кабинет
           if type === 'tribune'
             | Этап “Трибуна”
-          if ['brainstorm', 'conference'].includes(type)
+          if ['brainstorm', 'conference', 'review'].includes(type)
             | Командные этапы
 
         +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
 
-        if ['brainstorm', 'conference'].includes(type)
+        if ['brainstorm', 'conference', 'review'].includes(type)
           p.stage__subtitle
             if type === 'brainstorm'
               | Мозговой штурм
             if type === 'conference'
               | Конференция
+            if type === 'review'
+              | Рецензия
 
       if type === 'cabinet'
         .stage__main.stage-item(
@@ -99,7 +101,7 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
                 div
                   +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                     x-bind="btnLoad"
-                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-brainstorm.html')).text(); isLoading = false; isFilled = true"
+                    x-on:click=`isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-${type}.html')).text(); isLoading = false; isFilled = true`
                   )
 
                 div
@@ -145,9 +147,9 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
                   )
 
           div(x-ref="stageItems")
-            +table-data('brainstorm-not-filled')
+            +table-data(`${type}-not-filled`)
 
-      if type === 'conference'
+      if ['conference', 'review'].includes(type)
         .stage__main
           template(x-if="!isFilled")
             .stage__params
@@ -155,7 +157,7 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
                 div
                   +btn({content: '<span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span>'}).btn--tertiary.btn--lg.btn--width-full(
                     x-bind="btnLoad"
-                    x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-conference.html')).text(); isLoading = false; isFilled = true"
+                    x-on:click=`isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-${type}.html')).text(); isLoading = false; isFilled = true`
                   )
 
           div(x-ref="stageItems")
@@ -166,4 +168,4 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
                     .stage__command-title Команда #{index + 1}
                     icon-svg(name="angle-down").stage__command-header-icon
                   .stage__command-main(hidden)
-                    +table-data('conference')
+                    +table-data(type)

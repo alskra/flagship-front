@@ -1,0 +1,13 @@
+extends /pages/index/index
+
+include /components/stage/stage
+
+append variables
+  -
+    url = 'stage-review';
+    aside = false;
+
+block main
+  .grid-12
+    .col-12.col-8-min-lg.col-start-3-min-lg.col-6-min-xl.col-start-4-min-xl
+      +stage('review')

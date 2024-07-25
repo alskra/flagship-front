@@ -1,7 +1,8 @@
 .stage {
   &--cabinet,
   &--brainstorm:where(.is-filled),
-  &--conference {
+  &--conference,
+  &--review {
     .stage__params-body {
       grid-template-columns: 223fr 189fr 227fr 139fr;
     }
@@ -22,7 +23,8 @@
   @media (--max-md) {
     &--cabinet,
     &--brainstorm:where(.is-filled),
-    &--conference {
+    &--conference,
+    &--review {
       .stage__params-body {
         grid-template-columns: 1fr 1fr;
       }
