@@ -6,11 +6,15 @@ mixin header
           +btn({ icons: ['menu-unfold', 'menu-fold'] })(x-bind="btnMenu").header__btn-menu
         a.header__logo(href="guide.html")
           +img-2x()(src="~@images/logo.png")
-      .col-6.header__nav-box
-        nav.header__nav(x-bind="nav")
-          a.header__nav-item(href="index.html") Главная
-          a.header__nav-item(href="") Пункт меню 2
-          a.header__nav-item(href="") Пункт меню 3
-      .col-3.col-6-max-lg.header__actions
-        +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
-        +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent
+
+      .col-6(class={ 'header__nav-box': aside })
+        if aside
+          nav.header__nav(x-bind="nav")
+            a.header__nav-item(href="index.html") Главная
+            a.header__nav-item(href="") Пункт меню 2
+            a.header__nav-item(href="") Пункт меню 3
+
+      .col-3.col-6-max-lg(class={ 'header__actions': aside })
+        if aside
+          +btn({ tag: 'a', content: 'Выйти', icons: ['sign-out'] }).header__btn.header__btn--primary.header__btn--sign
+          +btn({ tag: 'a', icons: ['profile'] }).header__btn.header__btn--accent

@@ -23,6 +23,10 @@ block app
               +user-info()
 
               nav.aside__nav
+                a.aside__nav-item(
+                  class={ 'is-current': url === 'event-create' }
+                  href=url !== 'event-create' ? 'event-create.html' : null
+                ) Список событий
                 a.aside__nav-item(href="") Пользователи
                 a.aside__nav-item(href="") Настройки
 

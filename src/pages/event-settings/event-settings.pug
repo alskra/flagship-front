@@ -13,11 +13,11 @@ block aside
   nav.aside__nav
     a.aside__nav-item(
       class={ 'is-current': url === 'event-settings' }
-      href="event-settings.html"
+      href=url !== 'event-settings' ? 'event-settings.html' : null
     ) Общие настройки
     a.aside__nav-item(
-      href="event-settings-datetime.html"
       class={ 'is-current': url === 'event-settings-datetime' }
+      href=url !== 'event-settings-datetime' ? 'event-settings-datetime.html' : null
     ) Дата и время
 
 block main

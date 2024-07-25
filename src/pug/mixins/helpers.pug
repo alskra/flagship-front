@@ -2,7 +2,8 @@ mixin pages(pages)
   if pages.length
     ol
       each page in pages
-        li
-          a(href=`${page.url}.html`)= page.title
-          if page.pages
-            +pages(page.pages)
+        if !page.hidden
+          li
+            a(href=`${page.url}.html`)= page.title
+            if page.pages
+              +pages(page.pages)
