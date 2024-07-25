@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Флагманы образования - Создание события (Главная после авторизации в админ. панель)</title>
+    <meta property="description" content="Флагманы образования - Создание события (Главная после авторизации в админ. панель)">
+  <script defer src="js/runtime.6785a450.js"></script><script defer src="js/vendors.7345a198.js"></script><script defer src="js/main.9cf5a620.js"></script><link href="css/main.4d9ebdd9.css" rel="stylesheet"></head>
+  <body>
+    <div class="app" x-data="app" x-bind="app">
+      <header class="header" x-data="header">
+        <div class="container grid-12 header__container">
+          <div class="col-3 col-6-max-lg">
+            <button class="btn header__btn-menu" type="button" x-bind="btnMenu">
+              <icon-svg class="btn__icon" name="menu-unfold"></icon-svg>
+              <icon-svg class="btn__icon" name="menu-fold"></icon-svg>
+            </button><a class="header__logo" href="guide.html"><img src="images/logo.035d28a2.webp" srcset="images/logo@1.5x.8dd72072.webp 1.5x, images/logo@2x.342b2c15.webp 2x" loading="lazy" alt=""></a>
+          </div>
+          <div class="col-6 header__nav-box">
+            <nav class="header__nav" x-bind="nav"><a class="header__nav-item" href="index.html">Главная</a><a class="header__nav-item" href="">Пункт меню 2</a><a class="header__nav-item" href="">Пункт меню 3</a></nav>
+          </div>
+          <div class="col-3 col-6-max-lg header__actions">
+            <a class="btn header__btn header__btn--primary header__btn--sign" href="">
+              <icon-svg class="btn__icon" name="sign-out"></icon-svg><span class="btn__content">Выйти</span>
+            </a>
+            <a class="btn header__btn header__btn--accent" href="">
+              <icon-svg class="btn__icon" name="profile"></icon-svg>
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="app__main" x-bind="appMain">
+        <div class="container grid-12 app__main-container">
+          <div class="col-3-min-lg app__main-aside">
+            <aside class="aside">
+              <div class="aside__body">
+                <div class="user-info">
+                  <div class="content user-info__content">
+                    <div class="h5">Иванов Иван</div>
+                    <div class="p color-primary">ivanov@mail.ru</div>
+                  </div>
+                </div>
+                <nav class="aside__nav"><a class="aside__nav-item is-current">Список событий</a><a class="aside__nav-item" href="">Пользователи</a><a class="aside__nav-item" href="">Настройки</a></nav>
+              </div>
+            </aside>
+          </div>
+          <div class="col-12 col-9-min-lg col-7-min-xl col-start-5-min-xl app__main-body">
+            <h1 class="h3 content">Список событий</h1>
+            <div class="events"><a class="events__action-add" href="">
+                <div class="events__action-add-body">
+                  <icon-svg class="events__action-add-bg" name="border"></icon-svg>
+                  <icon-svg class="events__action-add-icon" name="plus"></icon-svg>
+                  <div class="events__action-add-content">Добавить событие</div>
+                </div></a>
+              <div class="table-responsive">
+                <div class="overflow-clip">
+                  <table class="table-data table-data--events" x-data="tableData" x-bind="tableData">
+                    <thead>
+                      <tr>
+                        <th data-sort="targetGroup" x-bind="sortBtn"><span class="table-data__sort">Группа
+                            <icon-svg name="filter"></icon-svg></span></th>
+                        <th><span>Название события</span></th>
+                        <th data-sort="datetime" x-bind="sortBtn"><span class="table-data__sort">Дата
+                            <icon-svg name="filter"></icon-svg></span></th>
+                        <th><span>Ссылка на регистрацию</span></th>
+                        <th><span>Ссылка на этапы</span></th>
+                        <th colspan="3"><span>Действия</span></th>
+                      </tr>
+                    </thead>
+                    <tbody x-ref="body">
+                      <tr data-target-group="1-student" data-datetime="2024-07-10T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>10.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-11T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>11.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-12T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>12.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-11T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>11.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-12T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>12.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-13T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>13.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-12T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>12.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-13T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>13.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-14T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>14.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-13T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>13.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-14T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>14.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-15T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>15.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-14T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>14.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-15T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>15.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-16T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>16.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-15T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>15.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-16T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>16.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-17T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>17.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-16T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>16.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-17T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>17.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-18T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>18.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-17T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>17.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-18T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>18.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-19T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>19.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-18T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>18.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-19T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>19.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-20T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>20.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="1-student" data-datetime="2024-07-19T12:00Z">
+                        <td><span class="icon icon-student table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>19.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="2-teacher" data-datetime="2024-07-20T12:00Z">
+                        <td><span class="icon icon-teacher table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>20.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr data-target-group="3-manager" data-datetime="2024-07-21T12:00Z">
+                        <td><span class="icon icon-manager table-data__target-group"></span></td>
+                        <td><span>Новое событие Флагманы Образования</span></td>
+                        <td><span>21.07.2024</span></td>
+                        <td><a href="">зарегистрироваться</a></td>
+                        <td><a href="">этапы</a></td>
+                        <td>
+                          <a class="btn btn--action" href="" title="QR-код">
+                            <icon-svg class="btn__icon" name="qr"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Редактировать">
+                            <icon-svg class="btn__icon" name="edit"></icon-svg>
+                          </a>
+                        </td>
+                        <td>
+                          <a class="btn btn--action" href="" title="Удалить">
+                            <icon-svg class="btn__icon" name="remove"></icon-svg>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Флагманы образования - Настройки события -&gt; Дата и время</title>
+    <meta property="description" content="Флагманы образования - Настройки события -&gt; Дата и время">
+  <script defer src="js/runtime.6785a450.js"></script><script defer src="js/vendors.7345a198.js"></script><script defer src="js/main.9cf5a620.js"></script><link href="css/main.4d9ebdd9.css" rel="stylesheet"></head>
+  <body>
+    <div class="app" x-data="app" x-bind="app">
+      <header class="header" x-data="header">
+        <div class="container grid-12 header__container">
+          <div class="col-3 col-6-max-lg">
+            <button class="btn header__btn-menu" type="button" x-bind="btnMenu">
+              <icon-svg class="btn__icon" name="menu-unfold"></icon-svg>
+              <icon-svg class="btn__icon" name="menu-fold"></icon-svg>
+            </button><a class="header__logo" href="guide.html"><img src="images/logo.035d28a2.webp" srcset="images/logo@1.5x.8dd72072.webp 1.5x, images/logo@2x.342b2c15.webp 2x" loading="lazy" alt=""></a>
+          </div>
+          <div class="col-6 header__nav-box">
+            <nav class="header__nav" x-bind="nav"><a class="header__nav-item" href="index.html">Главная</a><a class="header__nav-item" href="">Пункт меню 2</a><a class="header__nav-item" href="">Пункт меню 3</a></nav>
+          </div>
+          <div class="col-3 col-6-max-lg header__actions">
+            <a class="btn header__btn header__btn--primary header__btn--sign" href="">
+              <icon-svg class="btn__icon" name="sign-out"></icon-svg><span class="btn__content">Выйти</span>
+            </a>
+            <a class="btn header__btn header__btn--accent" href="">
+              <icon-svg class="btn__icon" name="profile"></icon-svg>
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="app__main" x-bind="appMain">
+        <div class="container grid-12 app__main-container">
+          <div class="col-3-min-lg app__main-aside">
+            <aside class="aside">
+              <div class="aside__body">
+                <div class="event-info">
+                  <div class="content event-info__content">
+                    <div class="h5">Название события</div>
+                    <div class="p event-info__badges">
+                      <div class="event-info__badge">Черновик</div>
+                    </div>
+                  </div>
+                </div>
+                <nav class="aside__nav"><a class="aside__nav-item" href="event-settings.html">Настройки</a></nav>
+              </div>
+            </aside>
+          </div>
+          <div class="col-12 col-9-min-lg col-7-min-xl col-start-5-min-xl app__main-body">
+            <h1 class="h3 content">Дата и время</h1>
+            <form class="event-settings" x-data="eventSettings" action="">
+              <div class="event-settings__body">
+                <div class="event-settings__group">
+                  <label class="form-label">Группа</label>
+                  <div class="target-groups">
+                    <label class="target-groups__item target-groups__item--student">
+                      <div class="target-groups__item-body">
+                        <input class="visually-hidden" type="radio" name="type" value="student">
+                        <div class="icon icon-student target-groups__item-icon"></div>
+                        <div class="target-groups__item-title">Студент</div>
+                      </div>
+                    </label>
+                    <label class="target-groups__item target-groups__item--teacher">
+                      <div class="target-groups__item-body">
+                        <input class="visually-hidden" type="radio" name="type" value="teacher">
+                        <div class="icon icon-teacher target-groups__item-icon"></div>
+                        <div class="target-groups__item-title">Педагог</div>
+                      </div>
+                    </label>
+                    <label class="target-groups__item target-groups__item--manager">
+                      <div class="target-groups__item-body">
+                        <input class="visually-hidden" type="radio" name="type" value="manager">
+                        <div class="icon icon-manager target-groups__item-icon"></div>
+                        <div class="target-groups__item-title">Управле&shy;нец</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="event-settings__main">
+                  <div class="event-settings__group" x-id="[&quot;form-field&quot;]">
+                    <label class="form-label" x-bind:for="$id('form-field')">Название события</label>
+                    <input class="form-field" type="text" name="name" required x-bind:id="$id('form-field')" value="Новое событие Флагманы Образования">
+                    </input>
+                  </div>
+                  <div class="event-settings__group" x-id="[&quot;form-field&quot;]">
+                    <label class="form-label" x-bind:for="$id('form-field')">Дата и время начала (МСК)</label>
+                    <input class="form-field" type="text" required x-bind:id="$id('form-field')">
+                    </input>
+                    <input type="hidden" name="start-date">
+                  </div>
+                  <div class="event-settings__group" x-id="[&quot;form-field&quot;]">
+                    <label class="form-label" x-bind:for="$id('form-field')">Дата и время окончания (МСК)</label>
+                    <input class="form-field" type="text" required x-bind:id="$id('form-field')">
+                    </input>
+                    <input type="hidden" name="end-date">
+                  </div>
+                </div>
+                <div class="event-settings__footer">
+                  <button class="btn btn--primary btn--width-208" type="submit"><span class="btn__content">Сохранить</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

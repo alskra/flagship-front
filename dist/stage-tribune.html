@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Флагманы образования - Этап “Трибуна”</title>
+    <meta property="description" content="Флагманы образования - Этап “Трибуна”">
+  <script defer src="js/runtime.6785a450.js"></script><script defer src="js/vendors.7345a198.js"></script><script defer src="js/main.9cf5a620.js"></script><link href="css/main.4d9ebdd9.css" rel="stylesheet"></head>
+  <body>
+    <div class="app" x-data="app" x-bind="app">
+      <header class="header" x-data="header">
+        <div class="container grid-12 header__container">
+          <div class="col-3 col-6-max-lg"><a class="header__logo" href="guide.html"><img src="images/logo.035d28a2.webp" srcset="images/logo@1.5x.8dd72072.webp 1.5x, images/logo@2x.342b2c15.webp 2x" loading="lazy" alt=""></a>
+          </div>
+          <div class="col-6 header__nav-box">
+          </div>
+          <div class="col-3 col-6-max-lg header__actions">
+          </div>
+        </div>
+      </header>
+      <main class="app__main" x-bind="appMain">
+        <div class="container grid-12 app__main-container">
+          <div class="col-12 app__main-body">
+            <div class="grid-12">
+              <div class="col-12 col-8-min-lg col-start-3-min-lg">
+                <!-- `stage(false)` - передаем параметр жеребьевки-->
+                <div class="stage stage--tribune" x-data="stage({ isFilled: false })" x-bind="stage">
+                  <div class="stage__body">
+                    <div class="stage__header">
+                      <h1 class="h1 content stage__title">Этап “Трибуна”
+                      </h1>
+                      <a class="btn stage__btn-next" href="">
+                        <icon-svg class="btn__icon" name="arrow-right"></icon-svg><span class="btn__content">Далее</span>
+                      </a>
+                    </div>
+                    <div class="stage__main">
+                      <template x-if="!isFilled">
+                        <div class="stage__params">
+                          <div class="stage__params-body">
+                            <div>
+                              <button class="btn btn--tertiary btn--lg btn--width-full" type="button" x-bind="btnLoad" x-on:click="isLoading = true; $refs.stageItems.innerHTML = await (await fetch('ajax/stage-items-tribune.html')).text(); isLoading = false; isFilled = true"><span class="btn__content"><span class="hidden-max-sm">Провести жеребьевку</span><span class="hidden-min-sm">Жеребьевка</span></span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </template>
+                      <div x-ref="stageItems">
+                        <div class="table-responsive">
+                          <div class="overflow-clip">
+                            <table class="table-data table-data--tribune" x-data="tableData" x-bind="tableData">
+                              <thead>
+                                <tr>
+                                  <th><span>№</span></th>
+                                  <th><span>Фамилия</span></th>
+                                  <th><span>Имя</span></th>
+                                  <th><span>Отчество</span></th>
+                                  <th><span>Статус</span></th>
+                                  <th colspan="2"><span>Таймер</span></th>
+                                </tr>
+                              </thead>
+                              <tbody x-ref="body">
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

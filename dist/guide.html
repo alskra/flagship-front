@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Флагманы образования - Guide</title>
+    <meta property="description" content="Флагманы образования - Guide">
+  <script defer src="js/runtime.6785a450.js"></script><script defer src="js/vendors.7345a198.js"></script><script defer src="js/main.9cf5a620.js"></script><link href="css/main.4d9ebdd9.css" rel="stylesheet"></head>
+  <body>
+    <div class="app" x-data="app" x-bind="app">
+      <header class="header" x-data="header">
+        <div class="container grid-12 header__container">
+          <div class="col-3 col-6-max-lg"><a class="header__logo" href="guide.html"><img src="images/logo.035d28a2.webp" srcset="images/logo@1.5x.8dd72072.webp 1.5x, images/logo@2x.342b2c15.webp 2x" loading="lazy" alt=""></a>
+          </div>
+          <div class="col-6 header__nav-box">
+          </div>
+          <div class="col-3 col-6-max-lg header__actions">
+          </div>
+        </div>
+      </header>
+      <main class="app__main">
+        <div class="container grid-1 grid-8-min-md grid-12-min-lg mb-8">
+          <div class="col-2-min-md col-start-3-min-lg">
+            <div x-text="$store.time"></div>
+            <div x-text="$store.formatTime($store.time, { full: true })"></div>
+            <div x-text="$store.formatTime($store.time)"></div>
+          </div>
+          <div class="col-2-min-md">
+            <div x-data="timer" x-text="formatTime"></div>
+            <div x-data="{ timeLeft: 9000 }">
+              <div x-data="timer" x-text="formatTime"></div>
+            </div>
+            <div x-data="Object.assign(timer(), { timeLeft: 11000 })" x-text="formatTime"></div>
+          </div>
+          <div class="col-2-min-md">
+            <div x-data="{ timeLeft: 0 }">
+              <div x-data="timer" x-text="formatTime"></div>
+              <button @click="timeLeft = 15000">Set 15000 ms</button>
+            </div>
+          </div>
+          <div class="col-2-min-md">
+            <div x-data="{ timeLeft: 0 }">
+              <div x-data="timer" x-text="formatTime"></div>
+              <button @click="timeLeft = 15123">Set 15123 ms</button>
+            </div>
+          </div>
+        </div>
+        <div class="container guide">
+          <div class="content">
+            <h2 id="pages">Pages</h2>
+            <ol>
+              <li><a href="event-create.html">Создание события (Главная после авторизации в админ. панель)</a>
+              </li>
+              <li><a href="event-settings.html">Настройки события</a>
+              </li>
+              <li><a href="event-request-sign-up.html">Событие -&gt; Запрос регистрации</a>
+              </li>
+              <li><a href="sign-up.html">Регистрация</a>
+              </li>
+              <li><a href="stage-cabinet.html">Этап кабинет</a>
+              </li>
+              <li><a href="stage-tribune.html">Этап “Трибуна”</a>
+              </li>
+              <li><a href="stage-brainstorm.html">Командные этапы -&gt; Мозговой штурм</a>
+              </li>
+              <li><a href="stage-conference.html">Командные этапы -&gt; Конференция</a>
+              </li>
+              <li><a href="stage-review.html">Командные этапы -&gt; Рецензия</a>
+              </li>
+            </ol>
+            <h1>h1: Конкурс среди организаций высшего образования</h1>
+            <h2>h2: Конкурс среди организаций высшего образования</h2>
+            <h3>h3: Конкурс среди организаций высшего образования</h3>
+            <h4>h4: Конкурс среди организаций высшего образования</h4>
+            <h5>h5: Конкурс среди организаций высшего образования</h5>
+            <h6>h6: Конкурс среди организаций высшего образования</h6><a href="#pages">Anchor link to Pages</a>
+            <p>Это <strong>информационно-познавательный</strong> портал для молодёжи <em>Новгородской области</em>, занимающийся реализацией
+              <a href>молодёжной политики</a> во всех <a>актуальных</a> и действующих направлениях данной отрасли.
+              Это информационно-познавательный портал для молодёжи Новгородской области, занимающийся реализацией
+              молодёжной политики во всех актуальных и действующих направлениях данной отрасли.
+              Это информационно-познавательный портал для молодёжи.
+              
+            </p>
+            <p>
+              Новгородской области, занимающийся реализацией молодёжной политики во всех актуальных
+              и действующих направлениях данной отрасли.
+              
+            </p>
+            <ul>
+              <li>
+                30 октября в Батецком районе будет дан старт областному походу по местам боевых сражений.
+                К нему присоединятся активисты военно-патриотических клубов, центров, объединений и представители
+                поисковых отрядов Новгородской области.
+                
+              </li>
+              <li>
+                Поход продлится до 1 ноября и будет посвящен боевому пути 1-й Ленинградской стрелковой дивизии
+                народного ополчения, которая в июле 1941 года высадилась на станции Батецкая и заняла оборону
+                на Лужском рубеже.
+                
+              </li>
+              <li>
+                В первый день участники познакомятся с виртуальной экспозицией, посвященной 1-й Кировской дивизии
+                народного ополчения, посетят Исторический памятник древнеславянской культуры «Шум-Гора».
+                
+              </li>
+            </ul>
+            <div class="text-center"><img src="images/example.a71b2a0b.jpg" alt="" width="300"><img src="images/example.744dc972.webp" alt="" width="300"><img src="images/example.a71b2a0b.jpg" alt="" width="300"><img src="/images/example.jpg" alt="" width="300"><img src="/upload/example.jpg" alt="" width="300"><img src="upload/example.jpg" alt="" width="300"></div>
+            <h2 id="buttons"><code>buttons</code></h2>
+            <button>Кнопка</button>
+            <button style="border-color: black;">Кнопка</button>
+          </div>
+        </div>
+        <div class="container content">
+          <h2 class="mt mb" id="containers"><code>containers</code></h2>
+        </div>
+        <div class="container">
+          <div style="width: 50%;">
+            <div class="el"></div>
+          </div>
+        </div>
+        <div class="el-2"></div>
+        <div class="el-3" title="Конкурс среди организаций высшего образования"></div>
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-columns: 1fr; grid-auto-flow: column;">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <div class="container grid-12 grid-12-min-lg grid-max-xl mb-3_5 mb-8-min-lg">
+          <div class="col-1">1</div>
+          <div class="col-2 col-2-min-lg">2</div>
+          <div class="col-3">3</div>
+        </div>
+        <div class="container grid-flex-12 grid-flex-12-min-lg flex-max-xl">
+          <div class="col-size-1">1</div>
+          <div class="col-size-2 col-size-2-min-lg">2</div>
+          <div class="col-size-3">3</div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container"></div>
+      </footer>
+    </div>
+  </body>
+</html>

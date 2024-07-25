@@ -1,0 +1,573 @@
+
+<div class="stage__command stage-item stage-item--review" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak id="command-1">
+  <div class="stage__command-body">
+    <div class="stage__command-header" x-bind="commandHeader">
+      <div class="stage__command-title">Команда 1</div>
+      <icon-svg class="stage__command-header-icon" name="angle-down"></icon-svg>
+    </div>
+    <div class="stage__command-main" hidden>
+      <div class="table-responsive">
+        <div class="overflow-clip">
+          <table class="table-data table-data--review" x-data="tableData" x-bind="tableData">
+            <thead>
+              <tr>
+                <th><span>Фамилия</span></th>
+                <th><span>Имя</span></th>
+                <th><span>Отчество</span></th>
+                <th><span>Статус</span></th>
+              </tr>
+            </thead>
+            <tbody x-ref="body">
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template x-teleport="#command-review-1">
+    <div class="stage__command-review">
+      <div class="stage__command-review-title">Команда 4 рецензирует команду 1</div>
+      <div class="stage__command-timer">
+        <div x-show="!isStarted">
+          <select class="form-field" x-model.number="controlTime">
+            <option value="5000">5 сек.</option>
+            <option value="300000">5 мин.</option>
+            <option value="900000">15 мин.</option>
+            <option value="1800000">30 мин.</option>
+            <option value="2700000">45 мин.</option>
+            <option value="3600000">1 час</option>
+            <option value="5400000">1 час 30 мин</option>
+          </select>
+        </div>
+        <div x-show="!isStarted">
+          <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+          </button>
+        </div>
+        <div x-show="isStarted">
+          <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+          </input>
+        </div>
+      </div>
+    </div>
+  </template>
+  <div id="command-review-2"></div>
+</div>
+<div class="stage__command stage-item stage-item--review" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak id="command-2">
+  <div class="stage__command-body">
+    <div class="stage__command-header" x-bind="commandHeader">
+      <div class="stage__command-title">Команда 2</div>
+      <icon-svg class="stage__command-header-icon" name="angle-down"></icon-svg>
+    </div>
+    <div class="stage__command-main" hidden>
+      <div class="table-responsive">
+        <div class="overflow-clip">
+          <table class="table-data table-data--review" x-data="tableData" x-bind="tableData">
+            <thead>
+              <tr>
+                <th><span>Фамилия</span></th>
+                <th><span>Имя</span></th>
+                <th><span>Отчество</span></th>
+                <th><span>Статус</span></th>
+              </tr>
+            </thead>
+            <tbody x-ref="body">
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template x-teleport="#command-review-2">
+    <div class="stage__command-review">
+      <div class="stage__command-review-title">Команда 1 рецензирует команду 2</div>
+      <div class="stage__command-timer">
+        <div x-show="!isStarted">
+          <select class="form-field" x-model.number="controlTime">
+            <option value="5000">5 сек.</option>
+            <option value="300000">5 мин.</option>
+            <option value="900000">15 мин.</option>
+            <option value="1800000">30 мин.</option>
+            <option value="2700000">45 мин.</option>
+            <option value="3600000">1 час</option>
+            <option value="5400000">1 час 30 мин</option>
+          </select>
+        </div>
+        <div x-show="!isStarted">
+          <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+          </button>
+        </div>
+        <div x-show="isStarted">
+          <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+          </input>
+        </div>
+      </div>
+    </div>
+  </template>
+  <div id="command-review-3"></div>
+</div>
+<div class="stage__command stage-item stage-item--review" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak id="command-3">
+  <div class="stage__command-body">
+    <div class="stage__command-header" x-bind="commandHeader">
+      <div class="stage__command-title">Команда 3</div>
+      <icon-svg class="stage__command-header-icon" name="angle-down"></icon-svg>
+    </div>
+    <div class="stage__command-main" hidden>
+      <div class="table-responsive">
+        <div class="overflow-clip">
+          <table class="table-data table-data--review" x-data="tableData" x-bind="tableData">
+            <thead>
+              <tr>
+                <th><span>Фамилия</span></th>
+                <th><span>Имя</span></th>
+                <th><span>Отчество</span></th>
+                <th><span>Статус</span></th>
+              </tr>
+            </thead>
+            <tbody x-ref="body">
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template x-teleport="#command-review-3">
+    <div class="stage__command-review">
+      <div class="stage__command-review-title">Команда 2 рецензирует команду 3</div>
+      <div class="stage__command-timer">
+        <div x-show="!isStarted">
+          <select class="form-field" x-model.number="controlTime">
+            <option value="5000">5 сек.</option>
+            <option value="300000">5 мин.</option>
+            <option value="900000">15 мин.</option>
+            <option value="1800000">30 мин.</option>
+            <option value="2700000">45 мин.</option>
+            <option value="3600000">1 час</option>
+            <option value="5400000">1 час 30 мин</option>
+          </select>
+        </div>
+        <div x-show="!isStarted">
+          <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+          </button>
+        </div>
+        <div x-show="isStarted">
+          <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+          </input>
+        </div>
+      </div>
+    </div>
+  </template>
+  <div id="command-review-4"></div>
+</div>
+<div class="stage__command stage-item stage-item--review" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak id="command-4">
+  <div class="stage__command-body">
+    <div class="stage__command-header" x-bind="commandHeader">
+      <div class="stage__command-title">Команда 4</div>
+      <icon-svg class="stage__command-header-icon" name="angle-down"></icon-svg>
+    </div>
+    <div class="stage__command-main" hidden>
+      <div class="table-responsive">
+        <div class="overflow-clip">
+          <table class="table-data table-data--review" x-data="tableData" x-bind="tableData">
+            <thead>
+              <tr>
+                <th><span>Фамилия</span></th>
+                <th><span>Имя</span></th>
+                <th><span>Отчество</span></th>
+                <th><span>Статус</span></th>
+              </tr>
+            </thead>
+            <tbody x-ref="body">
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+              <tr>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+                  <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+                  </input>
+                </td>
+                <td><span class="table-data__status" x-bind="status"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template x-teleport="#command-review-4">
+    <div class="stage__command-review">
+      <div class="stage__command-review-title">Команда 3 рецензирует команду 4</div>
+      <div class="stage__command-timer">
+        <div x-show="!isStarted">
+          <select class="form-field" x-model.number="controlTime">
+            <option value="5000">5 сек.</option>
+            <option value="300000">5 мин.</option>
+            <option value="900000">15 мин.</option>
+            <option value="1800000">30 мин.</option>
+            <option value="2700000">45 мин.</option>
+            <option value="3600000">1 час</option>
+            <option value="5400000">1 час 30 мин</option>
+          </select>
+        </div>
+        <div x-show="!isStarted">
+          <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+          </button>
+        </div>
+        <div x-show="isStarted">
+          <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+          </input>
+        </div>
+      </div>
+    </div>
+  </template>
+  <div id="command-review-1"></div>
+</div>

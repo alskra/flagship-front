@@ -1,0 +1,253 @@
+
+<div class="table-responsive">
+  <div class="overflow-clip">
+    <table class="table-data table-data--tribune" x-data="tableData" x-bind="tableData">
+      <thead>
+        <tr>
+          <th><span>№</span></th>
+          <th><span>Фамилия</span></th>
+          <th><span>Имя</span></th>
+          <th><span>Отчество</span></th>
+          <th><span>Статус</span></th>
+          <th><span>Таймер</span></th>
+        </tr>
+      </thead>
+      <tbody x-ref="body">
+        <tr class="stage-item stage-item--tribune" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak>
+          <td><span>1</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="stage-item--tribune" x-data="stageItem({ isStarted: true, timeLeft: 45000 })" x-bind="stageItem" x-cloak>
+          <td><span>2</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петров')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петр')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="stage-item--tribune" x-data="stageItem({ isStarted: true, timeLeft: 0 })" x-bind="stageItem" x-cloak>
+          <td><span>3</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Сидоров')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Николай')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Александрович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="stage-item stage-item--tribune" x-data="stageItem({ isStarted: false, timeLeft: 0 })" x-bind="stageItem" x-cloak>
+          <td><span>4</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванов')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иван')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петрович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="stage-item--tribune" x-data="stageItem({ isStarted: true, timeLeft: 90000 })" x-bind="stageItem" x-cloak>
+          <td><span>5</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петров')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Петр')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Иванович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr class="stage-item--tribune" x-data="stageItem({ isStarted: true, timeLeft: 0 })" x-bind="stageItem" x-cloak>
+          <td><span>6</span></td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Сидоров')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Николай')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td class="table-data__editable" title="Двойной клик - Редактировать" x-data="editable('Александрович')" x-bind="editable"><span x-bind="field"></span>
+            <input class="form-field" type="text" x-bind="fieldEdit" x-model="valueEdit" x-ref="fieldEdit" x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() =&gt; { afterSubmit() })">
+            </input>
+          </td>
+          <td><span class="table-data__status" x-bind="status"></span></td>
+          <td>
+            <div class="table-data__timer">
+              <div x-show="!isStarted">
+                <select class="form-field" x-model.number="controlTime">
+                  <option value="5000">5 сек.</option>
+                  <option value="300000">5 мин.</option>
+                  <option value="900000">15 мин.</option>
+                  <option value="1800000">30 мин.</option>
+                  <option value="2700000">45 мин.</option>
+                  <option value="3600000">1 час</option>
+                  <option value="5400000">1 час 30 мин</option>
+                </select>
+              </div>
+              <div x-show="!isStarted">
+                <button class="btn btn--accent btn--width-full" type="button" x-bind="btnStart" x-on:click="beforeSendData(); fetch('', { method: 'POST', body: controlTime }).then(() =&gt; { afterSendData() })"><span class="btn__content">Старт</span>
+                </button>
+              </div>
+              <div x-show="isStarted">
+                <input class="form-field form-field form-field--timer" type="text" readonly x-data="timer" x-bind:value="formatTime">
+                </input>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
