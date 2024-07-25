@@ -218,3 +218,11 @@
     --font-size: 14rem;
   }
 }
+
+.table-data__editable {
+  .form-field {
+    --height: 30rem;
+
+    min-width: 160rem;
+  }
+}

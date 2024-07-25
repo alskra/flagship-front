@@ -1,4 +1,5 @@
 import Alpine from 'alpinejs';
+import '@components/editable/editable';
 import '@components/stage-item/stage-item';
 import './table-data.scss';
 

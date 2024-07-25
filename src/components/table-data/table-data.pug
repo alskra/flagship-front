@@ -1,4 +1,18 @@
 mixin table-data(type = 'events')
+  mixin editable(val)
+    td.table-data__editable(
+      x-data=`editable('${val}')`
+      x-bind="editable"
+    )
+      span(x-bind="field")
+      +form-field()(
+        x-bind="fieldEdit"
+        x-model="valueEdit"
+        x-ref="fieldEdit"
+        x-on:keyup.enter="fetch('', { method: 'POST', body: valueEdit }).then(() => { afterSubmit() })"
+      )
+
+
   .table-responsive&attributes(attributes)
     .overflow-clip
       table.table-data(
@@ -80,21 +94,21 @@ mixin table-data(type = 'events')
           tbody(x-ref="body")
             each item, index in Array(8)
               tr
-                td: span Иванов
-                td: span Иван
-                td: span Петрович
+                +editable('Иванов')
+                +editable('Иван')
+                +editable('Петрович')
                 td: span.table-data__status(x-bind="status")
 
               tr
-                td: span Петров
-                td: span Петр
-                td: span Иванович
+                +editable('Петров')
+                +editable('Петр')
+                +editable('Иванович')
                 td: span.table-data__status(x-bind="status")
 
               tr
-                td: span Сидоров
-                td: span Николай
-                td: span Александрович
+                +editable('Сидоров')
+                +editable('Николай')
+                +editable('Александрович')
                 td: span.table-data__status(x-bind="status")
 
         if type === 'tribune-not-filled'
@@ -137,9 +151,9 @@ mixin table-data(type = 'events')
                 x-cloak
               )
                 td: span= index * 3 + 1
-                td: span Иванов
-                td: span Иван
-                td: span Петрович
+                +editable('Иванов')
+                +editable('Иван')
+                +editable('Петрович')
                 td: span.table-data__status(x-bind="status")
                 td
                   .table-data__timer
@@ -173,9 +187,9 @@ mixin table-data(type = 'events')
                 x-cloak
               )
                 td: span= index * 3 + 2
-                td: span Петров
-                td: span Петр
-                td: span Иванович
+                +editable('Петров')
+                +editable('Петр')
+                +editable('Иванович')
                 td: span.table-data__status(x-bind="status")
                 td
                   .table-data__timer
@@ -209,9 +223,9 @@ mixin table-data(type = 'events')
                 x-cloak
               )
                 td: span= index * 3 + 3
-                td: span Сидоров
-                td: span Николай
-                td: span Александрович
+                +editable('Сидоров')
+                +editable('Николай')
+                +editable('Александрович')
                 td: span.table-data__status(x-bind="status")
                 td
                   .table-data__timer
@@ -248,9 +262,9 @@ mixin table-data(type = 'events')
           tbody(x-ref="body")
             each item, index in Array(24)
               tr
-                td: span Иванов
-                td: span Иван
-                td: span Петрович
+                +editable('Иванов')
+                +editable('Иван')
+                +editable('Петрович')
 
         if ['brainstorm', 'conference', 'review'].includes(type)
           thead
@@ -263,7 +277,7 @@ mixin table-data(type = 'events')
           tbody(x-ref="body")
             each item, index in Array(6)
               tr
-                td: span Иванов
-                td: span Иван
-                td: span Петрович
+                +editable('Иванов')
+                +editable('Иван')
+                +editable('Петрович')
                 td: span.table-data__status(x-bind="status")
