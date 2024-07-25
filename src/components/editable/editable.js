@@ -47,8 +47,8 @@ Alpine.data('editable', (value) => ({
     });
   },
   field: {
-    'x-show'() {
-      return !this.isEdited;
+    ':class'() {
+      return { 'visibility-hidden': this.isEdited };
     },
     'x-text'() {
       return this.value;

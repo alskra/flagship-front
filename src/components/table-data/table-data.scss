@@ -220,9 +220,15 @@
 }
 
 .table-data__editable {
+  position: relative;
+
   .form-field {
     --height: 30rem;
 
-    min-width: 160rem;
+    position: absolute;
+    top: 8rem;
+    left: 16rem;
+    // min-width: 160rem;
+    width: calc(100% - 32rem);
   }
 }
