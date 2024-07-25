@@ -7,7 +7,7 @@ mixin header
         a.header__logo(href="guide.html")
           +img-2x()(src="~@images/logo.png")
 
-      .col-6(class={ 'header__nav-box': aside })
+      .col-6.header__nav-box
         if aside
           nav.header__nav(x-bind="nav")
             a.header__nav-item(href="index.html") Главная
