@@ -5,6 +5,19 @@ Alpine.data('editable', (value) => ({
   value,
   valueEdit: value,
   expired: null,
+  afterSubmit() {
+    this.value = this.valueEdit;
+    this.isEdited = false;
+  },
+  init() {
+    this.$watch('isEdited', (val) => {
+      if (val === true) {
+        setTimeout(() => this.$refs.fieldEdit.focus(), 20);
+      } else {
+        this.valueEdit = this.value;
+      }
+    });
+  },
   editable: {
     '@dblclick'() {
       // eslint-disable-next-line no-console
@@ -32,19 +45,6 @@ Alpine.data('editable', (value) => ({
         }
       }
     },
-  },
-  afterSubmit() {
-    this.value = this.valueEdit;
-    this.isEdited = false;
-  },
-  init() {
-    this.$watch('isEdited', (val) => {
-      if (val === true) {
-        setTimeout(() => this.$refs.fieldEdit.focus(), 20);
-      } else {
-        this.valueEdit = this.value;
-      }
-    });
   },
   field: {
     ':class'() {
