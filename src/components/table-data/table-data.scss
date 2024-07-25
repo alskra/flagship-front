@@ -86,10 +86,6 @@
     max-height: calc(100vh - var(--header-height) - var(--app__main-padding-top) - var(--app__main-padding-bottom));
     scroll-snap-type: y mandatory;
     scroll-padding-top: calc(30rem + var(--table-data-border-spacing));
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 
   .overflow-clip:has(> &) {
