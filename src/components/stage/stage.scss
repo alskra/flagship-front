@@ -190,9 +190,8 @@
   display: flex;
   gap: 8rem 20rem;
   align-items: center;
-  padding: 12rem 16rem;
+  padding: 14rem 16rem;
   background: var(--gray);
-  border-top: 3px solid transparent;
   border-bottom: 3px solid var(--accent);
 
   @media (--max-sm) {
