@@ -1,6 +1,7 @@
 .form-field {
   --line-height: 1.25;
   --content-height: calc(1em * var(--line-height));
+  --width: 100%;
   --height: 40rem;
   --padding-y: calc(0.5 * (var(--height) - var(--content-height) - 2 * var(--border-width)));
   --padding-x: 16rem;
@@ -12,7 +13,7 @@
   --border-color: transparent;
 
   display: block;
-  width: 100%;
+  width: var(--width);
   padding: var(--padding-y) var(--padding-x);
   font-size: var(--font-size);
   font-weight: var(--font-weight);

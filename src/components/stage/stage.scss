@@ -126,6 +126,8 @@
   @media (--max-sm) {
     display: grid;
     grid-template-columns: 1fr auto;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
   }
 }
 
@@ -160,20 +162,17 @@
 }
 
 .stage__command-timer {
-  display: grid;
-  grid-template-columns: 104rem 104rem;
+  display: flex;
   gap: var(--table-data-border-spacing);
 
   .form-field {
+    --width: 104rem;
     --height: 46rem;
     --font-size: 14rem;
   }
 
-  .form-field--timer {
-    --font-size: 14rem;
-  }
-
   .btn {
+    --width: 104rem;
     --height: 46rem;
   }
 
@@ -185,4 +184,26 @@
       grid-row: span 2;
     }
   }
+}
+
+.stage__command-review {
+  display: flex;
+  gap: 8rem 20rem;
+  align-items: center;
+  padding: 12rem 16rem;
+  background: var(--gray);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid var(--accent);
+
+  @media (--max-sm) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.stage__command-review-title {
+  flex: 1;
+  font-size: 20rem;
+  font-weight: 700;
+  color: var(--accent);
 }
