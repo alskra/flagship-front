@@ -14,12 +14,8 @@ block aside
     a.aside__nav-item(
       class={ 'is-current': url === 'event-settings' }
       href=url !== 'event-settings' ? 'event-settings.html' : null
-    ) Общие настройки
-    a.aside__nav-item(
-      class={ 'is-current': url === 'event-settings-datetime' }
-      href=url !== 'event-settings-datetime' ? 'event-settings-datetime.html' : null
-    ) Дата и время
+    ) Настройки
 
 block main
-  h1.h3.content Общие настройки
+  h1.h3.content Настройки
   +event-settings()

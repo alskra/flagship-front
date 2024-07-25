@@ -4,8 +4,13 @@
   gap: 26rem;
 
   @media (--max-lg) {
-    grid-template-columns: repeat(auto-fit, minmax(197rem, 1fr));
+    grid-template-columns: repeat(3, minmax(197rem, 1fr));
     gap: var(--grid-gutter);
+  }
+
+  @media (--max-md) {
+    grid-template-columns: none;
+    gap: 12rem;
   }
 }
 
@@ -18,18 +23,18 @@
   container-type: inline-size;
 
   &--student {
-    --bg: var(--accent);
-    --hover-bg: var(--accent-dark);
+    --bg: var(--accent-rgb);
+    --hover-bg: var(--accent-dark-rgb);
   }
 
   &--teacher {
-    --bg: var(--primary);
-    --hover-bg: var(--primary-dark);
+    --bg: var(--primary-rgb);
+    --hover-bg: var(--primary-dark-rgb);
   }
 
   &--manager {
-    --bg: var(--tertiary);
-    --hover-bg: var(--tertiary-dark);
+    --bg: var(--tertiary-rgb);
+    --hover-bg: var(--tertiary-dark-rgb);
   }
 }
 
@@ -37,19 +42,38 @@
   display: flex;
   flex: 1;
   flex-flow: column;
-  padding: 64rem 12rem 56rem;
-  color: var(--bg);
+  gap: 30rem;
+  padding: 64rem 16rem 56rem;
+  color: rgb(var(--bg));
+  cursor: pointer;
   background: currentcolor;
   border-radius: 8rem;
   transition: color var(--base-transition);
 
-  @include hover {
-    color: var(--hover-bg);
+  &:has(input:focus-visible) {
+    @include focus-default;
   }
 
-  @container (width > 253rem) {
-    padding-top: 30rem;
-    padding-bottom: 30rem;
+  &:has(input:checked) {
+    color: rgb(var(--hover-bg));
+    box-shadow: 0 0 0 3px rgb(var(--bg) / 75%);
+  }
+
+  @include hover {
+    color: rgb(var(--hover-bg));
+  }
+
+  @media (--max-lg) {
+    flex-direction: row;
+    gap: 12rem;
+    align-items: center;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+  }
+
+  @media (--max-md) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
   }
 }
 
@@ -64,14 +88,12 @@
   background: var(--white);
   border-radius: 50%;
 
-  &:--not-l-c {
-    margin-bottom: 30rem;
+  @media (--max-lg) {
+    margin: 0;
   }
 
-  @container (width > 253rem) {
-    &:--not-l-c {
-      margin-bottom: 20rem;
-    }
+  @media (--max-md) {
+    width: 48rem;
   }
 }
 

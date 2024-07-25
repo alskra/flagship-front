@@ -1,9 +1,5 @@
 .event-settings {
   container-type: inline-size;
-
-  &--max-width {
-    max-width: 488rem;
-  }
 }
 
 .event-settings__body {
@@ -16,10 +12,15 @@
   display: flex;
   flex-flow: column;
   gap: 28rem;
+  max-width: 488rem;
 }
 
 .event-settings__group {
   display: flex;
   flex-flow: column;
   gap: 8rem;
+}
+
+.event-settings__footer {
+  max-width: 488rem;
 }
