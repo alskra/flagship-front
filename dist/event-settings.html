@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Флагманы образования - Настройки события</title>
     <meta property="description" content="Флагманы образования - Настройки события">
-  <script defer src="js/runtime.6785a450.js"></script><script defer src="js/vendors.7345a198.js"></script><script defer src="js/main.9cf5a620.js"></script><link href="css/main.4d9ebdd9.css" rel="stylesheet"></head>
+  <script defer src="js/runtime.56196cc2.js"></script><script defer src="js/vendors.5f62ccb8.js"></script><script defer src="js/main.22000bd5.js"></script><link href="css/vendors.54cf8f04.css" rel="stylesheet"><link href="css/main.0a87aaae.css" rel="stylesheet"></head>
   <body>
     <div class="app" x-data="app" x-bind="app">
       <header class="header" x-data="header">
@@ -55,21 +55,21 @@
                   <div class="target-groups">
                     <label class="target-groups__item target-groups__item--student">
                       <div class="target-groups__item-body">
-                        <input class="visually-hidden" type="radio" name="type" value="student">
+                        <input class="visually-hidden" type="radio" name="group" value="student" checked>
                         <div class="icon icon-student target-groups__item-icon"></div>
                         <div class="target-groups__item-title">Студент</div>
                       </div>
                     </label>
                     <label class="target-groups__item target-groups__item--teacher">
                       <div class="target-groups__item-body">
-                        <input class="visually-hidden" type="radio" name="type" value="teacher">
+                        <input class="visually-hidden" type="radio" name="group" value="teacher">
                         <div class="icon icon-teacher target-groups__item-icon"></div>
                         <div class="target-groups__item-title">Педагог</div>
                       </div>
                     </label>
                     <label class="target-groups__item target-groups__item--manager">
                       <div class="target-groups__item-body">
-                        <input class="visually-hidden" type="radio" name="type" value="manager">
+                        <input class="visually-hidden" type="radio" name="group" value="manager">
                         <div class="icon icon-manager target-groups__item-icon"></div>
                         <div class="target-groups__item-title">Управле&shy;нец</div>
                       </div>
@@ -84,13 +84,13 @@
                   </div>
                   <div class="event-settings__group" x-id="[&quot;form-field&quot;]">
                     <label class="form-label" x-bind:for="$id('form-field')">Дата и время начала (МСК)</label>
-                    <input class="form-field" type="text" required x-bind:id="$id('form-field')">
+                    <input class="form-field" type="text" readonly required x-bind:id="$id('form-field')" x-ref="startDate">
                     </input>
                     <input type="hidden" name="start-date">
                   </div>
                   <div class="event-settings__group" x-id="[&quot;form-field&quot;]">
                     <label class="form-label" x-bind:for="$id('form-field')">Дата и время окончания (МСК)</label>
-                    <input class="form-field" type="text" required x-bind:id="$id('form-field')">
+                    <input class="form-field" type="text" readonly required x-bind:id="$id('form-field')" x-ref="endDate">
                     </input>
                     <input type="hidden" name="end-date">
                   </div>
