@@ -26,6 +26,7 @@
 }
 
 :root {
+  overflow: auto;
   scroll-padding-top: var(--root-scroll-padding-top);
 
   &.is-device-desktop {
@@ -53,6 +54,8 @@
 }
 
 body {
+  position: relative;
+  overflow: clip;
   overscroll-behavior: var(--body-overscroll-behavior);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);

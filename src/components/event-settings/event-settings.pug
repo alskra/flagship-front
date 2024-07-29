@@ -23,8 +23,10 @@ mixin event-settings
         .event-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время начала (МСК)
           +form-field()(
+            readonly
             required
             x-bind:id="$id('form-field')"
+            x-ref="startDate"
           )
           input(
             type="hidden"
@@ -34,8 +36,10 @@ mixin event-settings
         .event-settings__group(x-id=['form-field'])
           label.form-label(x-bind:for="$id('form-field')") Дата и время окончания (МСК)
           +form-field()(
+            readonly
             required
             x-bind:id="$id('form-field')"
+            x-ref="endDate"
           )
           input(
             type="hidden"
