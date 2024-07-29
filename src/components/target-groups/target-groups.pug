@@ -4,8 +4,9 @@ mixin target-groups
       .target-groups__item-body
         input(
           type="radio"
-          name="type"
+          name="group"
           value="student"
+          checked
         ).visually-hidden
         .icon.icon-student.target-groups__item-icon
         .target-groups__item-title Студент
@@ -14,7 +15,7 @@ mixin target-groups
       .target-groups__item-body
         input(
           type="radio"
-          name="type"
+          name="group"
           value="teacher"
         ).visually-hidden
         .icon.icon-teacher.target-groups__item-icon
@@ -24,7 +25,7 @@ mixin target-groups
       .target-groups__item-body
         input(
           type="radio"
-          name="type"
+          name="group"
           value="manager"
         ).visually-hidden
         .icon.icon-manager.target-groups__item-icon
