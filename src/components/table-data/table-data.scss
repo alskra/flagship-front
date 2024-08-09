@@ -14,6 +14,10 @@
     position: sticky;
     top: 0;
     z-index: 1;
+
+    :is(.is-browser-safari, .is-browser-mobile-safari) & {
+      top: negate(var(--table-data-border-spacing));
+    }
   }
 
   thead tr {
