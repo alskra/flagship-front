@@ -19,15 +19,11 @@ requireIcon.keys().forEach((iconPath) => {
 });
 
 let styleSheet;
-let styleEl;
 
 try {
   styleSheet = new CSSStyleSheet();
   styleSheet.replaceSync(style);
-} catch {
-  styleEl = document.createElement('style');
-  styleEl.innerHTML = style;
-}
+} catch { /* empty */ }
 
 const template = document.createElement('template');
 
@@ -64,6 +60,9 @@ class IconSvg extends HTMLElement {
     if (styleSheet) {
       this.shadowRoot.adoptedStyleSheets = [styleSheet];
     } else {
+      const styleEl = document.createElement('style');
+
+      styleEl.innerHTML = style;
       this.shadowRoot.append(styleEl);
     }
 
