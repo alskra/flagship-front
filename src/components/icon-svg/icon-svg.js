@@ -72,7 +72,7 @@ class IconSvg extends HTMLElement {
   update() {
     template.innerHTML = icons[this.name];
     this.svgEl.replaceWith(template.content);
-    this.svgEl.style.aspectRatio = `${this.svgEl.getAttribute('viewBox').split(/\s+/).slice(2).join('/')}`;
+    // this.svgEl.style.aspectRatio = `${this.svgEl.getAttribute('viewBox').split(/\s+/).slice(2).join('/')}`;
 
     if ([].includes(this.name)) {
       this.svgViewBoxHeight = +this.svgEl.getAttribute('viewBox').split(/\s+/).pop();
