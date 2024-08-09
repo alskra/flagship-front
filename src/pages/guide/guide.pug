@@ -36,6 +36,10 @@ block app
 
     .container.guide
       +content()
+        h2 UA Info
+        p(x-text="navigator.userAgent")
+        p(x-html="document.documentElement.className.split(' ').join('<br>')")
+
         h2#pages Pages
 
         +pages(store.pages)
