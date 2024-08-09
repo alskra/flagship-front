@@ -10,7 +10,7 @@ Alpine.data('eventSettings', () => ({
   dtf: new Intl.DateTimeFormat('ru-RU', {
     dateStyle: 'full',
     timeStyle: 'long',
-    timeZone: '+03:00',
+    timeZone: 'Europe/Moscow',
   }),
   init() {
     this.$nextTick(() => {
