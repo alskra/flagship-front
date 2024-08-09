@@ -1,4 +1,3 @@
-import 'construct-style-sheets-polyfill';
 import ResizeObserver from 'resize-observer-polyfill';
 import style from './icon-svg.scss?module';
 
@@ -19,10 +18,14 @@ requireIcon.keys().forEach((iconPath) => {
   icons[iconName] = requireIcon(iconPath).default || requireIcon(iconPath);
 });
 
-const template = document.createElement('template');
-const styleSheet = new CSSStyleSheet();
+let styleSheet;
 
-styleSheet.replaceSync(style);
+if (typeof CSSStyleSheet === 'function') {
+  styleSheet = new CSSStyleSheet();
+  styleSheet.replaceSync(style);
+}
+
+const template = document.createElement('template');
 
 const resizeObserver = new ResizeObserver((entries) => {
   entries.forEach((entry) => {
@@ -53,7 +56,16 @@ class IconSvg extends HTMLElement {
     super();
 
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.adoptedStyleSheets = [styleSheet];
+
+    if (typeof CSSStyleSheet === 'function') {
+      this.shadowRoot.adoptedStyleSheets = [styleSheet];
+    } else {
+      const styleEl = document.createElement('style');
+
+      styleEl.innerHTML = style;
+      this.shadowRoot.append(styleEl);
+    }
+
     this.shadowRoot.append(this.svgEl);
   }
 
