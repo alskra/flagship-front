@@ -19,10 +19,14 @@ requireIcon.keys().forEach((iconPath) => {
 });
 
 let styleSheet;
+let styleEl;
 
-if (typeof CSSStyleSheet === 'function') {
+try {
   styleSheet = new CSSStyleSheet();
   styleSheet.replaceSync(style);
+} catch {
+  styleEl = document.createElement('style');
+  styleEl.innerHTML = style;
 }
 
 const template = document.createElement('template');
@@ -57,12 +61,9 @@ class IconSvg extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
 
-    if (typeof CSSStyleSheet === 'function') {
+    if (styleSheet) {
       this.shadowRoot.adoptedStyleSheets = [styleSheet];
     } else {
-      const styleEl = document.createElement('style');
-
-      styleEl.innerHTML = style;
       this.shadowRoot.append(styleEl);
     }
 
