@@ -124,7 +124,7 @@ blockquote:--content {
 
 .table-responsive {
   display: block;
-  overflow-x: auto;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 
   &:--content {

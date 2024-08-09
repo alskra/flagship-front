@@ -42,9 +42,8 @@
     ::-webkit-scrollbar-thumb {
       background: var(--gray-2, var(--primary));
       background-clip: content-box;
-      border-right: 2px solid transparent;
-      border-left: 2px solid transparent;
-      border-radius: 6px / 4px;
+      border: 2px solid transparent;
+      border-radius: 6px;
     }
   }
 

@@ -86,23 +86,14 @@
   }
 
   .table-responsive:has(.overflow-clip > &) {
-    display: flex;
     max-height: calc(100vh - var(--header-height) - var(--app__main-padding-top) - var(--app__main-padding-bottom));
     scroll-snap-type: y mandatory;
     scroll-padding-top: calc(30rem + var(--table-data-border-spacing));
   }
 
   .overflow-clip:has(> &) {
-    flex: 0 0 100%;
-    align-self: flex-start;
-    min-width: auto;
+    display: inline-block;
     border-radius: 8rem 8rem 0 0;
-
-    &::before,
-    &::after {
-      display: table;
-      content: "";
-    }
   }
 
   &--events {
