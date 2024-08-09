@@ -5,6 +5,7 @@ import '@css/base.scss';
 import 'ninelines-ua-parser';
 import '@js/postcss-polyfills';
 import Viewport from '@js/viewport';
+import '@js/ios-viewport-fix';
 
 // AlpineJS
 import '@js/alpine';
