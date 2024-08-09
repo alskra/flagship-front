@@ -1,3 +1,4 @@
+import 'construct-style-sheets-polyfill';
 import ResizeObserver from 'resize-observer-polyfill';
 import style from './icon-svg.scss?module';
 

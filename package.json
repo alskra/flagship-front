@@ -69,6 +69,7 @@
     "air-datepicker": "^3.5.3",
     "alpinejs": "^3.14.1",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "construct-style-sheets-polyfill": "^3.1.0",
     "core-js": "^3.37.1",
     "css-blank-pseudo": "^6.0.2",
     "css-has-pseudo": "^6.0.5",
