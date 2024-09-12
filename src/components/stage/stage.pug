@@ -17,7 +17,14 @@ mixin stage(type = 'cabinet', { isFilled = false } = {})
           if ['brainstorm', 'conference', 'review'].includes(type)
             | Командные этапы
 
-        +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
+        .stage__nav
+          if type === 'cabinet'
+            +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
+          else if type === 'review'
+            +btn({ tag: 'a', content: 'Назад', icons: ['arrow-right'] }).stage__btn-prev(href="")
+          else
+            +btn({ tag: 'a', content: 'Назад', icons: ['arrow-right'] }).stage__btn-prev(href="")
+            +btn({ tag: 'a', content: 'Далее', icons: ['arrow-right'] }).stage__btn-next(href="")
 
         if ['brainstorm', 'conference', 'review'].includes(type)
           p.stage__subtitle

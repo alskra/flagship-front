@@ -56,7 +56,10 @@ mixin table-data(type = 'events')
                 td: a(href="") этапы
                 td: +btn({tag: 'a', icons: ['qr']}).btn--action(title="QR-код")
                 td: +btn({tag: 'a', icons: ['edit']}).btn--action(title="Редактировать")
-                td: +btn({tag: 'a', icons: ['remove']}).btn--action(title="Удалить")
+                td: +btn({tag: 'a', icons: ['remove']}).btn--action(
+                  title="Удалить"
+                  x-on:click="confirm('Вы уверены?') ? null : $event.preventDefault()"
+                )
 
               tr(
                 data-target-group="2-teacher"

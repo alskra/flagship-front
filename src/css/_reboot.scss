@@ -54,7 +54,7 @@
 
 body {
   position: relative;
-  overflow: clip;
+  overflow-x: clip;
   overscroll-behavior: var(--body-overscroll-behavior);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);

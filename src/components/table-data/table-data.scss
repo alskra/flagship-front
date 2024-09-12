@@ -94,6 +94,7 @@
   .overflow-clip:has(> &) {
     display: inline-block;
     min-width: 100%;
+    vertical-align: top;
     border-radius: 8rem 8rem 0 0;
   }
 
